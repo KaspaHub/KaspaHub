@@ -379,7 +379,7 @@ a:active {color:#D8B234; text-decoration: underline; }
         .card {
 			transition: all 0.3s ease;
 			min-height: 220px;
-			max-height: 220px;
+			max-height: 270px;
 			position: relative;
 			display: flex;
 			flex-direction: column;
