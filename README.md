@@ -1,3 +1,4 @@
-# kaspahub.github.io
-Explore the Kaspa ecosystem (coming soon)
-https://kaspahub.github.io/donations
+# Explore the Kaspa ecosystem
+
+https://kaspahub.github.io/wallets
+https://github.com/KaspaHub/donations
