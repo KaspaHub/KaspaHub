@@ -1,7 +1,7 @@
 # Explore the Kaspa ecosystem
 
-https://kaspahub.github.io/comparison
+https://kaspahub.org/comparison
 
-https://kaspahub.github.io/wallets
+https://kaspahub.org/wallets
 
-https://github.com/KaspaHub/donations
+https://kaspahub.org/donations
