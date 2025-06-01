@@ -343,14 +343,16 @@ table th, table td {
 }
 
 footer {
+	color: #6c757d;
 	font-size: 0.9em;
 	text-align: center;
-	color: #F1F1F1;
 	padding: 0;
 	margin: 0;
-	color: #6c757d;
+	min-height: 50px;
+	max-height: 50px;
+	display: grid;
+	place-content: center;
 }
-
 
 a {cursor: pointer; font-weight: bold; text-decoration: none; transition: color 0.2s linear; }
 a:link {color:#1C62B9; }
