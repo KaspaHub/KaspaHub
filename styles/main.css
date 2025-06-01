@@ -210,9 +210,11 @@ header a {
 }*/
 
 .wallet-logo {
-	width: 100px;
-	height: 100px;
-	margin-bottom: 20px;
+	min-width: 100px;
+	min-height: 100px;
+	max-width: 100px;
+	max-height: 100px;
+	margin-bottom: 10px;
 	border-radius: 50%;
 	overflow: hidden;
 	display: flex;
@@ -262,6 +264,12 @@ header a {
 .platform-tag img {
 	height: 16px;
 	margin-right: 5px;
+}
+
+img {
+	object-fit: contain !important;
+	max-width: 100% !important;
+	/*height: auto !important;*/
 }
 
 .link-button {
@@ -327,6 +335,7 @@ header a {
 	.wallet-card {
 		padding: 20px;
 	}
+	
 }
 
 footer {
