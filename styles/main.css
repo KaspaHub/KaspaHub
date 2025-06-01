@@ -96,19 +96,6 @@ header a {
 	color: #EDEDED !important;
 }
 
-article table, article table th, article table td, article table tr, .note-editable table, .note-editable table th, .note-editable table td, .note-editable table tr {
-	border: 2px solid #D4D4D4;
-}
-
-article table, .note-editable table {
-	background-color: rgba(192,192,192, 0.2);
-	border-collapse: collapse;
-}
-
-table th, table td {
-	padding: 0.2rem;
-}
-
 .page-wrapper {
 	max-width: 1300px;
 	margin: 0 auto;
