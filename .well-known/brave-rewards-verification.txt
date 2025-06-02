@@ -1,4 +1,4 @@
 This is a Brave Creators publisher verification file.
 
 Domain: kaspahub.org
-Token: 8d9a6f1b6673f5d8dbfd739c1a33687be7455b878a66b106ead4aa8e53c5825e
+Token: 4e0f693d6d7375600c5bb0f836f7c49c08b86fea35214265a7db76cb71a0c32b
