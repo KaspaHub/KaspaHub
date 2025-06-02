@@ -8,4 +8,4 @@ https://kaspahub.org/wallets
 
 https://kaspahub.org/tools
 
-https://kaspahub.org/donations
+https://github.com/KaspaHub/donations
