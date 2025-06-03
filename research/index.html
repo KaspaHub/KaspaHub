@@ -58,6 +58,10 @@
                         <label for="articles">Articles</label>
                     </div>
                     <div class="filter-group">
+                        <input type="checkbox" id="videos" data-feature="videos">
+                        <label for="videos">Videos</label>
+                    </div>
+                    <div class="filter-group">
                         <input type="checkbox" id="analytics" data-feature="analytics">
                         <label for="analytics">Analytics</label>
                     </div>
@@ -75,7 +79,6 @@
                     </div>
                 </div>
             </aside>
-
             <section class="filter-list-main">
                 <section class="research-tools-section">
                     <div class="filter-grid" id="toolGrid">
@@ -89,12 +92,13 @@
     <script>
         const researchTools = [
             {
-                name: "Kaspa.org",
+                name: "Kaspa",
                 description: "The main Kaspa website provides comprehensive information on Kaspa’s GHOSTDAG protocol, blockDAG architecture, and ecosystem resources, including links to wallets, explorers, and development tools for network analysis.",
-                officialSite: "https://kaspa.org/",
+                officialSite: "https://kaspa.org",
                 logo: "https://kaspahub.org/img/thumbnail.png",
                 features: {
                     articles: false,
+                    videos: true,
                     analytics: false,
                     blockExplorer: false,
                     visualizer: false,
@@ -108,6 +112,7 @@
                 logo: "https://kaspahub.org/img/wallets/kaspacom.jpg",
                 features: {
                     articles: false,
+                    videos: false,
                     analytics: false,
                     blockExplorer: false,
                     visualizer: false,
@@ -121,6 +126,7 @@
                 logo: "https://kaspahub.org/research/img/kasmedia.jpg",
                 features: {
                     articles: true,
+                    videos: false,
                     analytics: false,
                     blockExplorer: false,
                     visualizer: false,
@@ -133,6 +139,8 @@
                 officialSite: "https://research.kas.pa",
                 logo: "https://kaspahub.org/research/img/research.jpg",
                 features: {
+                    articles: false,
+                    videos: false,
                     analytics: false,
                     blockExplorer: false,
                     visualizer: false,
@@ -146,6 +154,7 @@
                 logo: "https://kaspahub.org/research/img/hashdag.jpg",
                 features: {
                     articles: true,
+                    videos: false,
                     analytics: false,
                     blockExplorer: false,
                     visualizer: false,
@@ -153,12 +162,13 @@
                 }
             },
             {
-                name: "Shai Wyborski on Medium",
-                description: "Medium profile of Shai Wyborski, a Kaspa researcher and author of the GHOSTDAG paper, providing insights and articles on Kaspa and blockchain technology.",
-                officialSite: "https://medium.com/@shai.wyborski",
+                name: "Shai Deshe (大胡子)",
+                description: "Dr. Shai Wyborski's website is a key Kaspa contributor and GHOSTDAG paper co-author, offers insights and resources on Kaspa, blockchain technology, cryptography, and decentralized consensus.",
+                officialSite: "https://wybor.ski",
                 logo: "https://kaspahub.org/research/img/shai.jpg",
                 features: {
                     articles: true,
+                    videos: true,
                     analytics: false,
                     blockExplorer: false,
                     visualizer: false,
