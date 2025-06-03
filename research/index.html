@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Primary Meta Tags -->
+    <title>Kaspa Hub - Research</title>
+    <meta name="title" content="Kaspa Hub - Research Tools" />
+    <meta name="description" content="Explore tools for researching Kaspa (KAS), including analytics, block explorers, visualizers, and KRC-20 token support for on-chain data and network insights." />
+    <meta name="keywords" content="kaspa, blockdag, ghostdag, cryptocurrency, analytics, block explorer, visualizer, krc20, krc-20" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kaspahub.org/research-tools" />
+    <meta property="og:title" content="Kaspa Hub - Research Tools" />
+    <meta property="og:description" content="Explore tools for researching Kaspa (KAS), including analytics, block explorers, visualizers, and KRC-20 token support for on-chain data and network insights." />
+    <meta property="og:image" content="https://kaspahub.org/img/thumbnail.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://kaspahub.org/research-tools" />
+    <meta property="twitter:title" content="Kaspa Hub - Research Tools" />
+    <meta property="twitter:description" content="Explore tools for researching Kaspa (KAS), including analytics, block explorers, visualizers, and KRC-20 token support for on-chain data and network insights." />
+    <meta property="twitter:image" content="https://kaspahub.org/img/thumbnail.png" />
+
+    <link rel="icon" type="image/x-icon" href="https://kaspahub.org/favicon.ico" />
+    <link rel="stylesheet" href="https://kaspahub.org/styles/main.css" />
+    <script defer src="https://kaspahub.org/scripts/main.js"></script>
+
+    <style>
+        .filter-card {
+            min-height: 400px;
+            max-height: 500px;
+            width: 85%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="page-nav"></nav>
+    </header>
+
+    <main class="page-wrapper">
+        <div style="color: #F1F1F1; min-height: 300px; align-content: center;">
+            <h1>Kaspa Research Tools</h1>
+            <p style="padding-left: 10px;">Explore a range of tools for researching Kaspa, providing insights into on-chain data and network activity. Find the tools that best suit your research needs.</p>
+        </div>
+        <div class="main-content-area">
+            <aside class="sidebar theme-1">
+                <div class="filter-category">
+                    <h2 id="counter"></h2>
+                    <h3>Features</h3>
+                    <div class="filter-group">
+                        <input type="checkbox" id="analytics" data-feature="analytics">
+                        <label for="analytics">Analytics</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="blockExplorer" data-feature="blockExplorer">
+                        <label for="blockExplorer">Block Explorer</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="visualizer" data-feature="visualizer">
+                        <label for="visualizer">Visualizer</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="krc20" data-feature="krc20">
+                        <label for="krc20">KRC-20</label>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="filter-list-main">
+                <section class="research-tools-section">
+                    <div class="filter-grid" id="toolGrid">
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer id="page-footer"></footer>
+
+    <script>
+        const researchTools = [
+            {
+                name: "Kaspa.org",
+                description: "The main Kaspa website provides comprehensive information on Kaspa’s GHOSTDAG protocol, blockDAG architecture, and ecosystem resources, including links to wallets, explorers, and development tools for network analysis.",
+                officialSite: "https://kaspa.org/",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: true,
+                    blockExplorer: false,
+                    visualizer: false,
+                    krc20: false
+                }
+            },
+            {
+                name: "Kaspa.com",
+                description: "KaspaCom is a platform for minting and trading KRC-20 tokens and KRC-721 NFTs on Kaspa’s blockDAG, with portfolio tools. It offers analytics to research Kaspa’s token ecosystem.",
+                officialSite: "https://www.kaspa.com/",
+                logo: "https://kaspahub.org/img/wallets/kaspacom.jpg",
+                features: {
+                    analytics: false,
+                    blockExplorer: false,
+                    visualizer: false,
+                    krc20: true
+                }
+            },
+            {
+                name: "KASmedia",
+                description: "KASmedia publishes research and news on Kaspa’s blockDAG, covering GHOSTDAG, on-chain data, and mining trends. It offers insights for researchers via articles and event coverage.",
+                officialSite: "https://www.kasmedia.com/",
+                logo: "https://kaspahub.org/img/research/kasmedia.jpg",
+                features: {
+                    analytics: false,
+                    blockExplorer: false,
+                    visualizer: false,
+                    krc20: false
+                }
+            },
+            {
+                name: "Kas.fyi",
+                description: "KAS-FYI Explorer provides a user-friendly interface for querying Kaspa transactions, blocks, and addresses, including KRC-20 token transactions, for on-chain data research.",
+                officialSite: "https://kas.fyi/",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: false,
+                    blockExplorer: true,
+                    visualizer: false,
+                    krc20: true
+                }
+            },
+            {
+                name: "Kaspalytics",
+                description: "Kaspalytics provides on-chain analysis with a DAG Tip Visualizer, market data (price, market cap, volume), and network statistics (DAA Score, hashrate, supply). It includes tools like Circulating Supply Aging and Addresses by KAS Balance.",
+                officialSite: "https://www.kaspalytics.com/",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: true,
+                    blockExplorer: false,
+                    visualizer: true,
+                    krc20: false
+                }
+            },
+            {
+                name: "Kaspa NG",
+                description: "Kaspa NG is a p2p node, wallet, and BlockDAG visualizer built on Rusty Kaspa. Its visualizer displays Kaspa’s blockDAG topology, aiding researchers in analyzing network structure and performance.",
+                officialSite: "https://kaspa-ng.org/",
+                logo: "https://kaspahub.org/img/wallets/kng.jpg",
+                features: {
+                    analytics: false,
+                    blockExplorer: false,
+                    visualizer: true,
+                    krc20: false
+                }
+            },
+            {
+                name: "Kaspa Explorer",
+                description: "The Kaspa Block Explorer allows querying addresses, blocks, and transactions, including KRC-20 token transactions, providing essential on-chain data for researchers analyzing Kaspa's blockDAG structure.",
+                officialSite: "https://explorer.kaspa.org/",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: false,
+                    blockExplorer: true,
+                    visualizer: false,
+                    krc20: false
+                }
+            },
+            {
+                name: "Kaspa Graph Inspector",
+                description: "The KGI BlockDAG Visualizer is designed to display Kaspa’s blockDAG topology, helping researchers understand the structure and relationships of parallel blocks in the network.",
+                officialSite: "https://kgi.kaspad.net/",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: false,
+                    blockExplorer: false,
+                    visualizer: true,
+                    krc20: false
+                }
+            },
+            {
+                name: "Kaspaspeed",
+                description: "Kaspaspeed visualizes block speeds of blockchain networks, comparing Kaspa’s high block rate (10 BPS) with Bitcoin, Solana, and others. It highlights Kaspa’s blockDAG performance for PoW vs. PoS research.",
+                officialSite: "https://kaspaspeed.com/",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: false,
+                    blockExplorer: false,
+                    visualizer: true,
+                    krc20: false
+                }
+            },
+            {
+                name: "KaspaHub Comparison",
+                description: "KaspaHub Comparison analyzes Kaspa against other cryptocurrencies, comparing metrics like transaction speed, block rate, and network features. It provides analytical insights for researchers studying Kaspa’s performance.",
+                officialSite: "https://kaspahub.org/comparison",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    analytics: true,
+                    blockExplorer: false,
+                    visualizer: false,
+                    krc20: false
+                }
+            }
+        ];
+
+        const toolGrid = document.getElementById('toolGrid');
+        const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+
+        function renderTools(filteredTools) {
+            toolGrid.innerHTML = '';
+            const counter = document.getElementById('counter');
+            counter.textContent = `(${filteredTools.length} of ${researchTools.length})`;
+            if (filteredTools.length === 0) {
+                toolGrid.innerHTML = '<p class="no-items-message">No research tools match your selected filters.</p>';
+                return;
+            }
+            filteredTools.forEach(tool => {
+                const card = document.createElement('div');
+                card.classList.add('filter-card');
+                card.classList.add('theme-1');
+                card.innerHTML = `
+                    <div class="filter-logo">
+                        <img src="${tool.logo}" alt="${tool.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+                    </div>
+                    <h3>${tool.name}</h3>
+                    <p class="filter-description">${tool.description}</p>
+                    <a href="${tool.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>`;
+                toolGrid.appendChild(card);
+            });
+        }
+
+        function filterTools() {
+            const activeFeatureKeys = new Set();
+            filterCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    activeFeatureKeys.add(checkbox.dataset.feature);
+                }
+            });
+            const filtered = researchTools.filter(tool => {
+                if (activeFeatureKeys.size === 0) {
+                    return true;
+                }
+                for (const featureKey of activeFeatureKeys) {
+                    if (!tool.features[featureKey]) {
+                        return false;
+                    }
+                }
+                return true;
+            });
+            renderTools(filtered);
+        }
+
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterTools);
+        });
+
+        renderTools(researchTools);
+    </script>
+</body>
+</html>
