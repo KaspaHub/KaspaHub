@@ -7,13 +7,13 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://kaspahub.org/comparison</loc>
+        <loc>https://kaspahub.org/research</loc>
         <lastmod>2025-06-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://kaspahub.org/wallets</loc>
+        <loc>https://kaspahub.org/comparison</loc>
         <lastmod>2025-06-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
