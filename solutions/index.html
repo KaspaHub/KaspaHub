@@ -54,6 +54,10 @@
                     <h2 id="counter"></h2>
                     <h3>Features</h3>
                     <div class="filter-group">
+                        <input type="checkbox" id="api" data-feature="api">
+                        <label for="api">API</label>
+                    </div>
+                    <div class="filter-group">
                         <input type="checkbox" id="openSource" data-feature="openSource">
                         <label for="openSource">Open Source</label>
                     </div>
@@ -90,6 +94,7 @@
                 officialSite: "https://kasway.xyz/",
                 logo: "https://kaspahub.org/img/merchants/kasway.jpg",
                 features: {
+                    api: false,
                     openSource: false,
                     onlinePayments: false,
                     pointOfSale: true,
@@ -102,6 +107,7 @@
                 officialSite: "https://nowpayments.io/supported-coins/kas-payments",
                 logo: "https://kaspahub.org/img/merchants/now.jpg",
                 features: {
+                    api: true,
                     openSource: false,
                     onlinePayments: true,
                     pointOfSale: false,
@@ -114,6 +120,7 @@
                 officialSite: "https://www.simplex.com/",
                 logo: "https://kaspahub.org/img/merchants/simplex.jpg",
                 features: {
+                    api: true,
                     openSource: false,
                     onlinePayments: true,
                     pointOfSale: false,
@@ -121,11 +128,12 @@
                 }
             },
             {
-                name: "Let's Exchange",
+                name: "LetsExchange",
                 description: "Let's Exchange is a crypto exchange for trading Kaspa with other cryptocurrencies. It helps merchants manage KAS holdings but isn’t for payment acceptance. It offers a wide range of coins and a user-friendly interface for trading.",
                 officialSite: "https://letsexchange.io",
                 logo: "https://kaspahub.org/img/merchants/lets.jpg",
                 features: {
+                    api: false,
                     openSource: false,
                     onlinePayments: false,
                     pointOfSale: false,
@@ -138,6 +146,7 @@
                 officialSite: "https://onramp.money/",
                 logo: "https://kaspahub.org/img/merchants/onramp.jpg",
                 features: {
+                    api: false,
                     openSource: false,
                     onlinePayments: false,
                     pointOfSale: false,
@@ -150,6 +159,7 @@
                 officialSite: "https://www.coinpal.io",
                 logo: "https://kaspahub.org/img/merchants/coinpal.jpg",
                 features: {
+                    api: false,
                     openSource: false,
                     onlinePayments: true,
                     pointOfSale: false,
@@ -162,6 +172,7 @@
                 officialSite: "https://cryptocurrencycheckout.com",
                 logo: "https://kaspahub.org/img/merchants/checkout.jpg",
                 features: {
+                    api: false,
                     openSource: false,
                     onlinePayments: true,
                     pointOfSale: false,
@@ -174,6 +185,7 @@
                 officialSite: "https://github.com/KaspaHub/donations",
                 logo: "https://kaspahub.org/img/thumbnail.png",
                 features: {
+                    api: false,
                     openSource: true,
                     onlinePayments: false,
                     pointOfSale: false,
