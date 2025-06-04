@@ -14,14 +14,14 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kaspahub.org/research-tools" />
+    <meta property="og:url" content="https://kaspahub.org/research/" />
     <meta property="og:title" content="Kaspa Hub - Research" />
     <meta property="og:description" content="Discover a range of tools and resources for the research and study of Kaspa, including analytics platforms, block explorers, data visualizers, and more—designed to help you explore on-chain data and gain deeper insights into the network." />
     <meta property="og:image" content="https://kaspahub.org/img/thumbnail.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://kaspahub.org/research-tools" />
+    <meta property="twitter:url" content="https://kaspahub.org/research/" />
     <meta property="twitter:title" content="Kaspa Hub - Research" />
     <meta property="twitter:description" content="Discover a range of tools and resources for the research and study of Kaspa, including analytics platforms, block explorers, data visualizers, and more—designed to help you explore on-chain data and gain deeper insights into the network." />
     <meta property="twitter:image" content="https://kaspahub.org/img/thumbnail.png" />
@@ -54,31 +54,31 @@
                     <h2 id="counter"></h2>
                     <h3>Features</h3>
                     <div class="filter-group">
-                        <input type="checkbox" id="articles" data-feature="articles">
+                        <input type="radio" name="feature" id="articles" data-feature="articles">
                         <label for="articles">Articles</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="videos" data-feature="videos">
+                        <input type="radio" name="feature" id="videos" data-feature="videos">
                         <label for="videos">Videos</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="analytics" data-feature="analytics">
+                        <input type="radio" name="feature" id="analytics" data-feature="analytics">
                         <label for="analytics">Analytics</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="blockExplorer" data-feature="blockExplorer">
+                        <input type="radio" name="feature" id="blockExplorer" data-feature="blockExplorer">
                         <label for="blockExplorer">Block Explorers</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="visualizer" data-feature="visualizer">
+                        <input type="radio" name="feature" id="visualizer" data-feature="visualizer">
                         <label for="visualizer">Visualizers</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="krc20" data-feature="krc20">
+                        <input type="radio" name="feature" id="krc20" data-feature="krc20">
                         <label for="krc20">KRC-20</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="mining" data-feature="mining">
+                        <input type="radio" name="feature" id="mining" data-feature="mining">
                         <label for="mining">Mining</label>
                     </div>
                 </div>
@@ -398,14 +398,14 @@
         ];
 
         const toolGrid = document.getElementById('toolGrid');
-        const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+        const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]');
 
         function renderTools(filteredTools) {
             toolGrid.innerHTML = '';
             const counter = document.getElementById('counter');
             counter.textContent = `(${filteredTools.length} of ${researchTools.length})`;
             if (filteredTools.length === 0) {
-                toolGrid.innerHTML = '<p class="no-items-message">No research tools match your selected filters.</p>';
+                toolGrid.innerHTML = '<p class="no-items-message">No research tools match your selected filter.</p>';
                 return;
             }
             filteredTools.forEach(tool => {
@@ -424,28 +424,15 @@
         }
 
         function filterTools() {
-            const activeFeatureKeys = new Set();
-            filterCheckboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    activeFeatureKeys.add(checkbox.dataset.feature);
-                }
-            });
-            const filtered = researchTools.filter(tool => {
-                if (activeFeatureKeys.size === 0) {
-                    return true;
-                }
-                for (const featureKey of activeFeatureKeys) {
-                    if (!tool.features[featureKey]) {
-                        return false;
-                    }
-                }
-                return true;
-            });
+            const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature;
+            const filtered = selectedFeature
+                ? researchTools.filter(tool => tool.features[selectedFeature])
+                : researchTools;
             renderTools(filtered);
         }
 
-        filterCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', filterTools);
+        filterRadios.forEach(radio => {
+            radio.addEventListener('change', filterTools);
         });
 
         renderTools(researchTools);
