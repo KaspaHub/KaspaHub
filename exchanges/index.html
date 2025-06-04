@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Primary Meta Tags -->
+    <title>Kaspa Hub - Exchanges</title>
+    <meta name="title" content="Kaspa Hub - Exchanges" />
+    <meta name="description" content="Discover where to buy, sell, and trade Kaspa across trusted crypto exchanges. Explore a variety of platforms supporting Kaspa with multiple trading options." />
+    <meta name="keywords" content="kaspa, blockdag, ghostdag, cryptocurrency, exchanges" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kaspahub.org/exchanges" />
+    <meta property="og:title" content="Kaspa Hub - Exchanges" />
+    <meta property="og:description" content="Discover where to buy, sell, and trade Kaspa across trusted crypto exchanges. Explore a variety of platforms supporting Kaspa with multiple trading options." />
+    <meta property="og:image" content="https://kaspahub.org/img/thumbnail.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://kaspahub.org/exchanges" />
+    <meta property="twitter:title" content="Kaspa Hub - Exchanges" />
+    <meta property="twitter:description" content="Discover where to buy, sell, and trade Kaspa across trusted crypto exchanges. Explore a variety of platforms supporting Kaspa with multiple trading options." />
+    <meta property="twitter:image" content="https://kaspahub.org/img/thumbnail.png" />
+
+    <link rel="icon" type="image/x-icon" href="https://kaspahub.org/favicon.ico" />
+    <link rel="stylesheet" href="https://kaspahub.org/styles/main.css" />
+    <script defer src="https://kaspahub.org/scripts/main.js"></script>
+    <style>
+        .filter-card {
+            min-height: 300px;
+            max-height: 300px;
+            width: 85%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="page-nav"></nav>
+    </header>
+
+    <main class="page-wrapper">
+        <div style="color: #F1F1F1; min-height: 300px; align-content: center;">
+            <h1>Trade Kaspa</h1>
+            <p style="padding-left: 10px;">To start trading Kaspa, you’ll need an exchange - a platform to buy, sell, and trade Kaspa. <br>Filter by features to find your ideal exchange.</p>
+        </div>
+        <div class="main-content-area">
+            <aside class="sidebar theme-1">
+                <div class="filter-category">
+                    <h2 id="counter"></h2>
+                    <h3>Features</h3>
+                    <div class="filter-group">
+                        <input type="checkbox" id="cex" data-feature="cex">
+                        <label for="cex">CEX</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="dex" data-feature="dex">
+                        <label for="dex">DEX</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="noKyc" data-feature="noKyc">
+                        <label for="noKyc">No KYC</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="debitCard" data-feature="debitCard">
+                        <label for="debitCard">Debit/ Credit Card</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="googleApplePay" data-feature="googleApplePay">
+                        <label for="googleApplePay">Google & Apple Pay</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="futuresTrading" data-feature="futuresTrading">
+                        <label for="futuresTrading">Futures Trading</label>
+                    </div>
+                </div>
+                <div class="filter-category">
+                    <h3>Tier</h3>
+                    <div class="filter-group">
+                        <input type="checkbox" id="tier1" data-feature="tier1">
+                        <label for="tier1">Tier 1</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="tier2" data-feature="tier2">
+                        <label for="tier2">Tier 2</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="tier3" data-feature="tier3">
+                        <label for="tier3">Tier 3</label>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="filter-list-main">
+                <section class="exchange-list-section">
+                    <div class="filter-grid" id="exchangeGrid">
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer id="page-footer"></footer>
+
+    <script>
+        const exchanges = [
+            {
+                name: "Uphold",
+                description: "Exchange platform",
+                officialSite: "https://uphold.com",
+                logo: "https://kaspahub.org/exchanges/img/uphold.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: true,
+                    tier2: false,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: true,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "Kraken",
+                description: "Trading platform",
+                officialSite: "https://www.kraken.com",
+                logo: "https://kaspahub.org/exchanges/img/kraken.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: true,
+                    tier2: false,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Bybit",
+                description: "Trading platform",
+                officialSite: "https://www.bybit.com",
+                logo: "https://kaspahub.org/exchanges/img/bybit.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: true,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Bitpanda",
+                description: "Exchange platform",
+                officialSite: "https://www.bitpanda.com",
+                logo: "https://kaspahub.org/exchanges/img/bitpanda.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "KuCoin",
+                description: "Trading platform",
+                officialSite: "https://www.kucoin.com",
+                logo: "https://kaspahub.org/exchanges/img/kucoin.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Gate",
+                description: "Trading platform",
+                officialSite: "https://www.gate.io",
+                logo: "https://kaspahub.org/exchanges/img/gate.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+
+            {
+                name: "Bitget",
+                description: "Trading platform",
+                officialSite: "https://www.bitget.com",
+                logo: "https://kaspahub.org/exchanges/img/bitget.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: true,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "MEXC",
+                description: "Trading platform",
+                officialSite: "https://www.mexc.com",
+                logo: "https://kaspahub.org/exchanges/img/mexc.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "BingX",
+                description: "Trading platform",
+                officialSite: "https://bingx.com",
+                logo: "https://kaspahub.org/exchanges/img/bingx.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "CoinEx",
+                description: "Trading platform",
+                officialSite: "https://www.coinex.com",
+                logo: "https://kaspahub.org/exchanges/img/coinex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "XT",
+                description: "Trading platform",
+                officialSite: "https://www.xt.com",
+                logo: "https://kaspahub.org/exchanges/img/xt.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Godex",
+                description: "Swap platform",
+                officialSite: "https://godex.io",
+                logo: "https://kaspahub.org/exchanges/img/godex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "ChangeNOW",
+                description: "Swap platform",
+                officialSite: "https://changenow.io",
+                logo: "https://kaspahub.org/exchanges/img/changenow.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "SimpleSwap",
+                description: "Swap platform",
+                officialSite: "https://simpleswap.io",
+                logo: "https://kaspahub.org/exchanges/img/simpleswap.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "Changelly",
+                description: "Swap platform",
+                officialSite: "https://changelly.com",
+                logo: "https://kaspahub.org/exchanges/img/changelly.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "Onramp Money",
+                description: "Swap platform",
+                officialSite: "https://onramp.money",
+                logo: "https://kaspahub.org/exchanges/img/onrampmoney.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: true,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "StealthEX",
+                description: "Swap platform",
+                officialSite: "https://stealthex.io",
+                logo: "https://kaspahub.org/exchanges/img/stealthex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "ChangeHero",
+                description: "Swap platform",
+                officialSite: "https://changehero.io",
+                logo: "https://kaspahub.org/exchanges/img/changehero.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "CoinoSwap",
+                description: "Swap platform",
+                officialSite: "https://www.coinoswap.com",
+                logo: "https://kaspahub.org/exchanges/img/coinoswap.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "LetsExchange",
+                description: "Swap platform",
+                officialSite: "https://letsexchange.io",
+                logo: "https://kaspahub.org/exchanges/img/letsexchange.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "RocketX",
+                description: "Swap platform",
+                officialSite: "https://www.rocketx.exchange",
+                logo: "https://kaspahub.org/exchanges/img/rocketx.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "Biconomy",
+                description: "Trading platform",
+                officialSite: "https://www.biconomy.com",
+                logo: "https://kaspahub.org/exchanges/img/biconomy.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Poloniex",
+                description: "Trading platform",
+                officialSite: "https://www.poloniex.com",
+                logo: "https://kaspahub.org/exchanges/img/poloniex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Coinone",
+                description: "Trading platform",
+                officialSite: "https://coinone.co.kr",
+                logo: "https://kaspahub.org/exchanges/img/coinone.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "CEX.IO",
+                description: "Trading platform",
+                officialSite: "https://www.cex.io",
+                logo: "https://kaspahub.org/exchanges/img/cexio.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "CoinW",
+                description: "Trading platform",
+                officialSite: "https://www.coinw.com",
+                logo: "https://kaspahub.org/exchanges/img/coinw.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "BitMart",
+                description: "Trading platform",
+                officialSite: "https://www.bitmart.com",
+                logo: "https://kaspahub.org/exchanges/img/bitmart.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "Bitvavo",
+                description: "Trading platform",
+                officialSite: "https://www.bitvavo.com",
+                logo: "https://kaspahub.org/exchanges/img/bitvavo.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "Phemex",
+                description: "Trading platform",
+                officialSite: "https://phemex.com",
+                logo: "https://kaspahub.org/exchanges/img/phemex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "LCX",
+                description: "Trading platform",
+                officialSite: "https://www.lcx.com",
+                logo: "https://kaspahub.org/exchanges/img/lcx.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "AscendEX",
+                description: "Trading platform",
+                officialSite: "https://www.ascendex.com",
+                logo: "https://kaspahub.org/exchanges/img/ascendex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "BTSE",
+                description: "Trading platform",
+                officialSite: "https://www.btse.com",
+                logo: "https://kaspahub.org/exchanges/img/btse.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: true,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "KCEX",
+                description: "Trading platform",
+                officialSite: "https://www.kcex.com",
+                logo: "https://kaspahub.org/exchanges/img/btse.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "JuCoin",
+                description: "Trading platform",
+                officialSite: "https://www.jucoin.com",
+                logo: "https://kaspahub.org/exchanges/img/jucoin.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "BTCC",
+                description: "Trading platform",
+                officialSite: "https://www.btcc.com",
+                logo: "https://kaspahub.org/exchanges/img/btcc.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: true,
+                    tier3: false,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "NonKYC",
+                description: "Trading platform",
+                officialSite: "https://nonkyc.io",
+                logo: "https://kaspahub.org/exchanges/img/nonkyc.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "Xeggex",
+                description: "Trading platform",
+                officialSite: "https://xeggex.com",
+                logo: "https://kaspahub.org/exchanges/img/xeggex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: true,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: false
+                }
+            },
+            {
+                name: "WEEX",
+                description: "Trading platform",
+                officialSite: "https://www.weex.com",
+                logo: "https://kaspahub.org/exchanges/img/weex.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "LBank",
+                description: "Trading platform",
+                officialSite: "https://www.lbank.com",
+                logo: "https://kaspahub.org/exchanges/img/lbank.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            },
+            {
+                name: "BigONE",
+                description: "Trading platform",
+                officialSite: "https://www.bigone.com",
+                logo: "https://kaspahub.org/exchanges/img/bigone.jpg",
+                features: {
+                    cex: true,
+                    dex: false,
+                    noKyc: false,
+                    tier1: false,
+                    tier2: false,
+                    tier3: true,
+                    debitCard: false,
+                    googleApplePay: false,
+                    futuresTrading: true
+                }
+            }
+        ];
+
+        const exchangeGrid = document.getElementById('exchangeGrid');
+        const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+
+        function renderExchanges(filteredExchanges) {
+            exchangeGrid.innerHTML = '';
+
+            const counter = document.getElementById('counter');
+            counter.textContent = `(${filteredExchanges.length} of ${exchanges.length})`;
+
+            if (filteredExchanges.length === 0) {
+                exchangeGrid.innerHTML = '<p class="no-items-message">No exchanges match your selected filters.</p>';
+                return;
+            }
+
+            filteredExchanges.forEach(exchange => {
+                const card = document.createElement('div');
+                card.classList.add('filter-card');
+                card.classList.add('theme-1');
+
+                card.innerHTML = `
+                    <div class="filter-logo">
+                        <img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+                    </div>
+                    <h3>${exchange.name}</h3>
+                    <p class="filter-description">${exchange.description}</p>
+                    <a href="${exchange.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
+                `;
+                exchangeGrid.appendChild(card);
+            });
+        }
+
+        function filterExchanges() {
+            const activeFeatureKeys = new Set();
+            filterCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    activeFeatureKeys.add(checkbox.dataset.feature);
+                }
+            });
+
+            const filtered = exchanges.filter(exchange => {
+                if (activeFeatureKeys.size === 0) {
+                    return true;
+                }
+
+                for (const featureKey of activeFeatureKeys) {
+                    if (!exchange.features[featureKey]) {
+                        return false;
+                    }
+                }
+                return true;
+            });
+            renderExchanges(filtered);
+        }
+
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterExchanges);
+        });
+
+        renderExchanges(exchanges);
+    </script>
+</body>
+</html>
