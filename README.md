@@ -6,8 +6,12 @@ https://kaspahub.org/research
 
 https://kaspahub.org/wallets
 
-https://kaspahub.org/tools
+https://kaspahub.org/exchanges
 
 https://kaspahub.org/comparison
+
+https://kaspahub.org/solutions
+
+https://kaspahub.org/developers
 
 https://github.com/KaspaHub/donations
