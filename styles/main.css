@@ -156,29 +156,36 @@ header a {
 	background-color: rgba(0, 0, 0, 0.05);
 }
 
-.filter-group input[type="checkbox"] {
-	width: 18px;
-	height: 18px;
-	appearance: none;
-	border: 2px solid #757575;
-	border-radius: 6px;
-	background-color: rgba(0, 0, 0, 0.1);
-	position: relative;
-	cursor: pointer;
+.filter-group input[type="radio"], .filter-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    border: 2px solid #757575;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
 }
 
-.filter-group input[type="checkbox"]:checked {
-	background-color: #005d54;
-	border-color: #0c3f3a;
+.filter-group input[type="radio"] {
+    border-radius: 50%;
+}
+
+.filter-group input[type="radio"]:checked, .filter-group input[type="checkbox"]:checked {
+    background-color: #005d54;
+    border-color: #0c3f3a;
+}
+
+.filter-group input[type="radio"]:checked::before, .filter-group input[type="checkbox"]:checked::before {
+    display: block;
+    text-align: center;
+    line-height: 14px;
+    color: #fff;
+    font-size: 12px;
 }
 
 .filter-group input[type="checkbox"]:checked::before {
-	content: '✔';
-	display: block;
-	text-align: center;
-	line-height: 14px;
-	color: #fff;
-	font-size: 12px;
+    content: '';
 }
 
 .filter-list-main {
