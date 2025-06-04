@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Primary Meta Tags -->
+    <title>Kaspa Hub - Merchant Solutions</title>
+    <meta name="title" content="Kaspa Hub - Merchant Solutions" />
+    <meta name="description" content="Explore Kaspa (KAS) merchant solutions for accepting payments. Filter by Open Source, Online Payments, Point of Sale, and Donations." />
+    <meta name="keywords" content="kaspa, blockdag, ghostdag, cryptocurrency, merchant solutions, payments" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kaspahub.org/merchant-solutions" />
+    <meta property="og:title" content="Kaspa Hub - Merchant Solutions" />
+    <meta property="og:description" content="Explore Kaspa (KAS) merchant solutions for accepting payments. Filter by Open Source, Online Payments, Point of Sale, and Donations." />
+    <meta property="og:image" content="https://kaspahub.org/img/thumbnail.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://kaspahub.org/merchant-solutions" />
+    <meta property="twitter:title" content="Kaspa Hub - Merchant Solutions" />
+    <meta property="twitter:description" content="Explore Kaspa (KAS) merchant solutions for accepting payments. Filter by Open Source, Online Payments, Point of Sale, and Donations." />
+    <meta property="twitter:image" content="https://kaspahub.org/img/thumbnail.png" />
+
+    <link rel="icon" type="image/x-icon" href="https://kaspahub.org/favicon.ico" />
+    <link rel="stylesheet" href="https://kaspahub.org/styles/main.css" />
+    <script defer src="https://kaspahub.org/scripts/main.js"></script>
+
+    <style>
+        .filter-card {
+            min-height: 400px;
+            max-height: 500px;
+            width: 85%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="page-nav"></nav>
+    </header>
+
+    <main class="page-wrapper">
+        <div style="color: #F1F1F1; min-height: 300px; align-content: center;">
+            <h1>Accept Kaspa Payments</h1>
+            <p style="padding-left: 10px;">To start accepting Kaspa, you’ll need a merchant solution - a platform to process KAS payments. <br>Filter by features to find your ideal solution.</p>
+        </div>
+        <div class="main-content-area">
+            <aside class="sidebar theme-1">
+                <div class="filter-category">
+                    <h2 id="counter"></h2>
+                    <h3>Features</h3>
+                    <div class="filter-group">
+                        <input type="checkbox" id="openSource" data-feature="openSource">
+                        <label for="openSource">Open Source</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="onlinePayments" data-feature="onlinePayments">
+                        <label for="onlinePayments">Online Payments</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="pointOfSale" data-feature="pointOfSale">
+                        <label for="pointOfSale">Point of Sale</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="donations" data-feature="donations">
+                        <label for="donations">Donations</label>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="filter-list-main">
+                <section class="merchant-list-section">
+                    <div class="filter-grid" id="merchantGrid">
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer id="page-footer"></footer>
+
+    <script>
+        const merchantSolutions = [
+            {
+                name: "Kasway POS",
+                description: "Kasway is the first decentralized POS for Kaspa, enabling direct in-person payments with real-time wallet settlements. Built on Kaspa’s fast BlockDAG, it’s perfect for stores and events, with a user-friendly interface adaptable to various devices.",
+                officialSite: "https://kasway.xyz/",
+                logo: "https://kaspahub.org/img/merchants/kasway.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: false,
+                    pointOfSale: true,
+                    donations: false
+                }
+            },
+            {
+                name: "NOWPayments",
+                description: "NOWPayments is a crypto payment gateway supporting Kaspa, ideal for e-commerce, gaming, and NFTs. It offers API integration for online payments and supports donations for non-profits. Secure and user-friendly, it helps businesses accept KAS with low fees and instant fiat conversion.",
+                officialSite: "https://nowpayments.io/supported-coins/kas-payments",
+                logo: "https://kaspahub.org/img/merchants/now.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: true,
+                    pointOfSale: false,
+                    donations: true
+                }
+            },
+            {
+                name: "Simplex",
+                description: "Simplex is a fiat-to-crypto onramp for buying Kaspa via credit cards or bank transfers. Integrated with exchanges, it helps merchants acquire KAS. Not for payment acceptance, it offers a secure, globally compliant way to obtain Kaspa.",
+                officialSite: "https://www.simplex.com/",
+                logo: "https://kaspahub.org/img/merchants/simplex.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: true,
+                    pointOfSale: false,
+                    donations: false
+                }
+            },
+            {
+                name: "Let's Exchange",
+                description: "Let's Exchange is a crypto exchange for trading Kaspa with other cryptocurrencies. It helps merchants manage KAS holdings but isn’t for payment acceptance. It offers a wide range of coins and a user-friendly interface for trading.",
+                officialSite: "https://letsexchange.io",
+                logo: "https://kaspahub.org/img/merchants/lets.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: false,
+                    pointOfSale: false,
+                    donations: false
+                }
+            },
+            {
+                name: "Onramp.money",
+                description: "Onramp.money is a fiat-to-crypto onramp for buying Kaspa with fiat currencies. Integrated with Kaspa wallets, it helps merchants acquire KAS for business needs. Not for payment acceptance, it’s user-friendly and globally accessible.",
+                officialSite: "https://onramp.money/",
+                logo: "https://kaspahub.org/img/merchants/onramp.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: false,
+                    pointOfSale: false,
+                    donations: false
+                }
+            },
+            {
+                name: "CoinPal",
+                description: "CoinPal is a secure cryptocurrency payment platform supporting Kaspa, bridging traditional finance and the evolving Web3 world. It offers seamless integration for e-commerce platforms, enabling merchants to accept KAS with low-fee, secure payments and multi-currency conversion options.",
+                officialSite: "https://www.coinpal.io",
+                logo: "https://kaspahub.org/img/merchants/coinpal.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: true,
+                    pointOfSale: false,
+                    donations: false
+                }
+            },
+            {
+                name: "CryptocurrencyCheckout",
+                description: "CryptocurrencyCheckout is a Free to Use, Non-Custodial & Decentralized Payment Gateway providing plugins that make accepting multiple cryptocurrencies for your products and services as easy as entering your wallet addresses.",
+                officialSite: "https://cryptocurrencycheckout.com",
+                logo: "https://kaspahub.org/img/merchants/checkout.jpg",
+                features: {
+                    openSource: false,
+                    onlinePayments: true,
+                    pointOfSale: false,
+                    donations: true
+                }
+            },
+            {
+                name: "KaspaHub Donations",
+                description: "A simple HTML and JavaScript-based web page that enables anyone to create a personalized donation page for the Kaspa. It automatically generates QR codes for seamless KAS payments, requiring no coding skills—just replace the wallet address to start accepting tips. It provides a simple, secure way to receive KAS contributions.",
+                officialSite: "https://github.com/KaspaHub/donations",
+                logo: "https://kaspahub.org/img/thumbnail.png",
+                features: {
+                    openSource: true,
+                    onlinePayments: false,
+                    pointOfSale: false,
+                    donations: true
+                }
+            }
+        ];
+
+        const merchantGrid = document.getElementById('merchantGrid');
+        const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+
+        function renderMerchants(filteredMerchants) {
+            merchantGrid.innerHTML = '';
+            const counter = document.getElementById('counter');
+            counter.textContent = `(${filteredMerchants.length} of ${merchantSolutions.length})`;
+            if (filteredMerchants.length === 0) {
+                merchantGrid.innerHTML = '<p class="no-items-message">No merchant solutions match your selected filters.</p>';
+                return;
+            }
+            filteredMerchants.forEach(merchant => {
+                const card = document.createElement('div');
+                card.classList.add('filter-card');
+                card.classList.add('theme-1');
+                card.innerHTML = `
+                    <div class="filter-logo">
+                        <img src="${merchant.logo}" alt="${merchant.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+                    </div>
+                    <h3>${merchant.name}</h3>
+                    <p class="filter-description">${merchant.description}</p>
+                    <a href="${merchant.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
+                `;
+                merchantGrid.appendChild(card);
+            });
+        }
+
+        function filterMerchants() {
+            const activeFeatureKeys = new Set();
+            filterCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    activeFeatureKeys.add(checkbox.dataset.feature);
+                }
+            });
+            const filtered = merchantSolutions.filter(merchant => {
+                if (activeFeatureKeys.size === 0) {
+                    return true;
+                }
+                for (const featureKey of activeFeatureKeys) {
+                    if (!merchant.features[featureKey]) {
+                        return false;
+                    }
+                }
+                return true;
+            });
+            renderMerchants(filtered);
+        }
+
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterMerchants);
+        });
+
+        renderMerchants(merchantSolutions);
+    </script>
+</body>
+</html>
