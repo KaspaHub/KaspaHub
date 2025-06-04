@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
 
     <!-- Primary Meta Tags -->
-    <title>KaspaHub - Wallets</title>
+    <title>Kaspa Hub - Wallets</title>
     <meta name="title" content="Kaspa Hub - Wallets" />
     <meta name="description" content="Explore a selection of wallets supporting the Kaspa (KAS) cryptocurrency. Filter by various features and supported devices to find the perfect wallet" />
     <meta name="keywords" content="kaspa, blockdag, ghostdag, cryptocurrency" />
@@ -27,10 +27,561 @@
     <meta property="twitter:image" content="https://kaspahub.org/img/thumbnail.png" />
 
     <link rel="icon" type="image/x-icon" href="https://kaspahub.org/favicon.ico" />
-    <link rel="stylesheet" href="https://kaspahub.org/styles/main.css">
+    <link rel="stylesheet" href="https://kaspahub.org/styles/main.css" />
     <script defer src="https://kaspahub.org/scripts/main.js"></script>
 </head>
-<body style="color: white;">
-soon!
+<body>
+    <header>
+        <nav id="page-nav"></nav>
+    </header>
+
+    <main class="page-wrapper">
+        <div style="color: #F1F1F1; min-height: 300px; align-content: center;">
+            <h1>Get a wallet</h1>
+            <p style="padding-left: 10px;">To start using Kaspa, you’ll need a wallet - an app that stores your coins and lets you interact with the network. <br>Explore and filter wallets by features and devices to find the best fit for you.</p>
+        </div>
+        <div class="main-content-area">
+            <aside class="sidebar theme-1">
+                <div class="filter-category">
+                    <h2 id="counter"></h2>
+                    <h3>Features</h3>
+                    <div class="filter-group">
+                        <input type="checkbox" id="openSource" data-feature="openSource">
+                        <label for="openSource">Open Source</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="multiChain" data-feature="multiChain">
+                        <label for="multiChain">Multi-Chain</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="selfCustodial" data-feature="selfCustodial">
+                        <label for="selfCustodial">Self-Custodial</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="krc20Tokens" data-feature="krc20Tokens">
+                        <label for="krc20Tokens">KRC20 Tokens</label>
+                    </div>
+                </div>
+
+                <div class="filter-category">
+                    <h3>Devices</h3>
+                    <div class="filter-group">
+                        <input type="checkbox" id="deviceHardware" data-feature="hardware">
+                        <label for="deviceHardware">Hardware</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="deviceDesktop" data-feature="desktop">
+                        <label for="deviceDesktop">Desktop</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="deviceMobile" data-feature="mobile">
+                        <label for="deviceMobile">Mobile</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="deviceBrowserExtension" data-feature="browserExtension">
+                        <label for="deviceBrowserExtension">Browser Extension</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="deviceWeb" data-feature="web">
+                        <label for="deviceWeb">Web</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="deviceCLI" data-feature="cli">
+                        <label for="deviceCLI">CLI</label>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="filter-list-main">
+                <section class="wallet-list-section">
+                    <div class="filter-grid" id="walletGrid">
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer id="page-footer"></footer>
+
+
+
+<script>
+const wallets = [
+    {
+        name: "Tangem",
+        description: "Popular hardware wallet for simple, multi-chain asset management. Ideal for users valuing simplicity with keyless operation.",
+        officialSite: "https://tangem.com",
+        logo: "https://kaspahub.org/wallets/img/tangem.jpg",
+        features: {
+            openSource: true,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: true,
+            hardware: true,
+            mobile: true,
+            desktop: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "OneKey",
+        description: "Secure hardware DeFi wallet for advanced users, offering multi-chain support across devices, and browsers.",
+        officialSite: "https://onekey.so/",
+        logo: "https://kaspahub.org/wallets/img/onekey.jpg",
+        features: {
+            openSource: true,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: true,
+            desktop: true,
+            mobile: true,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kaspium",
+        description: "Lightweight and fast mobile wallet for Kaspa, supporting 12/24-word seed phrases, ideal for daily users making payments.",
+        officialSite: "https://kaspium.io/",
+        logo: "https://kaspahub.org/wallets/img/kas.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            desktop: false,
+            mobile: true,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Ledger",
+        description: "Great hardware wallet for multi-chain asset management on desktop and mobile, ideal for general users & longterm holders.",
+        officialSite: "https://www.ledger.com/",
+        logo: "https://kaspahub.org/wallets/img/ledger.jpg",
+        features: {
+            openSource: true,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: true,
+            desktop: true,
+            mobile: true,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "SafePal",
+        description: "Secure wallet with hot and cold storage for multi-chain assets, ideal for daily users with built-in swapping.",
+        officialSite: "https://www.safepal.com",
+        logo: "https://kaspahub.org/wallets/img/safepal.jpg",
+        features: {
+            openSource: true,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: true,
+            mobile: true,
+            desktop: false,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "KasKeeper",
+        description: "Mobile wallet for Kaspa with KRC20 token support, backed by the Kaspa Ecosystem Foundation (KEF), designed for secure, self-custodial storage and easy transactions, perfect for daily users.",
+        officialSite: "https://play.google.com/store/apps/details?id=com.kaskeeper",
+        logo: "https://kaspahub.org/wallets/img/kaskeeper.jpg",
+        features: {
+            openSource: false,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: true,
+            hardware: false,
+            desktop: false,
+            mobile: true,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kastle Wallet",
+        description: "A user-friendly wallet for Kaspa, supporting KRC-20 tokens, KRC-721 NFTs, and KNS integration for a community-driven blockchain ecosystem.",
+        officialSite: "https://kastle.cc",
+        logo: "https://kaspahub.org/wallets/img/kastle.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: true,
+            hardware: false,
+            mobile: true,
+            desktop: false,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Ghost Wallet",
+        description: "Open-source web extension for Kaspa, supporting KRC20 token swap, mint, send, receive.",
+        officialSite: "https://www.ghostwallet.org",
+        logo: "https://kaspahub.org/wallets/img/ghost.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: true,
+            hardware: false,
+            mobile: false,
+            desktop: false,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kaspacom Wallet",
+        description: "Open-source web wallet for Kaspa, formerly known as Kaspiano, designed for developers with a focus on secure and efficient transactions.",
+        officialSite: "https://github.com/KASPACOM/kaspacom-web-wallet",
+        logo: "https://kaspahub.org/wallets/img/kaspacom.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            mobile: false,
+            desktop: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kaspa NG",
+        description: "KNG is Open-source wallet for advanced users and full-node runners, focusing on developer tools and security.",
+        officialSite: "https://kaspa-ng.org/",
+        logo: "https://kaspahub.org/wallets/img/kng.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            desktop: true,
+            mobile: false,
+            browserExtension: false,
+            web: true,
+            cli: true
+        }
+    },
+    {
+        name: "Atomik Wallet",
+        description: "Cross-platform wallet for Kaspa, currently only available on Android, user-friendly for non-technical users, with ongoing development.",
+        officialSite: "https://github.com/Atomik-Global/atomik-wallet",
+        logo: "https://kaspahub.org/wallets/img/atomik.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            mobile: true,
+            desktop: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kasware",
+        description: "Open-source browser extension wallet for Kaspa, supporting KRC20 tokens and KNS protocol.",
+        officialSite: "https://www.kasware.xyz/",
+        logo: "https://kaspahub.org/wallets/img/kasware.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: true,
+            hardware: false,
+            mobile: false,
+            desktop: false,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "CoinEx Wallet",
+        description: "Multi-chain wallet supporting over 50 kinds of coins, including Kaspa, with DeFi integration for secure storage and trading. Formerly known as ViaWallet.",
+        officialSite: "https://wallet.coinex.com/en/",
+        logo: "https://kaspahub.org/wallets/img/coinex.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            mobile: true,
+            desktop: true,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "OKX Wallet",
+        description: "Custodial Tier 1 exchange-integrated wallet for holding Kaspa, supporting multi-chain assets.",
+        officialSite: "https://web3.okx.com/",
+        logo: "https://kaspahub.org/wallets/img/okx.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: false,
+            krc20Tokens: false,
+            hardware: false,
+            mobile: true,
+            desktop: false,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Zelcore",
+        description: "Non-custodial multi-chain wallet supporting thousands of assets across 80+ blockchains on mobile and desktop.",
+        officialSite: "https://zelcore.io/",
+        logo: "https://kaspahub.org/wallets/img/zelcore.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            desktop: true,
+            mobile: true,
+            browserExtension: true,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Cool Wallet",
+        description: "Great hardware wallet for multi-chain assets, with cold and hot wallet functionality and built-in swapping in one mobile app.",
+        officialSite: "https://www.coolwallet.io",
+        logo: "https://kaspahub.org/wallets/img/cool.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: true,
+            mobile: true,
+            desktop: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Plus Wallet",
+        description: "Lightweight multi-chain wallet with built-in swap feature, available on mobile and web for easy use.",
+        officialSite: "https://pluswallet.app",
+        logo: "https://kaspahub.org/wallets/img/plus.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            mobile: true,
+            desktop: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kurncy",
+        description: "Lightweight custodial mobile wallet supporting KRC20 and KRC721 for Kaspa tokens and NFTs.",
+        officialSite: "https://www.kurncy.com",
+        logo: "https://kaspahub.org/wallets/img/kurncy.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: false,
+            krc20Tokens: true,
+            hardware: false,
+            mobile: true,
+            desktop: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "KSPR Bot",
+        description: "Telegram-based wallet for Kaspa, offering seamless KRC20 token management and self-custodial storage, ideal for users seeking convenience and integration with messaging platforms.",
+        officialSite: "https://kspr-bot.xyz",
+        logo: "https://kaspahub.org/wallets/img/kspr.jpg",
+        features: {
+            openSource: false,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: true,
+            hardware: false,
+            desktop: false,
+            mobile: false,
+            browserExtension: false,
+            web: false,
+            cli: false
+        }
+    },
+    {
+        name: "Kaspanet",
+        description: "Open-source web wallet for Kaspa, designed for ease of use and accessibility.",
+        officialSite: "https://wallet.kaspanet.io",
+        logo: "https://kaspahub.org/wallets/img/kas.jpg",
+        features: {
+            openSource: true,
+            multiChain: false,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: false,
+            mobile: false,
+            desktop: false,
+            browserExtension: false,
+            web: true,
+            cli: false
+        }
+    },
+    {
+        name: "Math Wallet",
+        description: "Versatile multi-chain wallet supporting over 219 blockchains, with hardware integration and access across multiple platforms.",
+        officialSite: "https://mathwallet.org",
+        logo: "https://kaspahub.org/wallets/img/math.jpg",
+        features: {
+            openSource: false,
+            multiChain: true,
+            selfCustodial: true,
+            krc20Tokens: false,
+            hardware: true,
+            mobile: true,
+            desktop: false,
+            browserExtension: true,
+            web: true,
+            cli: false
+        }
+    }
+
+];
+
+    const walletGrid = document.getElementById('walletGrid');
+    const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+
+    const tagInfoMap = {
+        openSource: { name: "Open Source", type: "feature" },
+        multiChain: { name: "Multi-Chain", type: "feature" },
+        selfCustodial: { name: "Self-Custodial", type: "feature" },
+        krc20Tokens: { name: "KRC20 Tokens", type: "feature" },
+        hardware: { name: "Hardware", type: "device", icon: "https://kaspahub.org/img/devices/hardware.png" },
+        desktop: { name: "Desktop", type: "device", icon: "https://kaspahub.org/img/devices/desktop.png" },
+        mobile: { name: "Mobile", type: "device", icon: "https://kaspahub.org/img/devices/mobile.png" },
+        browserExtension: { name: "Browser Extension", type: "device", icon: "https://kaspahub.org/img/devices/extension.png" },
+        web: { name: "Web", type: "device", icon: "https://kaspahub.org/img/devices/web.png" },
+        cli: { name: "CLI", type: "device", icon: "https://kaspahub.org/img/devices/cli.png" }
+    };
+
+    function renderWallets(filteredWallets) {
+        walletGrid.innerHTML = '';
+
+        const counter = document.getElementById('counter');
+        counter.textContent = `(${filteredWallets.length} of ${wallets.length})`;
+
+        if (filteredWallets.length === 0) {
+            walletGrid.innerHTML = '<p class="no-items-message">No wallets match your selected filters.</p>';
+            return;
+        }
+
+        filteredWallets.forEach(wallet => {
+            const card = document.createElement('div');
+            card.classList.add('filter-card');
+            card.classList.add('theme-1');
+
+            let featureTagsHtml = '';
+            let platformTagsHtml = '';
+
+            for (const featureKey in wallet.features) {
+                if (wallet.features[featureKey]) {
+                    const tagInfo = tagInfoMap[featureKey];
+                    if (tagInfo) {
+                        if (tagInfo.type === 'feature') {
+                            featureTagsHtml += `<span class="feature-tag">${tagInfo.name}</span>`;
+                        } else if (tagInfo.type === 'device') {
+                            platformTagsHtml += `
+                                <span class="platform-tag">
+                                    <img src="${tagInfo.icon || 'https://img.icons8.com/ios-filled/50/000000/puzzle.png'}" alt="${tagInfo.name} Icon" loading="lazy">
+                                    ${tagInfo.name}
+                                </span>`;
+                        }
+                    }
+                }
+            }
+
+            card.innerHTML = `
+                <div class="filter-logo">
+                    <img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+                </div>
+                <h3>${wallet.name}</h3>
+                <p class="filter-description">${wallet.description}</p>
+                <div class="filter-features-container">${featureTagsHtml}</div>
+                <div class="filter-platforms-container">${platformTagsHtml}</div>
+                <a href="${wallet.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
+            `;
+            walletGrid.appendChild(card);
+        });
+    }
+
+    function filterWallets() {
+        const activeFeatureKeys = new Set();
+        filterCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                activeFeatureKeys.add(checkbox.dataset.feature);
+            }
+        });
+
+        const filtered = wallets.filter(wallet => {
+            if (activeFeatureKeys.size === 0) {
+                return true;
+            }
+
+            for (const featureKey of activeFeatureKeys) {
+                if (!wallet.features[featureKey]) {
+                    return false;
+                }
+            }
+            return true;
+        });
+        renderWallets(filtered);
+    }
+
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterWallets);
+    });
+
+    renderWallets(wallets);
+
+</script>
 </body>
 </html>
