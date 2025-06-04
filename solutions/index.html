@@ -92,7 +92,7 @@
                 name: "Kasway POS",
                 description: "Kasway is the first decentralized POS for Kaspa, enabling direct in-person payments with real-time wallet settlements. Built on Kaspa’s fast BlockDAG, it’s perfect for stores and events, with a user-friendly interface adaptable to various devices.",
                 officialSite: "https://kasway.xyz/",
-                logo: "https://kaspahub.org/img/merchants/kasway.jpg",
+                logo: "https://kaspahub.org/solutions/img/kasway.jpg",
                 features: {
                     api: false,
                     openSource: false,
@@ -105,7 +105,7 @@
                 name: "NOWPayments",
                 description: "NOWPayments is a crypto payment gateway supporting Kaspa, ideal for e-commerce, gaming, and NFTs. It offers API integration for online payments and supports donations for non-profits. Secure and user-friendly, it helps businesses accept KAS with low fees and instant fiat conversion.",
                 officialSite: "https://nowpayments.io/supported-coins/kas-payments",
-                logo: "https://kaspahub.org/img/merchants/now.jpg",
+                logo: "https://kaspahub.org/solutions/img/nowpayments.jpg",
                 features: {
                     api: true,
                     openSource: false,
@@ -118,7 +118,7 @@
                 name: "Simplex",
                 description: "Simplex is a fiat-to-crypto onramp for buying Kaspa via credit cards or bank transfers. Integrated with exchanges, it helps merchants acquire KAS. Not for payment acceptance, it offers a secure, globally compliant way to obtain Kaspa.",
                 officialSite: "https://www.simplex.com/",
-                logo: "https://kaspahub.org/img/merchants/simplex.jpg",
+                logo: "https://kaspahub.org/solutions/img/simplex.jpg",
                 features: {
                     api: true,
                     openSource: false,
@@ -128,14 +128,53 @@
                 }
             },
             {
+                "name": "SimpleSwap",
+                "description": "SimpleSwap is a non-custodial cryptocurrency exchange supporting over 1500 cryptocurrencies, including Kaspa, allowing instant swaps without registration. It offers a loyalty program, cashback up to 0.4% in USDT, and supports buying crypto with debit/credit cards, making it ideal for seamless crypto exchanges.",
+                "officialSite": "https://simpleswap.io",
+                logo: "https://kaspahub.org/solutions/img/simpleswap.jpg",
+                "features": {
+                    "openSource": false,
+                    "onlinePayments": true,
+                    "pointOfSale": false,
+                    "donations": false,
+                    "api": true
+                }
+            },
+            {
+                "name": "Changelly",
+                "description": "Changelly is a cryptocurrency exchange platform supporting over 1000 cryptocurrencies, including Kaspa, offering instant swaps and competitive rates. It supports buying crypto with fiat via Visa, Mastercard, bank transfer, and Apple Pay, with 24/7 support and integrations with over 20 crypto platforms.",
+                "officialSite": "https://changelly.com",
+                logo: "https://kaspahub.org/solutions/img/changelly.jpg",
+                "features": {
+                    "openSource": false,
+                    "onlinePayments": true,
+                    "pointOfSale": false,
+                    "donations": false,
+                    "api": true
+                }
+            },
+            {
+                "name": "StealthEX",
+                "description": "StealthEX is a privacy-focused, non-custodial cryptocurrency exchange supporting over 1400 cryptocurrencies, including Kaspa, with limitless swaps and no KYC required. It focuses on crypto-to-crypto exchanges, offering best rates and 24/7 support for seamless trading.",
+                "officialSite": "https://stealthex.io",
+                logo: "https://kaspahub.org/solutions/img/stealthex.jpg",
+                "features": {
+                    "openSource": false,
+                    "onlinePayments": false,
+                    "pointOfSale": false,
+                    "donations": false,
+                    "api": true
+                }
+            },
+            {
                 name: "LetsExchange",
                 description: "Let's Exchange is a crypto exchange for trading Kaspa with other cryptocurrencies. It helps merchants manage KAS holdings but isn’t for payment acceptance. It offers a wide range of coins and a user-friendly interface for trading.",
                 officialSite: "https://letsexchange.io",
-                logo: "https://kaspahub.org/img/merchants/lets.jpg",
+                logo: "https://kaspahub.org/solutions/img/letsexchange.jpg",
                 features: {
-                    api: false,
+                    api: true,
                     openSource: false,
-                    onlinePayments: false,
+                    onlinePayments: true,
                     pointOfSale: false,
                     donations: false
                 }
@@ -144,22 +183,35 @@
                 name: "Onramp.money",
                 description: "Onramp.money is a fiat-to-crypto onramp for buying Kaspa with fiat currencies. Integrated with Kaspa wallets, it helps merchants acquire KAS for business needs. Not for payment acceptance, it’s user-friendly and globally accessible.",
                 officialSite: "https://onramp.money/",
-                logo: "https://kaspahub.org/img/merchants/onramp.jpg",
+                logo: "https://kaspahub.org/solutions/img/onramp.jpg",
                 features: {
-                    api: false,
+                    api: true,
                     openSource: false,
-                    onlinePayments: false,
+                    onlinePayments: true,
                     pointOfSale: false,
                     donations: false
+                }
+            },
+            {
+                "name": "ChangeHero",
+                "description": "ChangeHero is a non-custodial cryptocurrency exchange supporting over 200 cryptocurrencies, including Kaspa, offering lightning-fast swaps with high security and no account registration. It provides unbeatable rates and 24/7 support for efficient crypto trading.",
+                "officialSite": "https://changehero.io",
+                logo: "https://kaspahub.org/solutions/img/changehero.jpg",
+                "features": {
+                    "openSource": false,
+                    "onlinePayments": false,
+                    "pointOfSale": false,
+                    "donations": false,
+                    "api": true
                 }
             },
             {
                 name: "CoinPal",
                 description: "CoinPal is a secure cryptocurrency payment platform supporting Kaspa, bridging traditional finance and the evolving Web3 world. It offers seamless integration for e-commerce platforms, enabling merchants to accept KAS with low-fee, secure payments and multi-currency conversion options.",
                 officialSite: "https://www.coinpal.io",
-                logo: "https://kaspahub.org/img/merchants/coinpal.jpg",
+                logo: "https://kaspahub.org/solutions/img/coinpal.jpg",
                 features: {
-                    api: false,
+                    api: true,
                     openSource: false,
                     onlinePayments: true,
                     pointOfSale: false,
@@ -170,13 +222,26 @@
                 name: "CryptocurrencyCheckout",
                 description: "CryptocurrencyCheckout is a Free to Use, Non-Custodial & Decentralized Payment Gateway providing plugins that make accepting multiple cryptocurrencies for your products and services as easy as entering your wallet addresses.",
                 officialSite: "https://cryptocurrencycheckout.com",
-                logo: "https://kaspahub.org/img/merchants/checkout.jpg",
+                logo: "https://kaspahub.org/solutions/img/checkout.jpg",
                 features: {
                     api: false,
                     openSource: false,
                     onlinePayments: true,
                     pointOfSale: false,
                     donations: true
+                }
+            },
+            {
+                "name": "CoinoSwap",
+                "description": "CoinoSwap is a non-custodial cryptocurrency exchange aggregator that enables instant swaps and purchases of cryptocurrencies with best rates, without registration. It supports Kaspa and provides a user-friendly platform for efficient crypto trading.",
+                "officialSite": "https://www.coinoswap.com",
+                logo: "https://kaspahub.org/solutions/img/coinoswap.jpg",
+                "features": {
+                    "openSource": false,
+                    "onlinePayments": false,
+                    "pointOfSale": false,
+                    "donations": false,
+                    "api": false
                 }
             },
             {
