@@ -25,6 +25,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://kaspahub.org/solutions</loc>
+        <lastmod>2025-06-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://kaspahub.org/developers</loc>
         <lastmod>2025-06-03</lastmod>
         <changefreq>weekly</changefreq>
