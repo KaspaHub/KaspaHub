@@ -185,7 +185,7 @@ header a {
 }
 
 .filter-group input[type="checkbox"]:checked::before {
-    content: '';
+	content: '✔';
 }
 
 .filter-list-main {
