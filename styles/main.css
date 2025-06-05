@@ -364,7 +364,7 @@ a {cursor: pointer; font-weight: bold; text-decoration: none; transition: color 
 a:link {color:#1C62B9; }
 a:visited {color:#1C62B9; }
 a:hover {color:#3952C6; text-decoration: underline; }
-a:active {color:#D8B234; text-decoration: underline; }
+a:active {color:#6EC7BB; text-decoration: underline; }
 
 .container {
 	max-width: 1200px;
