@@ -305,6 +305,14 @@ img {
 }
 
 @media (max-width: 992px) {
+	#counter {
+		display: none;
+	}
+	
+	#features {
+		display: none;
+	}
+	
 	.main-content-area {
 		flex-direction: column;
 	}
