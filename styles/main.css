@@ -309,10 +309,6 @@ img {
 		display: none;
 	}
 	
-	#features {
-		display: none;
-	}
-	
 	.main-content-area {
 		flex-direction: column;
 	}
