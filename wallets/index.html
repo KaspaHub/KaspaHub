@@ -50,16 +50,24 @@
                         <label for="openSource">Open Source</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="multiChain" data-feature="multiChain">
-                        <label for="multiChain">Multi-Chain</label>
-                    </div>
-                    <div class="filter-group">
                         <input type="checkbox" id="selfCustodial" data-feature="selfCustodial">
                         <label for="selfCustodial">Self-Custodial</label>
                     </div>
                     <div class="filter-group">
-                        <input type="checkbox" id="krc20Tokens" data-feature="krc20Tokens">
-                        <label for="krc20Tokens">KRC20 Tokens</label>
+                        <input type="checkbox" id="krc20" data-feature="krc20">
+                        <label for="krc20">KRC-20 Tokens</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="krc721" data-feature="krc721">
+                        <label for="krc721">KRC-721 NFTs</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="knsDomains" data-feature="knsDomains">
+                        <label for="knsDomains">KNS Domains</label>
+                    </div>
+                    <div class="filter-group">
+                        <input type="checkbox" id="multiChain" data-feature="multiChain">
+                        <label for="multiChain">Multi-Chain</label>
                     </div>
                 </div>
 
@@ -84,10 +92,6 @@
                     <div class="filter-group">
                         <input type="checkbox" id="deviceWeb" data-feature="web">
                         <label for="deviceWeb">Web</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="deviceCLI" data-feature="cli">
-                        <label for="deviceCLI">CLI</label>
                     </div>
                 </div>
             </aside>
@@ -115,67 +119,52 @@ const wallets = [
             openSource: true,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: false,
+            knsDomains: false,
             hardware: true,
             mobile: true,
             desktop: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "OneKey",
         description: "Secure hardware DeFi wallet for advanced users, offering multi-chain support across devices, and browsers.",
-        officialSite: "https://onekey.so/",
+        officialSite: "https://onekey.so",
         logo: "https://kaspahub.org/wallets/img/onekey.jpg",
         features: {
             openSource: true,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: true,
             desktop: true,
             mobile: true,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "Kaspium",
         description: "Lightweight and fast mobile wallet for Kaspa, supporting 12/24-word seed phrases, ideal for daily users making payments.",
-        officialSite: "https://kaspium.io/",
+        officialSite: "https://kaspium.io",
         logo: "https://kaspahub.org/wallets/img/kas.jpg",
         features: {
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             desktop: false,
             mobile: true,
             browserExtension: false,
-            web: false,
-            cli: false
-        }
-    },
-    {
-        name: "Ledger",
-        description: "Great hardware wallet for multi-chain asset management on desktop and mobile, ideal for general users & longterm holders.",
-        officialSite: "https://www.ledger.com/",
-        logo: "https://kaspahub.org/wallets/img/ledger.jpg",
-        features: {
-            openSource: true,
-            multiChain: true,
-            selfCustodial: true,
-            krc20Tokens: false,
-            hardware: true,
-            desktop: true,
-            mobile: true,
-            browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -187,13 +176,14 @@ const wallets = [
             openSource: true,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: true,
             mobile: true,
             desktop: false,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -205,13 +195,14 @@ const wallets = [
             openSource: false,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             desktop: false,
             mobile: true,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -223,13 +214,14 @@ const wallets = [
             openSource: false,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: true,
+            knsDomains: true,
             hardware: false,
             mobile: true,
             desktop: false,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -241,13 +233,14 @@ const wallets = [
             openSource: false,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             desktop: true,
             mobile: true,
             browserExtension: false,
-            web: true,
-            cli: false
+            web: true
         }
     },
     {
@@ -259,13 +252,33 @@ const wallets = [
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: false,
             desktop: false,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
+        }
+    },
+    {
+        name: "Ledger",
+        description: "Great hardware wallet for multi-chain asset management on desktop and mobile, <strong>currently only works with KasVault</strong>.",
+        officialSite: "https://kasvault.io",
+        logo: "https://kaspahub.org/wallets/img/ledger.jpg",
+        features: {
+            openSource: true,
+            multiChain: true,
+            selfCustodial: true,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
+            hardware: true,
+            desktop: true,
+            mobile: true,
+            browserExtension: false,
+            web: false
         }
     },
     {
@@ -277,31 +290,33 @@ const wallets = [
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: false,
             desktop: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "Kaspa NG",
         description: "KNG is Open-source wallet for advanced users and full-node runners, focusing on developer tools and security.",
-        officialSite: "https://kaspa-ng.org/",
+        officialSite: "https://kaspa-ng.org",
         logo: "https://kaspahub.org/wallets/img/kng.jpg",
         features: {
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             desktop: true,
             mobile: false,
             browserExtension: false,
-            web: true,
-            cli: true
+            web: true
         }
     },
     {
@@ -313,85 +328,90 @@ const wallets = [
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: true,
             desktop: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "Kasware",
         description: "Open-source browser extension wallet for Kaspa, supporting KRC20 tokens and KNS protocol.",
-        officialSite: "https://www.kasware.xyz/",
+        officialSite: "https://www.kasware.xyz",
         logo: "https://kaspahub.org/wallets/img/kasware.jpg",
         features: {
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: true,
+            knsDomains: true,
             hardware: false,
             mobile: false,
             desktop: false,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "CoinEx Wallet",
         description: "Multi-chain wallet supporting over 50 kinds of coins, including Kaspa, with DeFi integration for secure storage and trading. Formerly known as ViaWallet.",
-        officialSite: "https://wallet.coinex.com/en/",
+        officialSite: "https://wallet.coinex.com",
         logo: "https://kaspahub.org/wallets/img/coinex.jpg",
         features: {
             openSource: false,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: true,
             desktop: true,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "OKX Wallet",
         description: "Custodial Tier 1 exchange-integrated wallet for holding Kaspa, supporting multi-chain assets.",
-        officialSite: "https://web3.okx.com/",
+        officialSite: "https://web3.okx.com",
         logo: "https://kaspahub.org/wallets/img/okx.jpg",
         features: {
             openSource: false,
             multiChain: true,
             selfCustodial: false,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: true,
             desktop: false,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "Zelcore",
         description: "Non-custodial multi-chain wallet supporting thousands of assets across 80+ blockchains on mobile and desktop.",
-        officialSite: "https://zelcore.io/",
+        officialSite: "https://zelcore.io",
         logo: "https://kaspahub.org/wallets/img/zelcore.jpg",
         features: {
             openSource: false,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             desktop: true,
             mobile: true,
             browserExtension: true,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -403,13 +423,14 @@ const wallets = [
             openSource: false,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: true,
             mobile: true,
             desktop: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -421,13 +442,14 @@ const wallets = [
             openSource: false,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: true,
             desktop: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -439,31 +461,33 @@ const wallets = [
             openSource: false,
             multiChain: false,
             selfCustodial: false,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: true,
+            knsDomains: false,
             hardware: false,
             mobile: true,
             desktop: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
         name: "KSPR Bot",
-        description: "Telegram-based wallet for Kaspa, offering seamless KRC20 token management and self-custodial storage, ideal for users seeking convenience and integration with messaging platforms.",
+        description: "Telegram-based wallet for Kaspa, offering seamless KRC20 token management and self-custodial storage, ideal for users seeking convenience and integration with messaging platform.",
         officialSite: "https://kspr-bot.xyz",
         logo: "https://kaspahub.org/wallets/img/kspr.jpg",
         features: {
             openSource: false,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: true,
+            krc20: true,
+            krc721: true,
+            knsDomains: false,
             hardware: false,
             desktop: false,
             mobile: false,
             browserExtension: false,
-            web: false,
-            cli: false
+            web: false
         }
     },
     {
@@ -475,13 +499,14 @@ const wallets = [
             openSource: true,
             multiChain: false,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: false,
             mobile: false,
             desktop: false,
             browserExtension: false,
-            web: true,
-            cli: false
+            web: true
         }
     },
     {
@@ -493,13 +518,14 @@ const wallets = [
             openSource: false,
             multiChain: true,
             selfCustodial: true,
-            krc20Tokens: false,
+            krc20: false,
+            krc721: false,
+            knsDomains: false,
             hardware: true,
             mobile: true,
             desktop: false,
             browserExtension: true,
-            web: true,
-            cli: false
+            web: true
         }
     }
 
@@ -512,13 +538,14 @@ const wallets = [
         openSource: { name: "Open Source", type: "feature" },
         multiChain: { name: "Multi-Chain", type: "feature" },
         selfCustodial: { name: "Self-Custodial", type: "feature" },
-        krc20Tokens: { name: "KRC20 Tokens", type: "feature" },
+        krc20: { name: "KRC-20", type: "feature" },
+        krc721: { name: "KRC-721", type: "feature" },
+        knsDomains: { name: "KNS", type: "feature" },
         hardware: { name: "Hardware", type: "device", icon: "https://kaspahub.org/img/devices/hardware.png" },
         desktop: { name: "Desktop", type: "device", icon: "https://kaspahub.org/img/devices/desktop.png" },
         mobile: { name: "Mobile", type: "device", icon: "https://kaspahub.org/img/devices/mobile.png" },
         browserExtension: { name: "Browser Extension", type: "device", icon: "https://kaspahub.org/img/devices/extension.png" },
-        web: { name: "Web", type: "device", icon: "https://kaspahub.org/img/devices/web.png" },
-        cli: { name: "CLI", type: "device", icon: "https://kaspahub.org/img/devices/cli.png" }
+        web: { name: "Web", type: "device", icon: "https://kaspahub.org/img/devices/web.png" }
     };
 
     function renderWallets(filteredWallets) {
