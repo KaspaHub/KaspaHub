@@ -107,755 +107,755 @@
 
     <script>
         const exchanges = [
-            {
-                name: "Uphold",
-                description: "Uphold is a US-based exchange platform established in 2014, offering crypto, fiat, and metals.",
-                officialSite: "https://uphold.com",
-                logo: "https://kaspahub.org/exchanges/img/uphold.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: true,
-                    tier2: true,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: true,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Kraken",
-                description: "Kraken is a US-based trading platform founded in 2011, providing crypto and fiat trading services.",
-                officialSite: "https://www.kraken.com",
-                logo: "https://kaspahub.org/exchanges/img/kraken.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: true,
-                    tier2: true,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "Bybit",
-                description: "Bybit is a UAE-based trading platform established in 2018, focusing on crypto derivatives trading.",
-                officialSite: "https://www.bybit.com",
-                logo: "https://kaspahub.org/exchanges/img/bybit.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: true,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: true,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "Bitpanda",
-                description: "Bitpanda is an Austrian exchange platform founded in 2014, offering crypto, stocks, and ETFs.",
-                officialSite: "https://www.bitpanda.com",
-                logo: "https://kaspahub.org/exchanges/img/bitpanda.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: true,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: true,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "KuCoin",
-                description: "KuCoin is a Seychelles-based trading platform launched in 2017, providing diverse crypto services.",
-                officialSite: "https://www.kucoin.com",
-                logo: "https://kaspahub.org/exchanges/img/kucoin.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: true,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "Gate",
-                description: "Gate.io is a Seychelles-based trading platform established in 2013, offering crypto and NFT services.",
-                officialSite: "https://www.gate.io",
-                logo: "https://kaspahub.org/exchanges/img/gate.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-
-            {
-                name: "Bitget",
-                description: "Bitget is a Seychelles-based trading platform founded in 2018, featuring crypto and copy trading.",
-                officialSite: "https://www.bitget.com",
-                logo: "https://kaspahub.org/exchanges/img/bitget.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: true,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "MEXC",
-                description: "MEXC is a Seychelles-based trading platform established in 2018, supporting over 2,000 crypto assets.",
-                officialSite: "https://www.mexc.com",
-                logo: "https://kaspahub.org/exchanges/img/mexc.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "BingX",
-                description: "BingX is a Singapore-based trading platform founded in 2018, offering crypto and copy trading services.",
-                officialSite: "https://bingx.com",
-                logo: "https://kaspahub.org/exchanges/img/bingx.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "CoinEx",
-                description: "CoinEx is a Hong Kong-based trading platform launched in 2017, providing crypto spot and futures trading.",
-                officialSite: "https://www.coinex.com",
-                logo: "https://kaspahub.org/exchanges/img/coinex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "BTCC",
-                description: "BTCC is a UK-based trading platform established in 2011, offering crypto futures and spot trading services.",
-                officialSite: "https://www.btcc.com",
-                logo: "https://kaspahub.org/exchanges/img/btcc.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "CoinW",
-                description: "CoinW is a Singapore-based trading platform established in 2017, offering spot and futures crypto trading.",
-                officialSite: "https://www.coinw.com",
-                logo: "https://kaspahub.org/exchanges/img/coinw.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "XT",
-                description: "XT.com is a Seychelles-based trading platform founded in 2018, providing diverse crypto trading services.",
-                officialSite: "https://www.xt.com",
-                logo: "https://kaspahub.org/exchanges/img/xt.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "LCX",
-                description: "LCX is a Liechtenstein-based trading platform established in 2018, offering crypto trading and tokenization services.",
-                officialSite: "https://www.lcx.com",
-                logo: "https://kaspahub.org/exchanges/img/lcx.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "AscendEX",
-                description: "AscendEX is a Singapore-based trading platform founded in 2018, offering crypto spot and futures trading.",
-                officialSite: "https://www.ascendex.com",
-                logo: "https://kaspahub.org/exchanges/img/ascendex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "ChangeNOW",
-                description: "ChangeNOW is a Seychelles-based crypto swap platform established in 2017, offering non-custodial exchanges without registration.",
-                officialSite: "https://changenow.io",
-                logo: "https://kaspahub.org/exchanges/img/changenow.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "SimpleSwap",
-                description: "SimpleSwap is a Cayman Islands-based crypto swap platform founded in 2018, providing instant exchanges without KYC requirements.",
-                officialSite: "https://simpleswap.io",
-                logo: "https://kaspahub.org/exchanges/img/simpleswap.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Changelly",
-                description: "Changelly is a Czech Republic-based crypto swap platform established in 2015, offering instant exchanges and fiat on-ramp services.",
-                officialSite: "https://changelly.com",
-                logo: "https://kaspahub.org/exchanges/img/changelly.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Onramp Money",
-                description: "Onramp Money is an India-based fiat-to-crypto payment gateway launched in 2022, enabling seamless fiat-to-crypto conversions.",
-                officialSite: "https://onramp.money",
-                logo: "https://kaspahub.org/exchanges/img/onrampmoney.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: true,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "StealthEX",
-                description: "StealthEX is a Cayman Islands-based instant crypto exchange platform since 2018, offering 2000+ assets with no registration or custody.",
-                officialSite: "https://stealthex.io",
-                logo: "https://kaspahub.org/exchanges/img/stealthex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "ChangeHero",
-                description: "ChangeHero is an Estonia-based instant crypto swap platform founded in 2017, offering quick, account-free exchanges.",
-                officialSite: "https://changehero.io",
-                logo: "https://kaspahub.org/exchanges/img/changehero.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "LetsExchange",
-                description: "LetsExchange is a Seychelles-based crypto swap platform launched in 2021, offering over 4,500 assets with no registration required.",
-                officialSite: "https://letsexchange.io",
-                logo: "https://kaspahub.org/exchanges/img/letsexchange.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "RocketX",
-                description: "RocketX is a Netherlands-based crypto swap and bridge platform founded in 2020, aggregating top DEXs and CEXs for seamless cross-chain swaps.",
-                officialSite: "https://www.rocketx.exchange",
-                logo: "https://kaspahub.org/exchanges/img/rocketx.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Godex",
-                description: "Godex is a Seychelles-based crypto swap platform founded in 2018, offering anonymous exchanges without registration.",
-                officialSite: "https://godex.io",
-                logo: "https://kaspahub.org/exchanges/img/godex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "CoinoSwap",
-                description: "CoinoSwap is a Wyoming, USA-based crypto swap and exchange aggregator founded in 2022, offering 1,500+ coins with no registration needed.",
-                officialSite: "https://www.coinoswap.com",
-                logo: "https://kaspahub.org/exchanges/img/coinoswap.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "DigiFinex",
-                description: "DigiFinex is a Seychelles-based trading platform established in 2017, providing crypto spot and margin trading.",
-                officialSite: "https://www.digifinex.com",
-                logo: "https://kaspahub.org/exchanges/img/digifinex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "Biconomy",
-                description: "Biconomy is a Canada-based trading platform founded in 2019, offering crypto trading and DeFi solutions.",
-                officialSite: "https://www.biconomy.com",
-                logo: "https://kaspahub.org/exchanges/img/biconomy.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "Poloniex",
-                description: "Poloniex is a Seychelles-based trading platform established in 2014, offering crypto spot and futures trading.",
-                officialSite: "https://www.poloniex.com",
-                logo: "https://kaspahub.org/exchanges/img/poloniex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "Coinstore",
-                description: "Coinstore is a Singapore-based trading platform founded in 2020, offering crypto trading and launchpad services.",
-                officialSite: "https://www.coinstore.com",
-                logo: "https://kaspahub.org/exchanges/img/coinstore.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "CoinSpot",
-                description: "CoinSpot is an Australian exchange platform established in 2013, offering crypto trading and NFT marketplace.",
-                officialSite: "https://www.coinspot.com.au",
-                logo: "https://kaspahub.org/exchanges/img/coinspot.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Tapbit",
-                description: "Tapbit is a US-based trading platform founded in 2019, offering crypto spot and futures trading services.",
-                officialSite: "https://www.tapbit.com",
-                logo: "https://kaspahub.org/exchanges/img/tapbit.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Coinone",
-                description: "Coinone is a South Korean trading platform established in 2014, offering crypto and KRW trading.",
-                officialSite: "https://coinone.co.kr",
-                logo: "https://kaspahub.org/exchanges/img/coinone.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "CEX.IO",
-                description: "CEX.IO is a UK-based trading platform founded in 2013, providing crypto and fiat trading services.",
-                officialSite: "https://www.cex.io",
-                logo: "https://kaspahub.org/exchanges/img/cexio.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: true,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Bitvavo",
-                description: "Bitvavo is a Netherlands-based trading platform established in 2018, offering crypto trading and staking.",
-                officialSite: "https://www.bitvavo.com",
-                logo: "https://kaspahub.org/exchanges/img/bitvavo.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Phemex",
-                description: "Phemex is a Singapore-based trading platform founded in 2019, offering crypto spot and derivatives trading.",
-                officialSite: "https://phemex.com",
-                logo: "https://kaspahub.org/exchanges/img/phemex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "BTSE",
-                description: "BTSE is a Seychelles-based trading platform established in 2018, providing crypto and fiat trading services.",
-                officialSite: "https://www.btse.com",
-                logo: "https://kaspahub.org/exchanges/img/btse.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: true,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "KCEX",
-                description: "KCEX is a Seychelles-based trading platform founded in 2021, offering crypto spot and futures trading.",
-                officialSite: "https://www.kcex.com",
-                logo: "https://kaspahub.org/exchanges/img/kcex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "JuCoin",
-                description: "JuCoin is a Singapore-based trading platform established in 2013, offering crypto trading and Web3 services.",
-                officialSite: "https://www.jucoin.com",
-                logo: "https://kaspahub.org/exchanges/img/jucoin.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "NonKYC",
-                description: "NonKYC.io is a Seychelles-based trading platform founded in 2023, offering crypto trading without KYC requirements.",
-                officialSite: "https://nonkyc.io",
-                logo: "https://kaspahub.org/exchanges/img/nonkyc.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "Xeggex",
-                description: "Xeggex is a Seychelles-based no-KYC exchange launched in 2021, specializing in small to mid-cap crypto assets.",
-                officialSite: "https://xeggex.com",
-                logo: "https://kaspahub.org/exchanges/img/xeggex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: true,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: false
-                }
-            },
-            {
-                name: "WEEX",
-                description: "Weex is a Singapore-based trading platform founded in 2018, offering crypto spot and derivatives trading.",
-                officialSite: "https://www.weex.com",
-                logo: "https://kaspahub.org/exchanges/img/weex.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "LBank",
-                description: "LBank is a Hong Kong-based trading platform established in 2015, offering crypto trading and token listing services.",
-                officialSite: "https://www.lbank.com",
-                logo: "https://kaspahub.org/exchanges/img/lbank.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "BigONE",
-                description: "BigONE is a Seychelles-based trading platform founded in 2017, providing crypto trading and investment services.",
-                officialSite: "https://www.bigone.com",
-                logo: "https://kaspahub.org/exchanges/img/bigone.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            },
-            {
-                name: "BitMart",
-                description: "BitMart is a Cayman Islands-based exchange platform established in 2017, offering crypto trading and staking services.",
-                officialSite: "https://www.bitmart.com",
-                logo: "https://kaspahub.org/exchanges/img/bitmart.jpg",
-                features: {
-                    cex: true,
-                    dex: false,
-                    noKyc: false,
-                    tier1: false,
-                    tier2: false,
-                    tier3: false,
-                    debitCard: false,
-                    googleApplePay: false,
-                    futuresTrading: true
-                }
-            }
+	    {
+		name: "Uphold",
+		description: "Uphold is a US-based exchange platform established in 2014, offering crypto, fiat, and metals.",
+		officialSite: "https://uphold.com",
+		logo: "https://kaspahub.org/exchanges/img/uphold.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: true,
+		    tier2: true,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: true,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Kraken",
+		description: "Kraken is a US-based trading platform founded in 2011, providing crypto and fiat trading services.",
+		officialSite: "https://www.kraken.com",
+		logo: "https://kaspahub.org/exchanges/img/kraken.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: true,
+		    tier2: true,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Bybit",
+		description: "Bybit is a UAE-based trading platform established in 2018, focusing on crypto derivatives trading.",
+		officialSite: "https://www.bybit.com",
+		logo: "https://kaspahub.org/exchanges/img/bybit.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: true,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: true,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Bitpanda",
+		description: "Bitpanda is an Austrian exchange platform founded in 2014, offering crypto, stocks, and ETFs.",
+		officialSite: "https://www.bitpanda.com",
+		logo: "https://kaspahub.org/exchanges/img/bitpanda.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: true,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: true,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "KuCoin",
+		description: "KuCoin is a Seychelles-based trading platform launched in 2017, providing diverse crypto services.",
+		officialSite: "https://www.kucoin.com",
+		logo: "https://kaspahub.org/exchanges/img/kucoin.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: true,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Gate",
+		description: "Gate.io is a Seychelles-based trading platform established in 2013, offering crypto and NFT services.",
+		officialSite: "https://www.gate.io",
+		logo: "https://kaspahub.org/exchanges/img/gate.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	
+	    {
+		name: "Bitget",
+		description: "Bitget is a Seychelles-based trading platform founded in 2018, featuring crypto and copy trading.",
+		officialSite: "https://www.bitget.com",
+		logo: "https://kaspahub.org/exchanges/img/bitget.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: true,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "MEXC",
+		description: "MEXC is a Seychelles-based trading platform established in 2018, supporting over 2,000 crypto assets.",
+		officialSite: "https://www.mexc.com",
+		logo: "https://kaspahub.org/exchanges/img/mexc.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "BingX",
+		description: "BingX is a Singapore-based trading platform founded in 2018, offering crypto and copy trading services.",
+		officialSite: "https://bingx.com",
+		logo: "https://kaspahub.org/exchanges/img/bingx.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "CoinEx",
+		description: "CoinEx is a Hong Kong-based trading platform launched in 2017, providing crypto spot and futures trading.",
+		officialSite: "https://www.coinex.com",
+		logo: "https://kaspahub.org/exchanges/img/coinex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "BTCC",
+		description: "BTCC is a UK-based trading platform established in 2011, offering crypto futures and spot trading services.",
+		officialSite: "https://www.btcc.com",
+		logo: "https://kaspahub.org/exchanges/img/btcc.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "CoinSpot",
+		description: "CoinSpot is an Australian exchange platform established in 2013, offering crypto trading and NFT marketplace.",
+		officialSite: "https://www.coinspot.com.au",
+		logo: "https://kaspahub.org/exchanges/img/coinspot.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "JuCoin",
+		description: "JuCoin is a Singapore-based trading platform established in 2013, offering crypto trading and Web3 services.",
+		officialSite: "https://www.jucoin.com",
+		logo: "https://kaspahub.org/exchanges/img/jucoin.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "CEX.IO",
+		description: "CEX.IO is a UK-based trading platform founded in 2013, providing crypto and fiat trading services.",
+		officialSite: "https://www.cex.io",
+		logo: "https://kaspahub.org/exchanges/img/cexio.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Coinone",
+		description: "Coinone is a South Korean trading platform established in 2014, offering crypto and KRW trading.",
+		officialSite: "https://coinone.co.kr",
+		logo: "https://kaspahub.org/exchanges/img/coinone.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Poloniex",
+		description: "Poloniex is a Seychelles-based trading platform established in 2014, offering crypto spot and futures trading.",
+		officialSite: "https://www.poloniex.com",
+		logo: "https://kaspahub.org/exchanges/img/poloniex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Changelly",
+		description: "Changelly is a Czech Republic-based crypto swap platform established in 2015, offering instant exchanges and fiat on-ramp services.",
+		officialSite: "https://changelly.com",
+		logo: "https://kaspahub.org/exchanges/img/changelly.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "ChangeHero",
+		description: "ChangeHero is an Estonia-based instant crypto swap platform founded in 2017, offering quick, account-free exchanges.",
+		officialSite: "https://changehero.io",
+		logo: "https://kaspahub.org/exchanges/img/changehero.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "DigiFinex",
+		description: "DigiFinex is a Seychelles-based trading platform established in 2017, providing crypto spot and margin trading.",
+		officialSite: "https://www.digifinex.com",
+		logo: "https://kaspahub.org/exchanges/img/digifinex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "CoinW",
+		description: "CoinW is a Singapore-based trading platform established in 2017, offering spot and futures crypto trading.",
+		officialSite: "https://www.coinw.com",
+		logo: "https://kaspahub.org/exchanges/img/coinw.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "ChangeNOW",
+		description: "ChangeNOW is a Seychelles-based crypto swap platform established in 2017, offering non-custodial exchanges without registration.",
+		officialSite: "https://changenow.io",
+		logo: "https://kaspahub.org/exchanges/img/changenow.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "SimpleSwap",
+		description: "SimpleSwap is a Cayman Islands-based crypto swap platform founded in 2018, providing instant exchanges without KYC requirements.",
+		officialSite: "https://simpleswap.io",
+		logo: "https://kaspahub.org/exchanges/img/simpleswap.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "XT",
+		description: "XT.com is a Seychelles-based trading platform founded in 2018, providing diverse crypto trading services.",
+		officialSite: "https://www.xt.com",
+		logo: "https://kaspahub.org/exchanges/img/xt.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "LCX",
+		description: "LCX is a Liechtenstein-based trading platform established in 2018, offering crypto trading and tokenization services.",
+		officialSite: "https://www.lcx.com",
+		logo: "https://kaspahub.org/exchanges/img/lcx.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "AscendEX",
+		description: "AscendEX is a Singapore-based trading platform founded in 2018, offering crypto spot and futures trading.",
+		officialSite: "https://www.ascendex.com",
+		logo: "https://kaspahub.org/exchanges/img/ascendex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "StealthEX",
+		description: "StealthEX is a Cayman Islands-based instant crypto exchange platform since 2018, offering 2000+ assets with no registration or custody.",
+		officialSite: "https://stealthex.io",
+		logo: "https://kaspahub.org/exchanges/img/stealthex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Godex",
+		description: "Godex is a Seychelles-based crypto swap platform founded in 2018, offering anonymous exchanges without registration.",
+		officialSite: "https://godex.io",
+		logo: "https://kaspahub.org/exchanges/img/godex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Bitvavo",
+		description: "Bitvavo is a Netherlands-based trading platform established in 2018, offering crypto trading and staking.",
+		officialSite: "https://www.bitvavo.com",
+		logo: "https://kaspahub.org/exchanges/img/bitvavo.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "BTSE",
+		description: "BTSE is a Seychelles-based trading platform established in 2018, providing crypto and fiat trading services.",
+		officialSite: "https://www.btse.com",
+		logo: "https://kaspahub.org/exchanges/img/btse.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: true,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Biconomy",
+		description: "Biconomy is a Canada-based trading platform founded in 2019, offering crypto trading and DeFi solutions.",
+		officialSite: "https://www.biconomy.com",
+		logo: "https://kaspahub.org/exchanges/img/biconomy.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Tapbit",
+		description: "Tapbit is a US-based trading platform founded in 2019, offering crypto spot and futures trading services.",
+		officialSite: "https://www.tapbit.com",
+		logo: "https://kaspahub.org/exchanges/img/tapbit.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Phemex",
+		description: "Phemex is a Singapore-based trading platform founded in 2019, offering crypto spot and derivatives trading.",
+		officialSite: "https://phemex.com",
+		logo: "https://kaspahub.org/exchanges/img/phemex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "RocketX",
+		description: "RocketX is a Netherlands-based crypto swap and bridge platform founded in 2020, aggregating top DEXs and CEXs for seamless cross-chain swaps.",
+		officialSite: "https://www.rocketx.exchange",
+		logo: "https://kaspahub.org/exchanges/img/rocketx.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Coinstore",
+		description: "Coinstore is a Singapore-based trading platform founded in 2020, offering crypto trading and launchpad services.",
+		officialSite: "https://www.coinstore.com",
+		logo: "https://kaspahub.org/exchanges/img/coinstore.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: true,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "LetsExchange",
+		description: "LetsExchange is a Seychelles-based crypto swap platform launched in 2021, offering over 4,500 assets with no registration required.",
+		officialSite: "https://letsexchange.io",
+		logo: "https://kaspahub.org/exchanges/img/letsexchange.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "KCEX",
+		description: "KCEX is a Seychelles-based trading platform founded in 2021, offering crypto spot and futures trading.",
+		officialSite: "https://www.kcex.com",
+		logo: "https://kaspahub.org/exchanges/img/kcex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "Xeggex",
+		description: "Xeggex is a Seychelles-based no-KYC exchange launched in 2021, specializing in small to mid-cap crypto assets.",
+		officialSite: "https://xeggex.com",
+		logo: "https://kaspahub.org/exchanges/img/xeggex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "Onramp Money",
+		description: "Onramp Money is an India-based fiat-to-crypto payment gateway launched in 2022, enabling seamless fiat-to-crypto conversions.",
+		officialSite: "https://onramp.money",
+		logo: "https://kaspahub.org/exchanges/img/onrampmoney.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: true,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "CoinoSwap",
+		description: "CoinoSwap is a Wyoming, USA-based crypto swap and exchange aggregator founded in 2022, offering 1,500+ coins with no registration needed.",
+		officialSite: "https://www.coinoswap.com",
+		logo: "https://kaspahub.org/exchanges/img/coinoswap.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "NonKYC",
+		description: "NonKYC.io is a Seychelles-based trading platform founded in 2023, offering crypto trading without KYC requirements.",
+		officialSite: "https://nonkyc.io",
+		logo: "https://kaspahub.org/exchanges/img/nonkyc.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: true,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: false
+		}
+	    },
+	    {
+		name: "WEEX",
+		description: "Weex is a Singapore-based trading platform founded in 2018, offering crypto spot and derivatives trading.",
+		officialSite: "https://www.weex.com",
+		logo: "https://kaspahub.org/exchanges/img/weex.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "LBank",
+		description: "LBank is a Hong Kong-based trading platform established in 2015, offering crypto trading and token listing services.",
+		officialSite: "https://www.lbank.com",
+		logo: "https://kaspahub.org/exchanges/img/lbank.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "BigONE",
+		description: "BigONE is a Seychelles-based trading platform founded in 2017, providing crypto trading and investment services.",
+		officialSite: "https://www.bigone.com",
+		logo: "https://kaspahub.org/exchanges/img/bigone.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    },
+	    {
+		name: "BitMart",
+		description: "BitMart is a Cayman Islands-based exchange platform established in 2017, offering crypto trading and staking services.",
+		officialSite: "https://www.bitmart.com",
+		logo: "https://kaspahub.org/exchanges/img/bitmart.jpg",
+		features: {
+		    cex: true,
+		    dex: false,
+		    noKyc: false,
+		    tier1: false,
+		    tier2: false,
+		    tier3: false,
+		    debitCard: false,
+		    googleApplePay: false,
+		    futuresTrading: true
+		}
+	    }
         ];
 
         const exchangeGrid = document.getElementById('exchangeGrid');
