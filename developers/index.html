@@ -39,16 +39,16 @@
 	</style>
 </head>
 <body>
-    <header>
-        <nav id="page-nav"></nav>
-    </header>
+	<header>
+		<nav id="page-nav"></nav>
+	</header>
 
-    <main class="page-wrapper">
-        <div style="color: #F1F1F1; min-height: 300px; align-content: center;">
-            <h1>Kaspa Developer Tools</h1>
-            <p style="padding-left: 10px;">Discover open-source tools for building on Kaspa, including nodes, wallets, visualization tools, and community support applications. <br>Filter by programming language to find the right tool for your development needs.</p>
-        </div>
-        <div class="main-content-area">
+	<main class="page-wrapper">
+	<div style="color: #F1F1F1; min-height: 300px; align-content: center;">
+		<h1>Kaspa Developer Tools</h1>
+		<p style="padding-left: 10px;">Discover open-source tools for building on Kaspa, including nodes, wallets, visualization tools, and community support applications. <br>Filter by programming language to find the right tool for your development needs.</p>
+	</div>
+	<div class="main-content-area">
             <aside class="sidebar theme-1">
                 <div class="filter-category">
                     <h2 id="counter"></h2>
@@ -254,58 +254,58 @@
     const toolGrid = document.getElementById('toolGrid');
     const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]'); // Changed to radio buttons
 
-    function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
+	function getRandomColor() {
+		const letters = '0123456789ABCDEF';
+		let color = '#';
+		for (let i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
 
-    function renderTools(filteredTools) {
-        toolGrid.innerHTML = '';
+	function renderTools(filteredTools) {
+		toolGrid.innerHTML = '';
+		
+		const counter = document.getElementById('counter');
+		counter.textContent = `(${filteredTools.length} of ${tools.length})`;
+		
+		if (filteredTools.length === 0) {
+			toolGrid.innerHTML = '<p class="no-items-message">No tools match your selected filters.</p>';
+			return;
+		}
 
-        const counter = document.getElementById('counter');
-        counter.textContent = `(${filteredTools.length} of ${tools.length})`;
+	        filteredTools.forEach(tool => {
+			const card = document.createElement('div');
+			card.classList.add('filter-card');
+			card.classList.add('theme-1');
+			
+			const randomColor = getRandomColor();
+			
+			card.innerHTML = `
+<div class="filter-logo" style="background-color: ${randomColor}; display: flex; align-items: center; justify-content: center; height: 100px;">
+	<h3 style="color: #F1F1F1; margin: 0;">${tool.name}</h3>
+</div>
+<h3>${tool.name}</h3>
+<p class="filter-description">${tool.description}</p>
+<a href="${tool.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button">View</a>`;
+			toolGrid.appendChild(card);
+			});
+	    }
 
-        if (filteredTools.length === 0) {
-            toolGrid.innerHTML = '<p class="no-items-message">No tools match your selected filters.</p>';
-            return;
-        }
+	function filterTools() {
+		const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature; // Logic for radio buttons
+		
+		const filtered = selectedFeature
+			? tools.filter(tool => tool.features[selectedFeature])
+			: tools;
+		renderTools(filtered);
+	}
+	
+	filterRadios.forEach(radio => {
+		radio.addEventListener('change', filterTools);
+	});
 
-        filteredTools.forEach(tool => {
-            const card = document.createElement('div');
-            card.classList.add('filter-card');
-            card.classList.add('theme-1');
-
-            const randomColor = getRandomColor();
-
-            card.innerHTML = `
-                <div class="filter-logo" style="background-color: ${randomColor}; display: flex; align-items: center; justify-content: center; height: 100px;">
-                    <h3 style="color: #F1F1F1; margin: 0;">${tool.name}</h3>
-                </div>
-                <h3>${tool.name}</h3>
-                <p class="filter-description">${tool.description}</p>
-                <a href="${tool.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button">View</a>`;
-            toolGrid.appendChild(card);
-        });
-    }
-
-    function filterTools() {
-        const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature; // Logic for radio buttons
-
-        const filtered = selectedFeature
-            ? tools.filter(tool => tool.features[selectedFeature])
-            : tools;
-        renderTools(filtered);
-    }
-
-    filterRadios.forEach(radio => {
-        radio.addEventListener('change', filterTools);
-    });
-
-    renderTools(tools);
+	renderTools(tools);
 </script>
 </body>
 </html>
