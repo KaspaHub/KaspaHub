@@ -94,218 +94,232 @@
     </main>
     <footer id="page-footer"></footer>
 <script>
-    const tools = [
-	{
-		name: "Rusty Kaspa",
-		description: "The official Rust implementation of the Kaspa full-node and related libraries, designed for high-performance and scalability. It supports the BlockDAG protocol, enabling rapid transaction confirmations and high throughput. Ideal for developers building or contributing to Kaspa's core infrastructure, with active community support for collaboration.",
-		githubUrl: "https://github.com/kaspanet/rusty-kaspa",
-		features: {
-			rust: true,
-			javascript: false,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "WASM32 SDK",
-		description: "WASM bindings for Rusty Kaspa, enabling Rust code integration in JavaScript and TypeScript environments. Ideal for developers building Kaspa applications with web compatibility and high performance.",
-		githubUrl: "https://kaspa.aspectron.org/docs/index.html",
-		features: {
-			rust: true,
-			javascript: true,
-			typescript: true,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "Simply Kaspa Indexer",
-		description: "A Rust-based PostgreSQL indexer for Kaspa, optimized for concurrency and compatibility with kaspa-rest-server. Ideal for developers needing efficient blockchain data indexing.",
-		githubUrl: "https://hub.docker.com/r/supertypo/simply-kaspa-indexer",
-		features: {
-			rust: true,
-			javascript: false,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "KasPaper",
-		description: "A lightweight Go-based tool for generating secure Kaspa paper wallets. It provides a simple way to create offline storage for Kaspa assets by generating seed phrases and printable wallet files. Users can customize the wallet's appearance by editing the template.html file before compilation. Ideal for users seeking secure, offline storage solutions or developers integrating paper wallet functionality.",
-		githubUrl: "https://github.com/svarogg/kaspaper",
-		features: {
-			rust: false,
-			javascript: false,
-			typescript: false,
-			dart: false,
-			go: true,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "Kaspa-ng",
-		description: "A desktop application for running a Kaspa p2p node, wallet, and BlockDAG visualizer. Written in Rust, it offers a high-performance interface for managing transactions and exploring the Kaspa network. Suited for developers and enthusiasts seeking a comprehensive tool for decentralized operations, with support for solo mining via a stratum bridge.",
-		githubUrl: "https://github.com/aspectron/kaspa-ng",
-		features: {
-			rust: true,
-			javascript: false,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "REST-API Server",
-		description: "The REST-API server for the Kaspa network, providing an HTTP interface to interact with Kaspa nodes. It allows developers to build applications that communicate with the Kaspa blockchain using standard HTTP methods.",
-		githubUrl: "https://github.com/kaspa-ng/kaspa-rest-server",
-		features: {
-			rust: false,
-			javascript: false,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: true
-		}
-	},
-	{
-		name: "Kaspian",
-		description: "A self-custodial Kaspa wallet with integrated merchant tools, built using JavaScript (Bun) and Rust (via WebAssembly). It supports wallet creation, transaction management, and merchant payment integrations, making it ideal for developers building user-facing applications or e-commerce solutions on the Kaspa network. Currently in alpha, it requires local builds for testing.",
-		githubUrl: "https://github.com/KaffinPX/Kaspian",
-		features: {
-			rust: false,
-			javascript: false,
-			typescript: true,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "Graph Inspector",
-		description: "A real-time visualization tool for the Kaspa BlockDAG, built with Go and JavaScript (Node.js). It includes database and API components for analyzing the network's block structure, making it valuable for developers studying Kaspa's DAG-based architecture or building analytical tools for network insights.",
-		githubUrl: "https://github.com/kaspa-live/kaspa-graph-inspector",
-		features: {
-			rust: false,
-			javascript: false,
-			typescript: true,
-			dart: false,
-			go: true,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "BLanim",
-		description: "BLanim is a Python library that extends the Manim package to provide tools for creating animations of blockchain and blockDAG concepts. It is being utilized in creating educational content related to Kaspa, helping to visualize its BlockDAG architecture.",
-		githubUrl: "https://github.com/ShaiW/blanim",
-		features: {
-			rust: false,
-			javascript: false,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: true
-		}
-	},
-	{
-		name: "KaspaHub Donations",
-		description: "A simple HTML and JavaScript-based web page that enables anyone to create a personalized donation page for the Kaspa. It automatically generates QR codes for seamless KAS payments, requiring no coding skills—just replace the wallet address to start accepting tips. Ideal non-technical users looking to integrate or promote community-driven donation features within Kaspa-based projects.",
-		githubUrl: "https://github.com/KaspaHub/donations",
-		features: {
-			rust: false,
-			javascript: true,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
-	},
-	{
-		name: "KaspaCom Wallet",
-		description: "An open-source web wallet for the Kaspa network, built with JavaScript and TypeScript, supporting both Layer 1 and Layer 2 transactions. It offers a secure and user-friendly interface for managing KAS assets, sending and receiving funds, and integrating with decentralized applications (dApps). Ideal for developers building web-based Kaspa solutions or users seeking a browser-based wallet.",
-		githubUrl: "https://github.com/KASPACOM/kaspacom-web-wallet",
-		features: {
-			rust: false,
-			javascript: true,
-			typescript: false,
-			dart: false,
-			go: false,
-			php: false,
-			python: false
-		}
+const tools = [
+{
+	name: "Rusty Kaspa",
+	description: "The official Rust implementation of the Kaspa full-node and related libraries, designed for high-performance and scalability. It supports the BlockDAG protocol, enabling rapid transaction confirmations and high throughput. Ideal for developers building or contributing to Kaspa's core infrastructure, with active community support for collaboration.",
+	githubUrl: "https://github.com/kaspanet/rusty-kaspa",
+	features: {
+		rust: true,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
 	}
-    ];
+},
+{
+	name: "WASM32 SDK",
+	description: "WASM bindings for Rusty Kaspa, enabling Rust code integration in JavaScript and TypeScript environments. Ideal for developers building Kaspa applications with web compatibility and high performance.",
+	githubUrl: "https://kaspa.aspectron.org/docs/index.html",
+	features: {
+		rust: true,
+		javascript: true,
+		typescript: true,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "Simply Kaspa Indexer",
+	description: "A Rust-based PostgreSQL indexer for Kaspa, optimized for concurrency and compatibility with kaspa-rest-server. Ideal for developers needing efficient blockchain data indexing.",
+	githubUrl: "https://hub.docker.com/r/supertypo/simply-kaspa-indexer",
+	features: {
+		rust: true,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "KasPaper",
+	description: "A lightweight Go-based tool for generating secure Kaspa paper wallets. It provides a simple way to create offline storage for Kaspa assets by generating seed phrases and printable wallet files. Users can customize the wallet's appearance by editing the template.html file before compilation. Ideal for users seeking secure, offline storage solutions or developers integrating paper wallet functionality.",
+	githubUrl: "https://github.com/svarogg/kaspaper",
+	features: {
+		rust: false,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: true,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "Kaspa-ng",
+	description: "A desktop application for running a Kaspa p2p node, wallet, and BlockDAG visualizer. Written in Rust, it offers a high-performance interface for managing transactions and exploring the Kaspa network. Suited for developers and enthusiasts seeking a comprehensive tool for decentralized operations, with support for solo mining via a stratum bridge.",
+	githubUrl: "https://github.com/aspectron/kaspa-ng",
+	features: {
+		rust: true,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "NOWNodes",
+	description: "NOWNodes provides affordable blockchain developer APIs, offering access to over 100 blockchain RPC nodes and block explorers, including Kaspa, Ethereum, Bitcoin, and more. It supports shared and dedicated nodes, WebSocket connections, and testnet access, making it ideal for developers building on multiple blockchain networks, including Kaspa.",
+	githubUrl: "https://nownodes.io",
+	features: {
+		rust: false,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: true
+	}
+},
+{
+	name: "REST-API Server",
+	description: "The REST-API server for the Kaspa network, providing an HTTP interface to interact with Kaspa nodes. It allows developers to build applications that communicate with the Kaspa blockchain using standard HTTP methods.",
+	githubUrl: "https://github.com/kaspa-ng/kaspa-rest-server",
+	features: {
+		rust: false,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: true
+	}
+},
+{
+	name: "Kaspian",
+	description: "A self-custodial Kaspa wallet with integrated merchant tools, built using JavaScript (Bun) and Rust (via WebAssembly). It supports wallet creation, transaction management, and merchant payment integrations, making it ideal for developers building user-facing applications or e-commerce solutions on the Kaspa network. Currently in alpha, it requires local builds for testing.",
+	githubUrl: "https://github.com/KaffinPX/Kaspian",
+	features: {
+		rust: false,
+		javascript: false,
+		typescript: true,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "Graph Inspector",
+	description: "A real-time visualization tool for the Kaspa BlockDAG, built with Go and JavaScript (Node.js). It includes database and API components for analyzing the network's block structure, making it valuable for developers studying Kaspa's DAG-based architecture or building analytical tools for network insights.",
+	githubUrl: "https://github.com/kaspa-live/kaspa-graph-inspector",
+	features: {
+		rust: false,
+		javascript: false,
+		typescript: true,
+		dart: false,
+		go: true,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "BLanim",
+	description: "BLanim is a Python library that extends the Manim package to provide tools for creating animations of blockchain and blockDAG concepts. It is being utilized in creating educational content related to Kaspa, helping to visualize its BlockDAG architecture.",
+	githubUrl: "https://github.com/ShaiW/blanim",
+	features: {
+		rust: false,
+		javascript: false,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: true
+	}
+},
+{
+	name: "KaspaHub Donations",
+	description: "A simple HTML and JavaScript-based web page that enables anyone to create a personalized donation page for the Kaspa. It automatically generates QR codes for seamless KAS payments, requiring no coding skills—just replace the wallet address to start accepting tips. Ideal non-technical users looking to integrate or promote community-driven donation features within Kaspa-based projects.",
+	githubUrl: "https://github.com/KaspaHub/donations",
+	features: {
+		rust: false,
+		javascript: true,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
+	}
+},
+{
+	name: "KaspaCom Wallet",
+	description: "An open-source web wallet for the Kaspa network, built with JavaScript and TypeScript, supporting both Layer 1 and Layer 2 transactions. It offers a secure and user-friendly interface for managing KAS assets, sending and receiving funds, and integrating with decentralized applications (dApps). Ideal for developers building web-based Kaspa solutions or users seeking a browser-based wallet.",
+	githubUrl: "https://github.com/KASPACOM/kaspacom-web-wallet",
+	features: {
+		rust: false,
+		javascript: true,
+		typescript: false,
+		dart: false,
+		go: false,
+		php: false,
+		python: false
+	}
+}
+];
 
-    const toolGrid = document.getElementById('toolGrid');
-    const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]'); // Changed to radio buttons
+const toolGrid = document.getElementById('toolGrid');
+const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]'); // Changed to radio buttons
 
-	function getRandomColor() {
-		const letters = '0123456789ABCDEF';
-		let color = '#';
-		for (let i = 0; i < 6; i++) {
-			color += letters[Math.floor(Math.random() * 16)];
-		}
-		return color;
+function getRandomColor() {
+	const letters = '0123456789ABCDEF';
+	let color = '#';
+	for (let i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
+
+function renderTools(filteredTools) {
+	toolGrid.innerHTML = '';
+	
+	const counter = document.getElementById('counter');
+	counter.textContent = `(${filteredTools.length} of ${tools.length})`;
+	
+	if (filteredTools.length === 0) {
+		toolGrid.innerHTML = '<p class="no-items-message">No tools match your selected filters.</p>';
+		return;
 	}
 
-	function renderTools(filteredTools) {
-		toolGrid.innerHTML = '';
+	filteredTools.forEach(tool => {
+		const card = document.createElement('div');
+		card.classList.add('filter-card');
+		card.classList.add('theme-1');
 		
-		const counter = document.getElementById('counter');
-		counter.textContent = `(${filteredTools.length} of ${tools.length})`;
+		const randomColor = getRandomColor();
 		
-		if (filteredTools.length === 0) {
-			toolGrid.innerHTML = '<p class="no-items-message">No tools match your selected filters.</p>';
-			return;
-		}
-
-	        filteredTools.forEach(tool => {
-			const card = document.createElement('div');
-			card.classList.add('filter-card');
-			card.classList.add('theme-1');
-			
-			const randomColor = getRandomColor();
-			
-			card.innerHTML = `
+		card.innerHTML = `
 <div class="filter-logo" style="background-color: ${randomColor}; display: flex; align-items: center; justify-content: center; height: 100px;">
-	<h3 style="color: #F1F1F1; margin: 0;">${tool.name}</h3>
+<h3 style="color: #F1F1F1; margin: 0;">${tool.name}</h3>
 </div>
 <h3>${tool.name}</h3>
 <p class="filter-description">${tool.description}</p>
 <a href="${tool.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button">View</a>`;
-			toolGrid.appendChild(card);
-			});
-	    }
+		toolGrid.appendChild(card);
+		});
+}
 
-	function filterTools() {
-		const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature; // Logic for radio buttons
-		
-		const filtered = selectedFeature
-			? tools.filter(tool => tool.features[selectedFeature])
-			: tools;
-		renderTools(filtered);
-	}
+function filterTools() {
+	const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature; // Logic for radio buttons
 	
-	filterRadios.forEach(radio => {
-		radio.addEventListener('change', filterTools);
-	});
+	const filtered = selectedFeature
+		? tools.filter(tool => tool.features[selectedFeature])
+		: tools;
+	renderTools(filtered);
+}
 
-	renderTools(tools);
+filterRadios.forEach(radio => {
+	radio.addEventListener('change', filterTools);
+});
+
+renderTools(tools);
 </script>
 </body>
 </html>
