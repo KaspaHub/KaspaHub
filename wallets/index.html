@@ -32,83 +32,77 @@
 	<script defer src="https://kaspahub.org/scripts/main.js"></script>
 </head>
 <body>
-    <header>
-        <nav id="page-nav"></nav>
-    </header>
+<header>
+	<nav id="page-nav"></nav>
+</header>
 
-    <main class="page-wrapper">
-        <div style="color: #F1F1F1; min-height: 300px; align-content: center;">
-            <h1>Get a wallet</h1>
-            <p style="padding-left: 10px;">To start using Kaspa, you’ll need a wallet - an app that stores your coins and lets you interact with the network. <br>Explore and filter wallets by features and devices to find the best fit for you.</p>
-        </div>
-        <div class="main-content-area">
-            <aside class="sidebar theme-1">
-                <div class="filter-category">
-                    <h2 id="counter"></h2>
-                    <h3>Features</h3>
-                    <div class="filter-group">
-                        <input type="checkbox" id="openSource" data-feature="openSource">
-                        <label for="openSource">Open Source</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="selfCustodial" data-feature="selfCustodial">
-                        <label for="selfCustodial">Self-Custodial</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="krc20" data-feature="krc20">
-                        <label for="krc20">KRC-20 Tokens</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="krc721" data-feature="krc721">
-                        <label for="krc721">KRC-721 NFTs</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="knsDomains" data-feature="knsDomains">
-                        <label for="knsDomains">KNS Domains</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="multiChain" data-feature="multiChain">
-                        <label for="multiChain">Multi-Chain</label>
-                    </div>
-                </div>
-
-                <div class="filter-category">
-                    <h3>Devices</h3>
-                    <div class="filter-group">
-                        <input type="checkbox" id="deviceHardware" data-feature="hardware">
-                        <label for="deviceHardware">Hardware</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="deviceDesktop" data-feature="desktop">
-                        <label for="deviceDesktop">Desktop</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="deviceMobile" data-feature="mobile">
-                        <label for="deviceMobile">Mobile</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="deviceBrowserExtension" data-feature="browserExtension">
-                        <label for="deviceBrowserExtension">Browser Extension</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="checkbox" id="deviceWeb" data-feature="web">
-                        <label for="deviceWeb">Web</label>
-                    </div>
-                </div>
-            </aside>
-
-            <section class="filter-list-main">
-                <section class="wallet-list-section">
-                    <div class="filter-grid" id="walletGrid">
-                    </div>
-                </section>
-            </section>
-        </div>
-    </main>
-    <footer id="page-footer"></footer>
-
-
-
+<main class="page-wrapper">
+	<div style="color: #F1F1F1; min-height: 300px; align-content: center;">
+		<h1>Get a wallet</h1>
+		<p style="padding-left: 10px;">To start using Kaspa, you’ll need a wallet - an app that stores your coins and lets you interact with the network. <br>Explore and filter wallets by features and devices to find the best fit for you.</p>
+	</div>
+	<div class="main-content-area">
+		<aside class="sidebar theme-1">
+			<div class="filter-category">
+				<h2 id="counter"></h2>
+				<h3>Features</h3>
+				<div class="filter-group">
+					<input type="checkbox" id="openSource" data-feature="openSource">
+					<label for="openSource">Open Source</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="selfCustodial" data-feature="selfCustodial">
+					<label for="selfCustodial">Self-Custodial</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="krc20" data-feature="krc20">
+					<label for="krc20">KRC-20 Tokens</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="krc721" data-feature="krc721">
+					<label for="krc721">KRC-721 NFTs</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="knsDomains" data-feature="knsDomains">
+					<label for="knsDomains">KNS Domains</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="multiChain" data-feature="multiChain">
+					<label for="multiChain">Multi-Chain</label>
+				</div>
+			</div>
+			<div class="filter-category">
+				<h3>Devices</h3>
+				<div class="filter-group">
+					<input type="checkbox" id="deviceHardware" data-feature="hardware">
+					<label for="deviceHardware">Hardware</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="deviceDesktop" data-feature="desktop">
+					<label for="deviceDesktop">Desktop</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="deviceMobile" data-feature="mobile">
+					<label for="deviceMobile">Mobile</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="deviceBrowserExtension" data-feature="browserExtension">
+					<label for="deviceBrowserExtension">Browser Extension</label>
+				</div>
+				<div class="filter-group">
+					<input type="checkbox" id="deviceWeb" data-feature="web">
+					<label for="deviceWeb">Web</label>
+				</div>
+			</div>
+		</aside>
+		<section class="filter-list-main">
+			<section class="wallet-list-section">
+				<div class="filter-grid" id="walletGrid"></div>
+			</section>
+		</section>
+	</div>
+</main>
+<footer id="page-footer"></footer>
 <script>
 const wallets = [
 {
@@ -550,101 +544,98 @@ const wallets = [
 }
 ];
 
-    const walletGrid = document.getElementById('walletGrid');
-    const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+const walletGrid = document.getElementById('walletGrid');
+const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
 
-    const tagInfoMap = {
-        openSource: { name: "Open Source", type: "feature" },
-        multiChain: { name: "Multi-Chain", type: "feature" },
-        selfCustodial: { name: "Self-Custodial", type: "feature" },
-        krc20: { name: "KRC-20", type: "feature" },
-        krc721: { name: "KRC-721", type: "feature" },
-        knsDomains: { name: "KNS", type: "feature" },
-        hardware: { name: "Hardware", type: "device", icon: "https://kaspahub.org/img/devices/hardware.png" },
-        desktop: { name: "Desktop", type: "device", icon: "https://kaspahub.org/img/devices/desktop.png" },
-        mobile: { name: "Mobile", type: "device", icon: "https://kaspahub.org/img/devices/mobile.png" },
-        browserExtension: { name: "Browser Extension", type: "device", icon: "https://kaspahub.org/img/devices/extension.png" },
-        web: { name: "Web", type: "device", icon: "https://kaspahub.org/img/devices/web.png" }
-    };
+const tagInfoMap = {
+	openSource: { name: "Open Source", type: "feature" },
+	multiChain: { name: "Multi-Chain", type: "feature" },
+	selfCustodial: { name: "Self-Custodial", type: "feature" },
+	krc20: { name: "KRC-20", type: "feature" },
+	krc721: { name: "KRC-721", type: "feature" },
+	knsDomains: { name: "KNS", type: "feature" },
+	hardware: { name: "Hardware", type: "device", icon: "https://kaspahub.org/img/devices/hardware.png" },
+	desktop: { name: "Desktop", type: "device", icon: "https://kaspahub.org/img/devices/desktop.png" },
+	mobile: { name: "Mobile", type: "device", icon: "https://kaspahub.org/img/devices/mobile.png" },
+	browserExtension: { name: "Browser Extension", type: "device", icon: "https://kaspahub.org/img/devices/extension.png" },
+	web: { name: "Web", type: "device", icon: "https://kaspahub.org/img/devices/web.png" }
+};
 
-    function renderWallets(filteredWallets) {
-        walletGrid.innerHTML = '';
+function renderWallets(filteredWallets) {
+walletGrid.innerHTML = '';
 
-        const counter = document.getElementById('counter');
-        counter.textContent = `(${filteredWallets.length} of ${wallets.length})`;
+const counter = document.getElementById('counter');
+counter.textContent = `(${filteredWallets.length} of ${wallets.length})`;
 
-        if (filteredWallets.length === 0) {
-            walletGrid.innerHTML = '<p class="no-items-message">No wallets match your selected filters.</p>';
-            return;
-        }
+if (filteredWallets.length === 0) {
+	walletGrid.innerHTML = '<p class="no-items-message">No wallets match your selected filters.</p>';
+	return;
+}
 
-        filteredWallets.forEach(wallet => {
-            const card = document.createElement('div');
-            card.classList.add('filter-card');
-            card.classList.add('theme-1');
+filteredWallets.forEach(wallet => {
+	const card = document.createElement('div');
+	card.classList.add('filter-card');
+	card.classList.add('theme-1');
+	
+	let featureTagsHtml = '';
+	let platformTagsHtml = '';
+	
+	for (const featureKey in wallet.features) {
+			if (wallet.features[featureKey]) {
+				const tagInfo = tagInfoMap[featureKey];
+				if (tagInfo) {
+				if (tagInfo.type === 'feature') {
+					featureTagsHtml += `<span class="feature-tag">${tagInfo.name}</span>`;
+				} else if (tagInfo.type === 'device') {
+					platformTagsHtml += `<span class="platform-tag"><img src="${tagInfo.icon || 'https://img.icons8.com/ios-filled/50/000000/puzzle.png'}" alt="${tagInfo.name} Icon" loading="lazy">${tagInfo.name}</span>`;
+				}
+			}
+		}
+	}
 
-            let featureTagsHtml = '';
-            let platformTagsHtml = '';
+	card.innerHTML = `
+<div class="filter-logo">
+	<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+</div>
+<h3>${wallet.name}</h3>
+<p class="filter-description">${wallet.description}</p>
+<div class="filter-features-container">${featureTagsHtml}</div>
+<div class="filter-platforms-container">${platformTagsHtml}</div>
+<a href="${wallet.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
+`;
+	walletGrid.appendChild(card);
+	});
+}
 
-            for (const featureKey in wallet.features) {
-                if (wallet.features[featureKey]) {
-                    const tagInfo = tagInfoMap[featureKey];
-                    if (tagInfo) {
-                        if (tagInfo.type === 'feature') {
-                            featureTagsHtml += `<span class="feature-tag">${tagInfo.name}</span>`;
-                        } else if (tagInfo.type === 'device') {
-                            platformTagsHtml += `
-                                <span class="platform-tag">
-                                    <img src="${tagInfo.icon || 'https://img.icons8.com/ios-filled/50/000000/puzzle.png'}" alt="${tagInfo.name} Icon" loading="lazy">
-                                    ${tagInfo.name}
-                                </span>`;
-                        }
-                    }
-                }
-            }
+function filterWallets() {
+	const activeFeatureKeys = new Set();
+	filterCheckboxes.forEach(checkbox => {
+		if (checkbox.checked) {
+			activeFeatureKeys.add(checkbox.dataset.feature);
+		}
+	});
+	
+	const filtered = wallets.filter(wallet => {
+		if (activeFeatureKeys.size === 0) {
+			return true;
+		}
+	
+	    for (const featureKey of activeFeatureKeys) {
+		if (!wallet.features[featureKey]) {
+			return false;
+		}
+	}
+	return true;
+	});
+		
+	renderWallets(filtered);
+}
 
-            card.innerHTML = `
-                <div class="filter-logo">
-                    <img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
-                </div>
-                <h3>${wallet.name}</h3>
-                <p class="filter-description">${wallet.description}</p>
-                <div class="filter-features-container">${featureTagsHtml}</div>
-                <div class="filter-platforms-container">${platformTagsHtml}</div>
-                <a href="${wallet.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
-            `;
-            walletGrid.appendChild(card);
-        });
-    }
+filterCheckboxes.forEach(checkbox => {
+	checkbox.addEventListener('change', filterWallets);
+});
 
-    function filterWallets() {
-        const activeFeatureKeys = new Set();
-        filterCheckboxes.forEach(checkbox => {
-            if (checkbox.checked) {
-                activeFeatureKeys.add(checkbox.dataset.feature);
-            }
-        });
-
-        const filtered = wallets.filter(wallet => {
-            if (activeFeatureKeys.size === 0) {
-                return true;
-            }
-
-            for (const featureKey of activeFeatureKeys) {
-                if (!wallet.features[featureKey]) {
-                    return false;
-                }
-            }
-            return true;
-        });
-        renderWallets(filtered);
-    }
-
-    filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', filterWallets);
-    });
-
-    renderWallets(wallets);
+renderWallets(wallets);
 
 </script>
 </body>
