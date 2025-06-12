@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: 'Mulish';
-	src: url('https://kaspahub.org/styles/mulish-variablefont_wght.ttf') format('truetype');
+	src: url('/styles/mulish-variablefont_wght.ttf') format('truetype');
 }
 
 html {
@@ -24,8 +24,11 @@ html, body {
 }
 
 body {
-	background: #0F0F0F;
-	/*background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a);*/
+/* 	background: #0F0F0F; */
+	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 main {
