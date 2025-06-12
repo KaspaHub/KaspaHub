@@ -52,14 +52,6 @@
 			<div class="filter-category">
 				<h2 id="counter"></h2>
 				<h3>Features</h3>
-<!-- 				<div class="filter-group">
-					<input type="checkbox" id="cex" data-feature="cex">
-					<label for="cex">CEX</label>
-				</div>
-				<div class="filter-group">
-					<input type="checkbox" id="dex" data-feature="dex">
-					<label for="dex">DEX</label>
-				</div> -->
 				<div class="filter-group">
 					<input type="checkbox" id="noKyc" data-feature="noKyc">
 					<label for="noKyc">No KYC</label>
@@ -81,12 +73,16 @@
 		<section class="filter-list-main">
 			<section class="exchange-list-section">
 				<div class="filter-grid" id="exchangeGrid"></div>
+				<button class="theme-1" id="loadMoreBtn">Load More</button>
 			</section>
 		</section>
 	</div>
 </main>
 <footer id="page-footer"></footer>
 <script>
+const exchangesPerPage = 30;
+let currentIndex = 0;
+
 const exchanges = [
 {
 	name: "Uphold",
@@ -1128,64 +1124,65 @@ const exchanges = [
 ];
 
 const exchangeGrid = document.getElementById('exchangeGrid');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
 const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+const counter = document.getElementById('counter');
 
-function renderExchanges(filteredExchanges) {
-	exchangeGrid.innerHTML = '';
+let filteredExchanges = [...exchanges];
 
-	const counter = document.getElementById('counter');
-	counter.textContent = `(${filteredExchanges.length} of ${exchanges.length})`;
-
-	if (filteredExchanges.length === 0) {
-		exchangeGrid.innerHTML = '<p class="no-items-message">No exchanges match your selected filters.</p>';
-		return;
+function renderExchanges(initial = false) {
+	if (initial) {
+		exchangeGrid.innerHTML = '';
+		currentIndex = 0;
 	}
 
-	filteredExchanges.forEach(exchange => {
+	const slice = filteredExchanges.slice(currentIndex, currentIndex + exchangesPerPage);
+	slice.forEach(exchange => {
 		const card = document.createElement('div');
-		card.classList.add('filter-card');
-		card.classList.add('theme-1');
-
+		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
-		<div class="filter-logo">
-			<img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
-		</div>
-		<h3>${exchange.name}</h3>
-		<p class="filter-description">${exchange.description}</p>
-		<a href="${exchange.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
+<div class="filter-logo">
+	<img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+</div>
+<h3>${exchange.name}</h3>
+<p class="filter-description">${exchange.description}</p>
+<a href="${exchange.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
 		`;
+		
 		exchangeGrid.appendChild(card);
 	});
+
+	currentIndex += slice.length;
+	counter.textContent = `(${filteredExchanges.length} of ${exchanges.length})`;
+
+	loadMoreBtn.style.display = currentIndex < filteredExchanges.length ? 'block' : 'none';
 }
 
 function filterExchanges() {
-	const activeFeatureKeys = new Set();
-	filterCheckboxes.forEach(checkbox => {
-		if (checkbox.checked) {
-			activeFeatureKeys.add(checkbox.dataset.feature);
-		}
-	});
+	const activeFeatures = new Set();
+	filterCheckboxes.forEach(cb => cb.checked && activeFeatures.add(cb.dataset.feature));
 
-	const filtered = exchanges.filter(exchange => {
-		if (activeFeatureKeys.size === 0) {
-			return true;
-		}
-
-		for (const featureKey of activeFeatureKeys) {
-			if (!exchange.features[featureKey]) {
-				return false;
-			}
+	filteredExchanges = exchanges.filter(ex => {
+		for (let feature of activeFeatures) {
+			if (!ex.features[feature]) return false;
 		}
 		return true;
 	});
-	renderExchanges(filtered);
+
+	if (filteredExchanges.length === 0) {
+		exchangeGrid.innerHTML = '<p class="no-items-message">No exchanges match your selected filters.</p>';
+		loadMoreBtn.style.display = 'none';
+		counter.textContent = `(0 of ${exchanges.length})`;
+		return;
+	}
+
+	renderExchanges(true);
 }
 
-filterCheckboxes.forEach(checkbox => {
-	checkbox.addEventListener('change', filterExchanges);
-});
+filterCheckboxes.forEach(cb => cb.addEventListener('change', filterExchanges));
+loadMoreBtn.addEventListener('click', () => renderExchanges());
 
-renderExchanges(exchanges);
+renderExchanges(true);
 </script>
 </body>
 </html>
