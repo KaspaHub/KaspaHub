@@ -478,3 +478,11 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 	font-size: 1.4em;
 	}
 }
+#loadMoreBtn {
+	display: none;
+	margin: 20px auto;
+	padding: 10px 20px;
+	font-size: 1rem;
+	cursor: pointer;
+	border: 1px solid #444;
+}
