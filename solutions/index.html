@@ -166,19 +166,19 @@
 			donations: false
 		}
 	},
-	{
-		// name: "XO Swap",
-		// description: "XO Swap, powered by Exodus, is a premium crypto swap engine designed to drive growth for dApps and platforms, enabling seamless swaps across 100k+ assets on 50+ networks with 11+ liquidity sources.",
-		// officialSite: "https://www.xoswap.com",
-		// logo: "https://kaspahub.org/solutions/img/xoswap.jpg",
-		// features: {
-		// 	api: true,
-		// 	openSource: false,
-		// 	onlinePayments: false,
-		// 	pointOfSale: false,
-		// 	donations: false
-		// }
-	},
+	// {
+	// 	name: "XO Swap",
+	// 	description: "XO Swap, powered by Exodus, is a premium crypto swap engine designed to drive growth for dApps and platforms, enabling seamless swaps across 100k+ assets on 50+ networks with 11+ liquidity sources.",
+	// 	officialSite: "https://www.xoswap.com",
+	// 	logo: "https://kaspahub.org/solutions/img/xoswap.jpg",
+	// 	features: {
+	// 		api: true,
+	// 		openSource: false,
+	// 		onlinePayments: false,
+	// 		pointOfSale: false,
+	// 		donations: false
+	// 	}
+	// },
 	{
 		name: "StealthEX",
 		description: "StealthEX is a privacy-focused, non-custodial cryptocurrency exchange supporting over 1400 cryptocurrencies, including Kaspa, with limitless swaps and no KYC required. It focuses on crypto-to-crypto exchanges, offering best rates and 24/7 support for seamless trading.",
@@ -340,12 +340,12 @@
                 card.classList.add('filter-card');
                 card.classList.add('theme-1');
                 card.innerHTML = `
-                    <div class="filter-logo">
-                        <img src="${merchant.logo}" alt="${merchant.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
-                    </div>
-                    <h3>${merchant.name}</h3>
-                    <p class="filter-description">${merchant.description}</p>
-                    <a href="${merchant.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
+<div class="filter-logo">
+	<img src="${merchant.logo}" alt="${merchant.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+</div>
+<h3>${merchant.name}</h3>
+<p class="filter-description">${merchant.description}</p>
+<a href="${merchant.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
                 `;
                 merchantGrid.appendChild(card);
             });
