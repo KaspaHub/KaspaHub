@@ -99,6 +99,7 @@ const checkbox = document.getElementById('theme-toggle-checkbox');
 
 checkbox.addEventListener('change', () => {
 	document.cookie = `theme=${checkbox.checked ? 'dark' : 'light'}; path=/; SameSite=Lax`;
+	location.reload();
 });
 
 checkbox.checked = document.cookie.includes('theme=dark');
