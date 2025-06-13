@@ -22,9 +22,3 @@ checkbox.checked = document.cookie.includes('theme=dark');
   }
   document.body.classList.add('background-' + theme);
 })();
-
-function injectContent() {
-	document.getElementById('page-footer').innerHTML = '2025 Kaspa Community Hub';
-}
-
-injectContent();
