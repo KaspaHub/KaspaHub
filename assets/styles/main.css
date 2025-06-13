@@ -418,8 +418,8 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 }
 
 .card-title {
+	filter: brightness(0.9);
 	font-size: 1.8em;
-/* 	color: #8fbc8f; */
 	margin-bottom: 15px;
 }
 
