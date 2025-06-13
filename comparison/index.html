@@ -31,299 +31,303 @@
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css">
 	<script defer src="https://kaspahub.org/assets/scripts/main.js"></script>
 
-	<style>
-	.table-container {
-		max-width: 100%;
-		overflow-x: auto;
-		position: relative;
-	}
-	table {
-		width: max-content;
-		text-align: center;
-		margin: 0 auto;
-	}
-	table th, table td, table tr {
-		padding: 5px;
-	}
-	table th {
-		background-color: #b3b3b3;
-	}
-	table th:first-child, table td:first-child {
-		position: sticky;
-		left: 0;
-		background-color: #b3b3b3;
-		z-index: 1;
-		min-width: 120px;
-	}
-	table td:first-child {
-		font-weight: bold;
-	}
-	article table {
-		border-collapse: collapse;
-	}
-	table tr:nth-child(odd) {
-		background-color: #dddddd0f;
-	}
-	table tr:nth-child(even) {
-		background-color: #dddddd2e;
-	}
-	table tr:hover {
-		background-color: rgba(100, 100, 100, 0.1);
-	}
-	</style>
+<style>
+.table-container {
+	max-width: 100%;
+	overflow-x: auto;
+	position: relative;
+}
+table {
+	width: max-content;
+	text-align: center;
+	margin: 0 auto;
+}
+table th, table td, table tr {
+	padding: 5px;
+}
+table th {
+	background-color: #b3b3b3;
+}
+table th:first-child, table td:first-child {
+	position: sticky;
+	left: 0;
+	background-color: #b3b3b3;
+	z-index: 1;
+	min-width: 120px;
+}
+table td:first-child {
+	font-weight: bold;
+}
+article table {
+	border-collapse: collapse;
+}
+table tr:nth-child(odd) {
+	background-color: #dddddd0f;
+}
+table tr:nth-child(even) {
+	background-color: #dddddd2e;
+}
+table tr:hover {
+	background-color: rgba(100, 100, 100, 0.1);
+}
+</style>
 </head>
 <body class="background-light">
-    <header>
-        <nav id="page-nav"></nav>
-    </header>
-    <main class="page-wrapper">
-        <div style="min-height: 300px; align-content: center;">
-            <h1>Cryptocurrency Comparison</h1>
-            <p style="padding-left: 7px;">Compare Kaspa with other leading cryptocurrencies to evaluate its performance, efficiency, and unique features within the broader crypto ecosystem.</p>
-        </div>
-
-        <article class="theme-light">
-            <h2>Comparison Table</h2>
-
-
-<div class="table-container">
-    <table>
-        <tr>
-            <th>Currency</th>
-            <th>Block Time</th>
-            <th>Max TPS</th>
-            <th>Transaction Fee</th>
-            <th>Consensus</th>
-            <th>DLT</th>
-            <th>Security</th>
-            <th>Decentralization</th>
-            <th>Fair Launch?</th>
-        </tr>
-        <tr>
-            <td>Kaspa</td>
-            <td>0.10s-1s</td>
-            <td>3000</td>
-            <td>~$0.0001</td>
-            <td>Proof of Work</td>
-            <td>BlockDAG</td>
-            <td>High</td>
-            <td>High</td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td>Solana</td>
-            <td>0.40s-1.3s</td>
-            <td title="Source: Chainspect">2909</td>
-            <td>~$0.02</td>
-            <td>Proof of Stake + Proof of History</td>
-            <td>Blockchain</td>
-            <td>Moderate</td>
-            <td>Moderate</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>XRP</td>
-            <td>3-5s</td>
-            <td>1500</td>
-            <td>~$0.001</td>
-            <td>RPCA</td>
-            <td>Ledger</td>
-            <td>Moderate</td>
-            <td>Low</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>BNB Chain</td>
-            <td>0.75s-1.5s</td>
-            <td title="Source: Chainspect">1731</td>
-            <td>~$0.01</td>
-            <td>Proof of Staked Authority</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Low</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>DigiByte</td>
-            <td>15s</td>
-            <td>560</td>
-            <td>~$0.001</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>High</td>
-            <td title="0.5% Premine">❌</td>
-        </tr>
-        <tr>
-            <td>Polkadot</td>
-            <td title="Source: Chainspect">6s</td>
-            <td title="Source: Chainspect">463</td>
-            <td title="Source: CryptoDep">~$0.05</td>
-            <td>Nominated Proof of Stake</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Moderate</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>Polygon</td>
-            <td title="Source: Chainspect">2.10s</td>
-            <td title="Source: Chainspect">429</td>
-            <td>~$0.001</td>
-            <td>Proof of Stake</td>
-            <td>Blockchain</td>
-            <td>Moderate</td>
-            <td>Moderate</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>Nano</td>
-            <td title="Source: Nano.org Blog">0.40s-1.5s</td>
-            <td title="Source: Nano.org Blog">300</td>
-            <td>$0</td>
-            <td>Open Representative Voting</td>
-            <td>Block-Lattice</td>
-            <td>Moderate</td>
-            <td>Moderate</td>
-            <td title="5% Dev Allocation">❌</td>
-        </tr>
-        <tr>
-            <td>Bitcoin Cash</td>
-            <td>10 min</td>
-            <td>128</td>
-            <td>~$0.001</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>High</td>
-            <td>✅</td>
-        </tr>
-            <td>Ravencoin</td>
-            <td>1 min</td>
-            <td>116</td>
-            <td>~$0.001</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>High</td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td>Monero</td>
-            <td>2 min</td>
-            <td>90</td>
-            <td>~$0.01</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>High</td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td>Ethereum</td>
-            <td>12s</td>
-            <td>62</td>
-            <td>~$1</td>
-            <td>Proof of Stake</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Moderate</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>Litecoin</td>
-            <td>2.5 min</td>
-            <td>54</td>
-            <td>~$0.001</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>High</td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td>Dash</td>
-            <td>2.5 min</td>
-            <td>48</td>
-            <td>~$0.01</td>
-            <td>Proof of Work + Masternodes</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Moderate</td>
-            <td title="15% Instamine Bug">❌</td>
-        </tr>
-        <tr>
-            <td>Dogecoin</td>
-            <td>1 min</td>
-            <td>33</td>
-            <td>~$0.001</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Moderate</td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td>eCash</td>
-            <td title="Source: Chainspect">9 min</td>
-            <td title="Source: Chainspect">31</td>
-            <td>~$0.001</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Moderate</td>
-            <td title="8% Dev Dev Miner Fee">❌</td>
-        </tr>
-        <tr>
-            <td>Cardano</td>
-            <td title="Source: Chainspect">20s</td>
-            <td title="Source: Chainspect">12</td>
-            <td>~$0.11</td>
-            <td>Ouroboros Proof of Stake</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>Moderate</td>
-            <td>❌</td>
-        </tr>
-        <tr>
-            <td>Bitcoin</td>
-            <td>10 min</td>
-            <td title="Source: Chainspect">7</td>
-            <td>~$10</td>
-            <td>Proof of Work</td>
-            <td>Blockchain</td>
-            <td>High</td>
-            <td>High</td>
-            <td>✅</td>
-        </tr>
-    </table>
+<header>
+	<nav id="page-nav">
+		<h2><a href="/">Kaspa Hub</a></h2>
+		<div class="toggle-theme">
+			<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+			<label for="toggle-theme-checkbox"></label>
+		</div>
+	</nav>
+</header>
+<main class="page-wrapper">
+<div style="min-height: 300px; align-content: center;">
+	<h1>Cryptocurrency Comparison</h1>
+	<p style="padding-left: 7px;">Compare Kaspa with other leading cryptocurrencies to evaluate its performance, efficiency, and unique features within the broader crypto ecosystem.</p>
 </div>
-            <h2></h2>
-            <h3>Block Time</h3>
-            <p>Block time is the average duration required to append a new block to the blockchain ledger. Shorter block times allow for faster transaction confirmations, enhancing the user experience for payments and applications. Cryptocurrencies vary in their approach, with some achieving sub-second block times for speed, while others use longer intervals to ensure network stability.</p>
 
-            <h3>Max TPS</h3>
-            <p>Maximum Transactions Per Second (TPS) measures a network’s capacity to process transactions. High TPS is critical for scalability, supporting widespread adoption and real-time applications like payments or DeFi. Traditional blockchains often face bottlenecks due to linear block processing, whereas advanced structures like BlockDAGs or layer-2 solutions can handle thousands of TPS, enabling efficient, high-throughput ecosystems. Most TPS data sourced from <a href="https://chainspect.app/" target="_blank">Chainspect</a>.</p>
-
-            <h3>Transaction Fees</h3>
-            <p>Transaction fees are costs users pay to process transactions, serving to prevent spam by discouraging frivolous activity and to incentivize miners, stakers or node runners to validate and secure the network. Low fees enhance accessibility for microtransactions, especially in high-throughput systems. Fee structures vary by network design, consensus type, and demand, with some offering near-zero costs through optimized processing, while others face higher fees due to computational demands or market-driven pricing.</p>
-
-            <h3>Consensus Mechanisms</h3>
-            <p>Consensus mechanisms determine how a network validates transactions. Proof of Work (PoW) uses computational power to ensure robust security through decentralized mining. Proof of Stake (PoS) relies on staked assets to select validators, which may concentrate control among large stakeholders. Both mechanisms balance security, speed, and decentralization with distinct trade-offs.</p>
-
-            <h3>Distributed Ledger Technology (DLT)</h3>
-            <p>Distributed Ledger Technology (DLT) defines the structure of a cryptocurrency’s ledger. Traditional blockchains process transactions sequentially, limiting throughput. Advanced DLTs, like BlockDAGs or Block-Lattices, allow parallel transaction processing, significantly boosting scalability while maintaining security. The choice of DLT impacts a network’s ability to handle high transaction volumes and adapt to diverse use cases.</p>
-
-            <h3>Security</h3>
-            <p>Security in cryptocurrencies ensures resistance to attacks like double-spending, 51% attacks and spam. High security often stems from decentralized mining (PoW) or robust validator networks (PoS). However, trade-offs exist: highly centralized systems may sacrifice security for speed, while computationally intensive systems prioritize integrity over efficiency. Advanced designs mitigate these risks through innovative structures like GHOSTDAG.</p>
-
-            <h3>Decentralization</h3>
-            <p>Decentralization measures how distributed control is across a network. High decentralization, often seen in PoW systems with widespread mining, enhances censorship resistance and trustlessness. Moderate or low decentralization, common in PoS or authority-based systems, may improve efficiency but risks concentrating power among fewer nodes, potentially compromising network autonomy.</p>
-
-            <h3>Fair Launch</h3>
-            <p>A fair launch occurs when a cryptocurrency is introduced without pre-mining, pre-sales, coin allocations or miner fees, ensuring equal access for all participants. This fosters community trust and aligns with decentralization principles. Networks with fair launches (✅) distribute tokens through mining or open mechanisms, while others (❌) may favor early investors or founders, potentially centralizing wealth.</p>
-        </article>
-    </main>
-    <footer id="page-footer"></footer>
+<article class="theme-1">
+	<h2>Comparison Table</h2>
+	<div class="table-container">
+<table>
+<tr>
+	<th>Currency</th>
+	<th>Block Time</th>
+	<th>Max TPS</th>
+	<th>Transaction Fee</th>
+	<th>Consensus</th>
+	<th>DLT</th>
+	<th>Security</th>
+	<th>Decentralization</th>
+	<th>Fair Launch?</th>
+</tr>
+<tr>
+	<td>Kaspa</td>
+	<td>0.10s-1s</td>
+	<td>3000</td>
+	<td>~$0.0001</td>
+	<td>Proof of Work</td>
+	<td>BlockDAG</td>
+	<td>High</td>
+	<td>High</td>
+	<td>✅</td>
+</tr>
+<tr>
+	<td>Solana</td>
+	<td>0.40s-1.3s</td>
+	<td title="Source: Chainspect">2909</td>
+	<td>~$0.02</td>
+	<td>Proof of Stake + Proof of History</td>
+	<td>Blockchain</td>
+	<td>Moderate</td>
+	<td>Moderate</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>XRP</td>
+	<td>3-5s</td>
+	<td>1500</td>
+	<td>~$0.001</td>
+	<td>RPCA</td>
+	<td>Ledger</td>
+	<td>Moderate</td>
+	<td>Low</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>BNB Chain</td>
+	<td>0.75s-1.5s</td>
+	<td title="Source: Chainspect">1731</td>
+	<td>~$0.01</td>
+	<td>Proof of Staked Authority</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Low</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>DigiByte</td>
+	<td>15s</td>
+	<td>560</td>
+	<td>~$0.001</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>High</td>
+	<td title="0.5% Premine">❌</td>
+</tr>
+<tr>
+	<td>Polkadot</td>
+	<td title="Source: Chainspect">6s</td>
+	<td title="Source: Chainspect">463</td>
+	<td title="Source: CryptoDep">~$0.05</td>
+	<td>Nominated Proof of Stake</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Moderate</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>Polygon</td>
+	<td title="Source: Chainspect">2.10s</td>
+	<td title="Source: Chainspect">429</td>
+	<td>~$0.001</td>
+	<td>Proof of Stake</td>
+	<td>Blockchain</td>
+	<td>Moderate</td>
+	<td>Moderate</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>Nano</td>
+	<td title="Source: Nano.org Blog">0.40s-1.5s</td>
+	<td title="Source: Nano.org Blog">300</td>
+	<td>$0</td>
+	<td>Open Representative Voting</td>
+	<td>Block-Lattice</td>
+	<td>Moderate</td>
+	<td>Moderate</td>
+	<td title="5% Dev Allocation">❌</td>
+</tr>
+<tr>
+	<td>Bitcoin Cash</td>
+	<td>10 min</td>
+	<td>128</td>
+	<td>~$0.001</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>High</td>
+	<td>✅</td>
+</tr>
+	<td>Ravencoin</td>
+	<td>1 min</td>
+	<td>116</td>
+	<td>~$0.001</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>High</td>
+	<td>✅</td>
+</tr>
+<tr>
+	<td>Monero</td>
+	<td>2 min</td>
+	<td>90</td>
+	<td>~$0.01</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>High</td>
+	<td>✅</td>
+</tr>
+<tr>
+	<td>Ethereum</td>
+	<td>12s</td>
+	<td>62</td>
+	<td>~$1</td>
+	<td>Proof of Stake</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Moderate</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>Litecoin</td>
+	<td>2.5 min</td>
+	<td>54</td>
+	<td>~$0.001</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>High</td>
+	<td>✅</td>
+</tr>
+<tr>
+	<td>Dash</td>
+	<td>2.5 min</td>
+	<td>48</td>
+	<td>~$0.01</td>
+	<td>Proof of Work + Masternodes</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Moderate</td>
+	<td title="15% Instamine Bug">❌</td>
+</tr>
+<tr>
+	<td>Dogecoin</td>
+	<td>1 min</td>
+	<td>33</td>
+	<td>~$0.001</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Moderate</td>
+	<td>✅</td>
+</tr>
+<tr>
+	<td>eCash</td>
+	<td title="Source: Chainspect">9 min</td>
+	<td title="Source: Chainspect">31</td>
+	<td>~$0.001</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Moderate</td>
+	<td title="8% Dev Dev Miner Fee">❌</td>
+</tr>
+<tr>
+	<td>Cardano</td>
+	<td title="Source: Chainspect">20s</td>
+	<td title="Source: Chainspect">12</td>
+	<td>~$0.11</td>
+	<td>Ouroboros Proof of Stake</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>Moderate</td>
+	<td>❌</td>
+</tr>
+<tr>
+	<td>Bitcoin</td>
+	<td>10 min</td>
+	<td title="Source: Chainspect">7</td>
+	<td>~$10</td>
+	<td>Proof of Work</td>
+	<td>Blockchain</td>
+	<td>High</td>
+	<td>High</td>
+	<td>✅</td>
+</tr>
+</table>
+</div>
+	<h2></h2>
+	<h3>Block Time</h3>
+	<p>Block time is the average duration required to append a new block to the blockchain ledger. Shorter block times allow for faster transaction confirmations, enhancing the user experience for payments and applications. Cryptocurrencies vary in their approach, with some achieving sub-second block times for speed, while others use longer intervals to ensure network stability.</p>
+	
+	<h3>Max TPS</h3>
+	<p>Maximum Transactions Per Second (TPS) measures a network’s capacity to process transactions. High TPS is critical for scalability, supporting widespread adoption and real-time applications like payments or DeFi. Traditional blockchains often face bottlenecks due to linear block processing, whereas advanced structures like BlockDAGs or layer-2 solutions can handle thousands of TPS, enabling efficient, high-throughput ecosystems. Most TPS data sourced from <a href="https://chainspect.app/" target="_blank">Chainspect</a>.</p>
+	
+	<h3>Transaction Fees</h3>
+	<p>Transaction fees are costs users pay to process transactions, serving to prevent spam by discouraging frivolous activity and to incentivize miners, stakers or node runners to validate and secure the network. Low fees enhance accessibility for microtransactions, especially in high-throughput systems. Fee structures vary by network design, consensus type, and demand, with some offering near-zero costs through optimized processing, while others face higher fees due to computational demands or market-driven pricing.</p>
+	
+	<h3>Consensus Mechanisms</h3>
+	<p>Consensus mechanisms determine how a network validates transactions. Proof of Work (PoW) uses computational power to ensure robust security through decentralized mining. Proof of Stake (PoS) relies on staked assets to select validators, which may concentrate control among large stakeholders. Both mechanisms balance security, speed, and decentralization with distinct trade-offs.</p>
+	
+	<h3>Distributed Ledger Technology (DLT)</h3>
+	<p>Distributed Ledger Technology (DLT) defines the structure of a cryptocurrency’s ledger. Traditional blockchains process transactions sequentially, limiting throughput. Advanced DLTs, like BlockDAGs or Block-Lattices, allow parallel transaction processing, significantly boosting scalability while maintaining security. The choice of DLT impacts a network’s ability to handle high transaction volumes and adapt to diverse use cases.</p>
+	
+	<h3>Security</h3>
+	<p>Security in cryptocurrencies ensures resistance to attacks like double-spending, 51% attacks and spam. High security often stems from decentralized mining (PoW) or robust validator networks (PoS). However, trade-offs exist: highly centralized systems may sacrifice security for speed, while computationally intensive systems prioritize integrity over efficiency. Advanced designs mitigate these risks through innovative structures like GHOSTDAG.</p>
+	
+	<h3>Decentralization</h3>
+	<p>Decentralization measures how distributed control is across a network. High decentralization, often seen in PoW systems with widespread mining, enhances censorship resistance and trustlessness. Moderate or low decentralization, common in PoS or authority-based systems, may improve efficiency but risks concentrating power among fewer nodes, potentially compromising network autonomy.</p>
+	
+	<h3>Fair Launch</h3>
+	<p>A fair launch occurs when a cryptocurrency is introduced without pre-mining, pre-sales, coin allocations or miner fees, ensuring equal access for all participants. This fosters community trust and aligns with decentralization principles. Networks with fair launches (✅) distribute tokens through mining or open mechanisms, while others (❌) may favor early investors or founders, potentially centralizing wealth.</p>
+</article>
+</main>
+<footer id="page-footer"></footer>
 </body>
 </html>
