@@ -35,9 +35,9 @@
 <header>
 	<nav id="page-nav">
 		<h2><a href="/">Kaspa Hub</a></h2>
-  <div class="theme-toggle">
-    <input type="checkbox" id="theme-toggle-checkbox" aria-label="Toggle theme">
-    <label for="theme-toggle-checkbox"></label>
+  <div class="toggle-theme">
+    <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme">
+    <label for="toggle-theme-checkbox"></label>
   </div>
 	</nav>
 	<div class="intro">
@@ -95,7 +95,7 @@
 
 </main>
 <script>
-const checkbox = document.getElementById('theme-toggle-checkbox');
+const checkbox = document.getElementById('toggle-theme-checkbox');
 
 checkbox.addEventListener('change', () => {
 	document.cookie = `theme=${checkbox.checked ? 'dark' : 'light'}; path=/; SameSite=Lax`;
@@ -123,19 +123,19 @@ checkbox.checked = document.cookie.includes('theme');
 })();
 </script>
 <style>
-.theme-toggle {
+.toggle-theme {
 width: 50px;
 height: 50px;
 position: relative;
 }
 
-.theme-toggle input {
+.toggle-theme input {
 position: absolute;
 opacity: 0;
 pointer-events: none;
 }
 
-.theme-toggle label {
+.toggle-theme label {
 display: block;
 width: 100%;
 height: 100%;
@@ -150,15 +150,15 @@ transition: background-color 0.3s;
 user-select: none;
 }
 
-.theme-toggle input:not(:checked) + label::before {
+.toggle-theme input:not(:checked) + label::before {
 content: "🌞";
 }
 
-.theme-toggle input:checked + label::before {
+.toggle-theme input:checked + label::before {
 content: "🌜";
 }
 
-.theme-toggle input:checked + label {
+.toggle-theme input:checked + label {
 background-color: #333;
 color: white;
 }
