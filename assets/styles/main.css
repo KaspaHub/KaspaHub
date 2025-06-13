@@ -282,7 +282,7 @@ img {
 	text-decoration: none !important;
 	color: #fff !important;
 	padding: 12px 25px;
-	background: rgb(0 126 114);
+	background: rgb(0 126 114 / 55%);
 	border: 1px solid rgb(0 147 133);
 	border-radius: 16px;
 }
