@@ -35,7 +35,7 @@ main {
 }
 
 .theme-light {
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.2);
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-radius: 15px;
 	overflow: hidden;
@@ -43,7 +43,7 @@ main {
 }
 .theme-dark {
 	background-color: rgba(255, 255, 255, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 15px;
 	overflow: hidden;
 	padding: 20px;
@@ -53,7 +53,7 @@ main {
 /* 	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a); */
 	background: linear-gradient(to bottom right, #8BAFC4, #8BC6BD);
 /* 	color: #0F0F0F; */
-	color: #696969;
+	color: #515151;
 }
 
 .background-dark {
@@ -126,7 +126,7 @@ header a {
 	font-size: 1.5em;
 	margin-top: 0;
 	margin-bottom: 20px;
-	color: #000;
+	filter: brightness(0.7);
 }
 
 .filter-category {
@@ -135,7 +135,7 @@ header a {
 
 .filter-category h3 {
 	font-size: 1.1em;
-	color: #333;
+	filter: brightness(0.7);
 	margin-bottom: 15px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	padding-bottom: 10px;
@@ -146,13 +146,12 @@ header a {
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
-	cursor: pointer;
 }
 
 .filter-group label {
 	border-radius: 10px;
 	font-weight: 500;
-	color: #333;
+	filter: brightness(0.7);
 	cursor: pointer;
 	padding: 4px 6px;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -240,7 +239,6 @@ header a {
 	font-size: 1em;
 	margin-bottom: 20px;
 	flex-grow: 1;
-	color: #313131;
 }
 
 .filter-features-container, .filter-platforms-container {
