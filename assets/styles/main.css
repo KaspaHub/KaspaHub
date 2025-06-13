@@ -95,7 +95,6 @@ header {
 	padding: 40px 20px;
 	margin-bottom: 20px;
 	padding: 20px;
-	color: #EDEDED;
 }
 
 header h1 {
@@ -110,7 +109,7 @@ header p {
 
 header a {
 	text-decoration: none !important;
-	color: #EDEDED !important;
+	color: #ffffff !important;
 }
 
 .page-wrapper {
@@ -395,7 +394,7 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 }
 
 .intro h1 {
-	color: #8fbc8f;
+	color: #0c3f3a;
 	font-size: 3em;
 	margin-bottom: 10px;
 	font-weight: 700;
