@@ -285,15 +285,13 @@ img {
 }
 
 .link-button {
+	transition: background-color 0.3s ease, transform 0.2s ease;
 	text-decoration: none !important;
 	color: #fff !important;
-	display: inline-block;
 	padding: 12px 25px;
-	background-color: #0c3f3a;
-	border-radius: 8px;
-	margin-top: auto;
-	font-weight: 600;
-	transition: background-color 0.3s ease, transform 0.2s ease;
+	background: rgb(0 126 114);
+	border: 1px solid rgb(0 147 133);
+	border-radius: 16px;
 }
 
 .link-button:hover {
