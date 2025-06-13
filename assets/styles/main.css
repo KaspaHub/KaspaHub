@@ -25,7 +25,6 @@ html, body {
 
 body {
 /* 	background: #0F0F0F; */
-	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -35,12 +34,30 @@ main {
 	min-height: 110vh;
 }
 
-.theme-1 {
+.theme-light {
 	background-color: rgba(255, 255, 255, 0.6);
-	color: #141C10;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 15px;
 	overflow: hidden;
 	padding: 20px;
+}
+.theme-dark {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 15px;
+	overflow: hidden;
+	padding: 20px;
+}
+
+.background-light {
+/* 	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a); */
+	background: linear-gradient(to bottom right, #8BAFC4, #8BC6BD);
+	color: #0F0F0F;
+}
+
+.background-dark {
+	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a);
+	color: #F1F1F1;
 }
 
 input {
@@ -484,5 +501,4 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 	padding: 10px 20px;
 	font-size: 1rem;
 	cursor: pointer;
-	border: 1px solid #444;
 }
