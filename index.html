@@ -35,10 +35,10 @@
 <header>
 	<nav id="page-nav">
 		<h2><a href="/">Kaspa Hub</a></h2>
-  <div class="toggle-theme">
-    <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme">
-    <label for="toggle-theme-checkbox"></label>
-  </div>
+		  <div class="toggle-theme">
+		    <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme">
+		    <label for="toggle-theme-checkbox"></label>
+		  </div>
 	</nav>
 	<div style="text-align: center; margin: 40px;">
 		<h1 style="font-size: 3em; filter: brightness(0.7);">Kaspa Hub</h1>
@@ -87,74 +87,10 @@
 	</div>
 
 </main>
-<script>
-const checkbox = document.getElementById('toggle-theme-checkbox');
-
-checkbox.addEventListener('change', () => {
-  document.cookie = `theme=${checkbox.checked ? 'dark' : 'light'}; path=/; SameSite=Lax`;
-  location.reload();
-});
-
-checkbox.checked = document.cookie.includes('theme=dark');
-
-(function () {
-  const theme = document.cookie.includes('theme=dark') ? 'dark' : 'light';
-
-  document.body.classList.forEach(cls => {
-    if (cls.startsWith('background-')) {
-      document.body.classList.remove(cls);
-    }
-  });
-  document.body.classList.add(`background-${theme}`);
-
-  document.querySelectorAll('[class*="theme-"]').forEach(el => {
-    const original = Array.from(el.classList).find(c => c.startsWith('theme-'));
-    if (original) el.classList.replace(original, `theme-${theme}`);
-  });
-})();
-</script>
 <style>
-.toggle-theme {
-width: 50px;
-height: 50px;
-position: relative;
-}
 
-.toggle-theme input {
-position: absolute;
-opacity: 0;
-pointer-events: none;
-}
-
-.toggle-theme label {
-display: block;
-width: 100%;
-height: 100%;
-border-radius: 50%;
-background-color: #f0f0f0;
-font-size: 24px;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: background-color 0.3s;
-user-select: none;
-}
-
-.toggle-theme input:not(:checked) + label::before {
-content: "🌞";
-}
-
-.toggle-theme input:checked + label::before {
-content: "🌜";
-}
-
-.toggle-theme input:checked + label {
-background-color: #333;
-color: white;
-}
 body.theme-light .intro h1 {
-color: #0c3f3a;
+	color: #0c3f3a !important;
 }
 	
 </style>
