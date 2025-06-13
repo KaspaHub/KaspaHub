@@ -39,60 +39,66 @@
 	</style>
 </head>
 <body class="background-light">
-	<header>
-		<nav id="page-nav"></nav>
-	</header>
-
-	<main class="page-wrapper">
-	<div style="min-height: 300px; align-content: center;">
-		<h1>Build on Kaspa</h1>
-		<p style="padding-left: 7px;">Discover open-source tools for building on Kaspa, including nodes, wallets, visualization tools, and community support applications. <br>Filter by programming language to find the right tool for your development needs.</p>
+<header>
+<nav id="page-nav">
+	<h2><a href="/">Kaspa Hub</a></h2>
+	<div class="toggle-theme">
+		<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+		<label for="toggle-theme-checkbox"></label>
 	</div>
-	<div class="main-content-area">
-            <aside class="sidebar theme-light">
-                <div class="filter-category">
-                    <h2 id="counter"></h2>
-                    <h3>Languages</h3>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="rust" data-feature="rust">
-                        <label for="rust">Rust</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="javascript" data-feature="javascript">
-                        <label for="javascript">JavaScript</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="typescript" data-feature="typescript">
-                        <label for="typescript">TypeScript</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="dart" data-feature="dart">
-                        <label for="dart">Dart</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="go" data-feature="go">
-                        <label for="go">Go</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="php" data-feature="php">
-                        <label for="php">PHP</label>
-                    </div>
-                    <div class="filter-group">
-                        <input type="radio" name="language" id="python" data-feature="python">
-                        <label for="python">Python</label>
-                    </div>
-                </div>
-            </aside>
+</nav>
+</header>
 
-            <section class="filter-list-main">
-                <section class="tool-list-section">
-                    <div class="filter-grid" id="toolGrid">
-                    </div>
-                </section>
-            </section>
-        </div>
-    </main>
-    <footer id="page-footer"></footer>
+<main class="page-wrapper">
+<div style="min-height: 300px; align-content: center;">
+	<h1>Build on Kaspa</h1>
+	<p style="padding-left: 7px;">Discover open-source tools for building on Kaspa, including nodes, wallets, visualization tools, and community support applications. <br>Filter by programming language to find the right tool for your development needs.</p>
+</div>
+<div class="main-content-area">
+    <aside class="sidebar theme-1">
+	<div class="filter-category">
+	    <h2 id="counter"></h2>
+	    <h3>Languages</h3>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="rust" data-feature="rust">
+		<label for="rust">Rust</label>
+	    </div>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="javascript" data-feature="javascript">
+		<label for="javascript">JavaScript</label>
+	    </div>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="typescript" data-feature="typescript">
+		<label for="typescript">TypeScript</label>
+	    </div>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="dart" data-feature="dart">
+		<label for="dart">Dart</label>
+	    </div>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="go" data-feature="go">
+		<label for="go">Go</label>
+	    </div>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="php" data-feature="php">
+		<label for="php">PHP</label>
+	    </div>
+	    <div class="filter-group">
+		<input type="radio" name="language" id="python" data-feature="python">
+		<label for="python">Python</label>
+	    </div>
+	</div>
+    </aside>
+
+    <section class="filter-list-main">
+	<section class="tool-list-section">
+	    <div class="filter-grid" id="toolGrid">
+	    </div>
+	</section>
+    </section>
+</div>
+</main>
+<footer id="page-footer"></footer>
 <script>
 const tools = [
 {
@@ -291,7 +297,7 @@ function renderTools(filteredTools) {
 	filteredTools.forEach(tool => {
 		const card = document.createElement('div');
 		card.classList.add('filter-card');
-		card.classList.add('theme-light');
+		card.classList.add('theme-1');
 		
 		const randomColor = getRandomColor();
 		
