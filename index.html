@@ -104,17 +104,17 @@ checkbox.addEventListener('change', () => {
 
 checkbox.checked = document.cookie.includes('theme=dark');
 
-(function () {
+(function updateThemeClasses() {
   const body = document.body;
   const theme = document.cookie.includes('theme=dark') ? 'dark' : 'light';
 
   body.classList.forEach(cls => {
-    if (cls.startsWith('theme-')) {
+    if (cls.startsWith('theme-') || cls.startsWith('background-')) {
       body.classList.remove(cls);
     }
   });
 
-  body.classList.add(`background-${theme}`);
+  body.classList.add(`theme-${theme}`, `background-${theme}`);
 })();
 </script>
 <style>
