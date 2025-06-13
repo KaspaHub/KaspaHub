@@ -25,9 +25,6 @@ html, body {
 
 body {
 /* 	background: #0F0F0F; */
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 main {
@@ -43,11 +40,18 @@ main {
 	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
+.background-dark, .background-light {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .background-light {
 /* 	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a); */
 	background: linear-gradient(to bottom right, #8BAFC4, #8BC6BD);
 /* 	color: #0F0F0F; */
-	color: #515151;
+/* 	color: #515151; */
+	color: #3d3d3d;
 }
 
 .background-dark {
