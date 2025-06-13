@@ -102,7 +102,7 @@ checkbox.addEventListener('change', () => {
 	location.reload();
 });
 
-checkbox.checked = document.cookie.includes('theme=dark');
+checkbox.checked = document.cookie.includes('theme');
 
 (function updateThemeClasses() {
   const theme = document.cookie.includes('theme=dark') ? 'dark' : 'light';
