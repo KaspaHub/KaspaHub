@@ -104,17 +104,26 @@ checkbox.addEventListener('change', () => {
 
 checkbox.checked = document.cookie.includes('theme=dark');
 
-(function updateThemeClasses() {
-  const body = document.body;
+(function updateThemeAndBackground() {
   const theme = document.cookie.includes('theme=dark') ? 'dark' : 'light';
 
+  const body = document.body;
   body.classList.forEach(cls => {
-    if (cls.startsWith('theme-') || cls.startsWith('background-')) {
+    if (cls.startsWith('background-')) {
       body.classList.remove(cls);
     }
   });
+  body.classList.add(`background-${theme}`);
 
-  body.classList.add(`theme-${theme}`, `background-${theme}`);
+  const themedElements = document.querySelectorAll('[class*="theme-"]');
+  themedElements.forEach(el => {
+    el.classList.forEach(cls => {
+      if (cls.startsWith('theme-')) {
+        el.classList.remove(cls);
+      }
+    });
+    el.classList.add(`theme-${theme}`);
+  });
 })();
 </script>
 <style>
