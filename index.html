@@ -98,13 +98,13 @@
 const checkbox = document.getElementById('toggle-theme-checkbox');
 
 checkbox.addEventListener('change', () => {
-	document.cookie = `theme=${checkbox.checked ? 'dark' : 'light'}; path=/; SameSite=Lax`;
-	location.reload();
+  document.cookie = `theme=${checkbox.checked ? 'dark' : 'light'}; path=/; SameSite=Lax`;
+  location.reload();
 });
 
-checkbox.checked = document.cookie.includes('theme');
+checkbox.checked = document.cookie.includes('theme=dark');
 
-(function updateThemeClasses() {
+(function () {
   const theme = document.cookie.includes('theme=dark') ? 'dark' : 'light';
 
   document.body.classList.forEach(cls => {
@@ -115,10 +115,8 @@ checkbox.checked = document.cookie.includes('theme');
   document.body.classList.add(`background-${theme}`);
 
   document.querySelectorAll('[class*="theme-"]').forEach(el => {
-    const originalThemeClass = Array.from(el.classList).find(c => c.startsWith('theme-'));
-    if (originalThemeClass) {
-      el.classList.replace(originalThemeClass, `theme-${theme}`);
-    }
+    const original = Array.from(el.classList).find(c => c.startsWith('theme-'));
+    if (original) el.classList.replace(original, `theme-${theme}`);
   });
 })();
 </script>
