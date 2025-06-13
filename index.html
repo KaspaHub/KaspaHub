@@ -104,25 +104,21 @@ checkbox.addEventListener('change', () => {
 
 checkbox.checked = document.cookie.includes('theme=dark');
 
-(function updateThemeAndBackground() {
+(function updateThemeClasses() {
   const theme = document.cookie.includes('theme=dark') ? 'dark' : 'light';
 
-  const body = document.body;
-  body.classList.forEach(cls => {
+  document.body.classList.forEach(cls => {
     if (cls.startsWith('background-')) {
-      body.classList.remove(cls);
+      document.body.classList.remove(cls);
     }
   });
-  body.classList.add(`background-${theme}`);
+  document.body.classList.add(`background-${theme}`);
 
-  const themedElements = document.querySelectorAll('[class*="theme-"]');
-  themedElements.forEach(el => {
-    el.classList.forEach(cls => {
-      if (cls.startsWith('theme-')) {
-        el.classList.remove(cls);
-      }
-    });
-    el.classList.add(`theme-${theme}`);
+  document.querySelectorAll('[class*="theme-"]').forEach(el => {
+    const originalThemeClass = Array.from(el.classList).find(c => c.startsWith('theme-'));
+    if (originalThemeClass) {
+      el.classList.replace(originalThemeClass, `theme-${theme}`);
+    }
   });
 })();
 </script>
