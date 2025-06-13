@@ -502,3 +502,7 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 	font-size: 1rem;
 	cursor: pointer;
 }
+#page-nav {
+	display: flex;
+	justify-content: space-between;
+}
