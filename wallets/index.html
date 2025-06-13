@@ -31,7 +31,7 @@
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
 	<script defer src="https://kaspahub.org/assets/scripts/main.js"></script>
 </head>
-<body>
+<body class="background-light">
 <header>
 	<nav id="page-nav"></nav>
 </header>
@@ -42,7 +42,7 @@
 		<p style="padding-left: 7px;">To start using Kaspa, you’ll need a wallet - an app that stores your coins and lets you interact with the network. <br>Explore and filter wallets by features and devices to find the best fit for you.</p>
 	</div>
 	<div class="main-content-area">
-		<aside class="sidebar theme-1">
+		<aside class="sidebar theme-light">
 			<div class="filter-category">
 				<h2 id="counter"></h2>
 				<h3>Features</h3>
@@ -575,7 +575,7 @@ if (filteredWallets.length === 0) {
 filteredWallets.forEach(wallet => {
 	const card = document.createElement('div');
 	card.classList.add('filter-card');
-	card.classList.add('theme-1');
+	card.classList.add('theme-light');
 	
 	let featureTagsHtml = '';
 	let platformTagsHtml = '';
