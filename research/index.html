@@ -40,7 +40,13 @@
 </head>
 <body class="background-light">
 <header>
-<nav id="page-nav"></nav>
+	<nav id="page-nav">
+		<h2><a href="/">Kaspa Hub</a></h2>
+		<div class="toggle-theme">
+			<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+			<label for="toggle-theme-checkbox"></label>
+		</div>
+	</nav>
 </header>
 
 <main class="page-wrapper">
@@ -49,7 +55,7 @@
     <p style="padding-left: 7px;">Explore a comprehensive selection of tools and resources for the research and study of Kaspa, offering valuable insights into on-chain data and network activity.</p>
 </div>
 <div class="main-content-area">
-	<aside class="sidebar theme-light">
+	<aside class="sidebar theme-1">
 	<div class="filter-category">
 	    <h2 id="counter"></h2>
 	    <h3>Features</h3>
@@ -515,7 +521,7 @@ function renderTools(filteredTools) {
 	filteredTools.forEach(tool => {
 		const card = document.createElement('div');
 		card.classList.add('filter-card');
-		card.classList.add('theme-light');
+		card.classList.add('theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
 	<img src="${tool.logo}" alt="${tool.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
