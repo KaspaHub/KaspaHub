@@ -379,23 +379,6 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 	padding: 0 20px;
 }
 
-.intro {
-	text-align: center; 
-	margin-bottom: 50px;
-}
-
-.intro h1 {
-	color: #8fbc8f;
-	font-size: 3em;
-	margin-bottom: 10px;
-	font-weight: 700;
-}
-
-.intro p {
-	font-size: 1.2em;
-	color: #6c757d;
-}
-
 .grid-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -404,8 +387,8 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 
 .card {
 	transition: all 0.3s ease;
-	min-height: 220px;
-	max-height: 290px;
+	min-height: 200px;
+	max-height: 200px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
