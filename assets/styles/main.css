@@ -97,16 +97,6 @@ header {
 	padding: 20px;
 }
 
-header h1 {
-	color: #0056b3;
-	margin-bottom: 10px;
-	font-weight: 700;
-}
-
-header p {
-	color: #6c757d;
-}
-
 header a {
 	text-decoration: none !important;
 	color: #ffffff !important;
@@ -394,7 +384,7 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 }
 
 .intro h1 {
-	color: #0c3f3a;
+	color: #8fbc8f;
 	font-size: 3em;
 	margin-bottom: 10px;
 	font-weight: 700;
