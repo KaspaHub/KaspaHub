@@ -271,7 +271,9 @@ const tools = [
 ];
 
 const toolGrid = document.getElementById('toolGrid');
-const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]'); // Changed to radio buttons
+const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]');
+
+let lastCheckedRadio = null;
 
 function getRandomColor() {
 	const letters = '0123456789ABCDEF';
@@ -284,10 +286,9 @@ function getRandomColor() {
 
 function renderTools(filteredTools) {
 	toolGrid.innerHTML = '';
-	
 	const counter = document.getElementById('counter');
 	counter.textContent = `(${filteredTools.length} of ${tools.length})`;
-	
+
 	if (filteredTools.length === 0) {
 		toolGrid.innerHTML = '<p class="no-items-message">No tools match your selected filters.</p>';
 		return;
@@ -297,9 +298,9 @@ function renderTools(filteredTools) {
 		const card = document.createElement('div');
 		card.classList.add('filter-card');
 		card.classList.add('theme-1');
-		
+
 		const randomColor = getRandomColor();
-		
+
 		card.innerHTML = `
 <div class="filter-logo" style="background-color: ${randomColor}; display: flex; align-items: center; justify-content: center; height: 100px;">
 <h3 style="color: #F1F1F1; margin: 0;">${tool.name}</h3>
@@ -308,12 +309,11 @@ function renderTools(filteredTools) {
 <p class="filter-description">${tool.description}</p>
 <a href="${tool.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button">View</a>`;
 		toolGrid.appendChild(card);
-		});
+	});
 }
 
 function filterTools() {
-	const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature; // Logic for radio buttons
-	
+	const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature;
 	const filtered = selectedFeature
 		? tools.filter(tool => tool.features[selectedFeature])
 		: tools;
@@ -321,7 +321,15 @@ function filterTools() {
 }
 
 filterRadios.forEach(radio => {
-	radio.addEventListener('change', filterTools);
+	radio.addEventListener('click', function () {
+		if (lastCheckedRadio === this) {
+			this.checked = false;
+			lastCheckedRadio = null;
+		} else {
+			lastCheckedRadio = this;
+		}
+		filterTools();
+	});
 });
 
 renderTools(tools);
