@@ -2,8 +2,8 @@
 # https://kaspahub.org
 
 /* TEAM */
-KaspaHub Team: The dedicated team behind KaspaHub, building resources for the Kaspa cryptocurrency community.
-Contact: https://x.com/KaspaTeam
+Kaspa Hub Team: Built by the Kaspa community, for the Kaspa community. We are a global group of volunteers dedicated to developing and maintaining open-source resources for the Kaspa ecosystem.
+Contact: https://x.com/kaspahuborg
 Location: Global
 
 /* THANKS */
@@ -11,11 +11,11 @@ To the Kaspa community for their support and contributions.
 
 /* SITE */
 Purpose: Providing a hub for Kaspa cryptocurrency resources, including exchange listings, wallets, merchant solutions, developer tools and more.
-Open Source: KaspaHub is an entirely open-source project. We welcome community contributions!
+Open Source: Kaspa Hub is an entirely open-source project. We welcome community contributions!
 GitHub: https://github.com/KaspaHub/kaspahub.github.io
-Last Update: 2025-06-02
+Last Update: 2025-06-14
 Technologies: HTML, CSS, JavaScript
 Language: English
 
 /* NOTE */
-Learn more about Kaspa at https://kaspahub.org.
+Learn more about Kaspa at https://kaspa.org
