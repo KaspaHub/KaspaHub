@@ -38,6 +38,8 @@ main {
 	overflow: hidden;
 	padding: 20px;
 	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 }
 
 .background-light {
@@ -468,6 +470,7 @@ a:active {color:#6EC7BB; text-decoration: underline; }
 	padding: 10px 20px;
 	font-size: 1rem;
 	cursor: pointer;
+	color: inherit;
 }
 #page-nav {
 	display: flex;
