@@ -524,6 +524,7 @@ const researchTools = [
 
 const toolGrid = document.getElementById('toolGrid');
 const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]');
+let lastCheckedRadio = null;
 
 function renderTools(filteredTools) {
 	toolGrid.innerHTML = '';
@@ -533,11 +534,10 @@ function renderTools(filteredTools) {
 		toolGrid.innerHTML = '<p class="no-items-message">No research tools match your selected filter.</p>';
 		return;
 	}
-	
+
 	filteredTools.forEach(tool => {
 		const card = document.createElement('div');
-		card.classList.add('filter-card');
-		card.classList.add('theme-1');
+		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
 	<img src="${tool.logo}" alt="${tool.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
@@ -558,7 +558,15 @@ function filterTools() {
 }
 
 filterRadios.forEach(radio => {
-	radio.addEventListener('change', filterTools);
+	radio.addEventListener('click', function () {
+		if (lastCheckedRadio === this) {
+			this.checked = false;
+			lastCheckedRadio = null;
+		} else {
+			lastCheckedRadio = this;
+		}
+		filterTools();
+	});
 });
 
 renderTools(researchTools);
