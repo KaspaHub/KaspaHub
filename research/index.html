@@ -52,49 +52,41 @@
 
 <main class="page-wrapper">
 <div style="min-height: 300px; align-content: center;">
-    <h1>Study Kaspa</h1>
-    <p style="padding-left: 7px;">Explore a comprehensive selection of tools and resources for the research and study of Kaspa, offering valuable insights into on-chain data and network activity.</p>
+	<h1>Study Kaspa</h1>
+	<p style="padding-left: 7px;">Explore a comprehensive selection of tools and resources for the research and study of Kaspa, offering valuable insights into on-chain data and network activity.</p>
 </div>
 <div class="main-content-area">
-	<aside class="sidebar theme-1">
+<aside class="sidebar theme-1">
 	<div class="filter-category">
-	    <h2 id="counter"></h2>
-	    <h3>Features</h3>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="articles" data-feature="articles">
-		<label for="articles">Articles</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="videos" data-feature="videos">
-		<label for="videos">Videos</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="analytics" data-feature="analytics">
-		<label for="analytics">Analytics</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="blockExplorer" data-feature="blockExplorer">
-		<label for="blockExplorer">Block Explorers</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="visualizer" data-feature="visualizer">
-		<label for="visualizer">Visualizers</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="krc20" data-feature="krc20">
-		<label for="krc20">KRC-20</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="feature" id="mining" data-feature="mining">
-		<label for="mining">Mining</label>
-	    </div>
+		<h2 id="counter"></h2>
+		<h3>Features</h3>
+		<div class="filter-group">
+			<input type="radio" name="feature" id="articles" data-feature="articles">
+			<label for="articles">Articles</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="feature" id="videos" data-feature="videos">
+			<label for="videos">Videos</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="feature" id="analytics" data-feature="analytics">
+			<label for="analytics">Analytics</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="feature" id="blockExplorer" data-feature="blockExplorer">
+			<label for="blockExplorer">Block Explorers</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="feature" id="visualizer" data-feature="visualizer">
+			<label for="visualizer">Visualizers</label>
+		</div>
 	</div>
-	</aside>
-	<section class="filter-list-main">
-	<section class="research-tools-section">
-		<div class="filter-grid" id="toolGrid"></div>
-	</section>
-	</section>
+</aside>
+<section class="filter-list-main">
+<section class="research-tools-section">
+	<div class="filter-grid" id="toolGrid"></div>
+</section>
+</section>
 </div>
 </main>
 <footer id="page-footer">2025 Kaspa Community Hub</footer>
@@ -110,9 +102,7 @@ const researchTools = [
 		videos: true,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -125,9 +115,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: true,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -140,9 +128,7 @@ const researchTools = [
 		videos: true,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -155,9 +141,7 @@ const researchTools = [
 		videos: true,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -170,9 +154,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -185,9 +167,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -200,9 +180,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: true
+		visualizer: false
 	}
 },
 {
@@ -215,9 +193,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -230,9 +206,7 @@ const researchTools = [
 		videos: true,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -245,9 +219,7 @@ const researchTools = [
 		videos: true,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -258,11 +230,9 @@ const researchTools = [
 	features: {
 		articles: false,
 		videos: false,
-		analytics: false,
+		analytics: true,
 		blockExplorer: true,
-		visualizer: false,
-		krc20: true,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -275,9 +245,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -290,9 +258,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -305,9 +271,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: true,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -320,9 +284,20 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
+	}
+},
+{
+	name: "KatScan",
+	description: "KatScan is a KRC-20 token explorer for the Kaspa ecosystem, offering real-time tracking, market analysis, and a mint heatmap for visualizing token activity.",
+	officialSite: "https://katscan.xyz",
+	logo: "https://kaspahub.org/assets/kaspa.webp",
+	features: {
+		articles: false,
+		videos: false,
+		analytics: true,
+		blockExplorer: true,
+		visualizer: false
 	}
 },
 {
@@ -335,9 +310,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -350,9 +323,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -365,9 +336,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -380,9 +349,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: true,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -395,9 +362,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -410,9 +375,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -425,9 +388,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -440,9 +401,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -455,9 +414,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -470,9 +427,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -485,9 +440,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -500,24 +453,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
-	}
-},
-{
-	name: "Kaspool",
-	description: "Kaspool is a high-performing Kaspa mining pool with a 0% PPLNS fee and a minimum payout of 10 KAS daily. It offers global regional servers, timely payments, and advanced data analysis for efficient mining.",
-	officialSite: "https://kaspool.org",
-	logo: "https://kaspahub.org/assets/kaspa.webp",
-	features: {
-		articles: false,
-		videos: false,
-		analytics: true,
-		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: true
+		visualizer: false
 	}
 },
 {
@@ -530,9 +466,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: true,
-		visualizer: true,
-		krc20: true,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -545,9 +479,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -560,9 +492,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: true,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -575,9 +505,7 @@ const researchTools = [
 		videos: false,
 		analytics: true,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -590,9 +518,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: false,
-		krc20: false,
-		mining: false
+		visualizer: false
 	}
 },
 {
@@ -605,9 +531,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -620,9 +544,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 },
 {
@@ -635,9 +557,7 @@ const researchTools = [
 		videos: false,
 		analytics: false,
 		blockExplorer: false,
-		visualizer: true,
-		krc20: false,
-		mining: false
+		visualizer: true
 	}
 }
 ];
