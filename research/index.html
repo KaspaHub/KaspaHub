@@ -93,7 +93,7 @@
 <script>
 const researchTools = [
 {
-	name: "Kaspa",
+	name: "Kaspa.org",
 	description: "The main Kaspa website provides comprehensive information on Kaspa’s GHOSTDAG protocol, blockDAG architecture, and ecosystem resources, including links to wallets, explorers, and development tools for network analysis.",
 	officialSite: "https://kaspa.org",
 	logo: "https://kaspahub.org/assets/kaspa.webp",
@@ -112,6 +112,19 @@ const researchTools = [
 	logo: "https://kaspahub.org/assets/logos/kaspacom.webp",
 	features: {
 		articles: false,
+		analytics: false,
+		blockExplorer: false,
+		videos: false,
+		visualizer: false
+	}
+},
+{
+	name: "KASmedia",
+	description: "KASmedia publishes research and news on Kaspa’s blockDAG, covering GHOSTDAG, on-chain data, and mining trends. It offers insights for researchers via articles and event coverage.",
+	officialSite: "https://www.kasmedia.com",
+	logo: "https://kaspahub.org/assets/logos/kasmedia.webp",
+	features: {
+		articles: true,
 		analytics: false,
 		blockExplorer: false,
 		videos: false,
@@ -145,12 +158,12 @@ const researchTools = [
 	}
 },
 {
-	name: "KASmedia",
-	description: "KASmedia publishes research and news on Kaspa’s blockDAG, covering GHOSTDAG, on-chain data, and mining trends. It offers insights for researchers via articles and event coverage.",
-	officialSite: "https://www.kasmedia.com",
-	logo: "https://kaspahub.org/assets/logos/kasmedia.webp",
+	name: "Mineable Money",
+	description: "Mineable.money provides Kaspa resources for developers and miners, offering links to mining tools, developer APIs, and network data for the decentralized Kaspa cryptocurrency.",
+	officialSite: "https://mineable.money",
+	logo: "https://kaspahub.org/assets/logos/mineablemoney.webp",
 	features: {
-		articles: true,
+		articles: false,
 		analytics: false,
 		blockExplorer: false,
 		videos: false,
@@ -175,6 +188,19 @@ const researchTools = [
 	description: "A wiki page for Kaspa, providing comprehensive documentation and information on the Kaspa blockchain, its protocol, and ecosystem.",
 	officialSite: "https://wiki.kaspa.org",
 	logo: "https://kaspahub.org/assets/logos/kaspawiki.webp",
+	features: {
+		articles: true,
+		analytics: false,
+		blockExplorer: false,
+		videos: false,
+		visualizer: false
+	}
+},
+{
+	name: "KaspArchive",
+	description: "A resource providing factual information and debunking myths about the Kaspa cryptocurrency, aimed at educating users about its features and capabilities.",
+	officialSite: "https://kasparchive.com",
+	logo: "https://kaspahub.org/assets/kaspa.webp",
 	features: {
 		articles: true,
 		analytics: false,
@@ -223,14 +249,14 @@ const researchTools = [
 	}
 },
 {
-	name: "Mineable Money",
-	description: "Mineable.money provides Kaspa resources for developers and miners, offering links to mining tools, developer APIs, and network data for the decentralized Kaspa cryptocurrency.",
-	officialSite: "https://mineable.money",
-	logo: "https://kaspahub.org/assets/logos/mineablemoney.webp",
+	name: "Kaspa Explorer",
+	description: "The Kaspa Block Explorer allows querying addresses, blocks, and transactions, including KRC-20 token transactions, providing essential on-chain data for researchers analyzing Kaspa's blockDAG structure.",
+	officialSite: "https://explorer.kaspa.org",
+	logo: "https://kaspahub.org/assets/kaspa.webp",
 	features: {
 		articles: false,
 		analytics: false,
-		blockExplorer: false,
+		blockExplorer: true,
 		videos: false,
 		visualizer: false
 	}
@@ -249,16 +275,16 @@ const researchTools = [
 	}
 },
 {
-	name: "KaspArchive",
-	description: "A resource providing factual information and debunking myths about the Kaspa cryptocurrency, aimed at educating users about its features and capabilities.",
-	officialSite: "https://kasparchive.com",
+	name: "Kaspalytics",
+	description: "Kaspalytics provides on-chain analysis with a DAG Tip Visualizer, market data (price, market cap, volume), and network statistics (DAA Score, hashrate, supply). It includes tools like Circulating Supply Aging and Addresses by KAS Balance.",
+	officialSite: "https://www.kaspalytics.com",
 	logo: "https://kaspahub.org/assets/kaspa.webp",
 	features: {
-		articles: true,
-		analytics: false,
+		articles: false,
+		analytics: true,
 		blockExplorer: false,
 		videos: false,
-		visualizer: false
+		visualizer: true
 	}
 },
 {
@@ -269,32 +295,6 @@ const researchTools = [
 	features: {
 		articles: false,
 		analytics: false,
-		blockExplorer: false,
-		videos: false,
-		visualizer: true
-	}
-},
-{
-	name: "Kaspa Explorer",
-	description: "The Kaspa Block Explorer allows querying addresses, blocks, and transactions, including KRC-20 token transactions, providing essential on-chain data for researchers analyzing Kaspa's blockDAG structure.",
-	officialSite: "https://explorer.kaspa.org",
-	logo: "https://kaspahub.org/assets/kaspa.webp",
-	features: {
-		articles: false,
-		analytics: false,
-		blockExplorer: true,
-		videos: false,
-		visualizer: false
-	}
-},
-{
-	name: "Kaspalytics",
-	description: "Kaspalytics provides on-chain analysis with a DAG Tip Visualizer, market data (price, market cap, volume), and network statistics (DAA Score, hashrate, supply). It includes tools like Circulating Supply Aging and Addresses by KAS Balance.",
-	officialSite: "https://www.kaspalytics.com",
-	logo: "https://kaspahub.org/assets/kaspa.webp",
-	features: {
-		articles: false,
-		analytics: true,
 		blockExplorer: false,
 		videos: false,
 		visualizer: true
