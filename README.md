@@ -2,13 +2,15 @@
 
 https://kaspahub.org
 
-https://kaspahub.org/research
+https://kaspahub.org/projects/
 
-https://kaspahub.org/wallets
+https://kaspahub.org/research/
 
-https://kaspahub.org/exchanges
+https://kaspahub.org/wallets/
 
-https://kaspahub.org/comparison
+https://kaspahub.org/exchanges/
+
+https://kaspahub.org/comparison/
 
 https://kaspahub.org/solutions
 
