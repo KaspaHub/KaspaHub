@@ -1,6 +1,7 @@
 # Explore the Kaspa ecosystem
+Dive into the Kaspa universe with Kaspa Hub - an independent community-driven platform bringing together resources, tools, and connections for anyone interested in the Kaspa network.
 
-https://kaspahub.org
+https://kaspahub.org/
 
 https://kaspahub.org/projects/
 
@@ -12,8 +13,8 @@ https://kaspahub.org/exchanges/
 
 https://kaspahub.org/comparison/
 
-https://kaspahub.org/solutions
+https://kaspahub.org/solutions/
 
-https://kaspahub.org/developers
+https://kaspahub.org/developers/
 
 https://github.com/KaspaHub/donations
