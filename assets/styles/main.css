@@ -406,7 +406,14 @@ blockquote::before {
 	top: -13px;
 	content: "\275D";
 }
-
+code {
+	font-family: Consolas,"courier new";
+	background-color: rgba(192,192,192, 0.3);
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 1.05em;
+	border-radius: 6px;
+}
 .container {
 	max-width: 1200px;
 	margin: 40px auto;
