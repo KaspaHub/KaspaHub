@@ -363,7 +363,49 @@ a {cursor: pointer; font-weight: bold; text-decoration: none; transition: color 
 a:link {color:#1C62B9; }
 a:visited {color:#1C62B9; }
 a:hover {color:#3952C6; text-decoration: underline; }
-a:active {color:#6EC7BB; text-decoration: underline; }
+a:active {color:#D8B234; text-decoration: underline; }
+pre {
+	font-family: Consolas,"courier new";
+	background-color: rgba(45,55,60, 0.9);
+	color: #CED7E5;
+	font-size: 1.1rem;
+	border-radius: 6px;
+	padding: 10px;
+	margin-left: 10%;
+	margin-right: 10%;
+	position: relative;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+blockquote p {
+	margin: 0;
+}
+blockquote {
+	border-radius: 10px;
+	background-color: rgba(237,237,237, 0.6);
+	color: #212121;
+	font-size: 1.1rem;
+	font-style: italic;
+	padding: 10px;
+	
+	position: relative;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	word-break: break-word;
+	
+	min-width: 128px;
+	width: fit-content;
+}
+blockquote::before {
+	position: absolute;
+	color: lightgray;
+	font-size: 2rem;
+	left: -13px;
+	top: -13px;
+	content: "\275D";
+}
 
 .container {
 	max-width: 1200px;
