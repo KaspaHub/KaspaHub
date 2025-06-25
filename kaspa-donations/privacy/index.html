@@ -48,34 +48,43 @@
 		<h1>Kaspa Donations Privacy Policy</h1>
 	</div>
 	<article class="theme-1">
-		<p>Effective date: June 24, 2025</p>
-
-		<p><strong>Kaspa Donations</strong> is a browser extension designed to help users discover and use Kaspa donation addresses on websites.<br>This Privacy Policy explains what data we collect, how we use it, and your rights.</p>
-
+		<p>Effective date: June 25, 2025</p>
+		
+		<p><strong>Kaspa Donations</strong> is a browser extension designed to help users discover and use Kaspa donation addresses on websites. This Privacy Policy explains what data we collect, how we use it, and your rights.</p>
+		
 		<h3>1. Data We Collect</h3>
-		<p>Kaspa Donations extension respects your data - it does <strong>not</strong> collect, store, or transmit any personal information or browsing data. Specifically:</p>
+		<p>Kaspa Donations extension is built with privacy in mind. It does <strong>not</strong> collect, store, or transmit any personal or sensitive information. Specifically:</p>
 		<ul>
-			<li>We do not collect or track your IP address, browsing history, or any personally identifiable information.</li>
-			<li>We do not send any data to external servers.</li>
-			<li>We do not use cookies, analytics, or trackers.</li>
+		<li>We do not collect your IP address, browsing history, or any personally identifiable information.</li>
+		<li>We do not send any data to external servers or third parties.</li>
+		<li>We do not use cookies, analytics, trackers, or fingerprinting techniques.</li>
+		<li>All processing happens locally in your browser.</li>
 		</ul>
-
+		
 		<h3>2. How the Extension Works</h3>
-		<p>Kaspa Donations operates entirely within your browser. When activated, it scans the current page for specific <code>&lt;meta&gt;</code> tags (<code>kaspa:wallet</code> and <code>kaspa:title</code>) to display donation details. All processing happens locally on your device.</p>
-
+		<p>Kaspa Donations operates entirely within your browser. When active, it does the following:</p>
+		<ul>
+		<li>Injects a script on web pages you visit (limited to HTTP/HTTPS pages) to look for specific <code>&lt;meta&gt;</code> tags: <code>kaspa:wallet</code> and optionally <code>kaspa:title</code>.</li>
+		<li>If a valid Kaspa address is found, it displays the address and optionally generates a QR code for your convenience. All of this happens locally in your browser session.</li>
+		<li>If no valid donation address is found or if the website doesn't support Kaspa, the extension simply informs you and takes no further action.</li>
+		<li>It uses icon changes and popup behavior to give visual feedback but does not track user actions or interactions.</li>
+		</ul>
+		
 		<h3>3. Permissions</h3>
-		<p>The extension requests minimal permissions:
-			<ul>
-				<li><strong>activeTab</strong> - so it can read the current page only when you activate it.</li>
-				<li><strong>scripting</strong> - to inject a script that reads meta tags on the page.</li>
-			</ul>
-		</p>
-
-		<h3>4. Changes to This Policy</h3>
-		<p>We may update this policy if necessary. Any changes will be posted on this page with a revised "Effective date."</p>
-
-		<h3>5. Contact</h3>
-		<p>If you have any questions or concerns about this privacy policy, please contact us at <a href="https://x.com/Kaspahuborg">https://x.com/Kaspahuborg</a>.</p>
+		<p>To function properly, the extension requests the following minimal permissions:</p>
+		<ul>
+		<li><strong>activeTab</strong> – Allows the extension to run only on the currently active browser tab when you activate it.</li>
+		<li><strong>scripting</strong> – Enables the extension to inject and execute a script that reads the meta tags from the page.</li>
+		</ul>
+		
+		<h3>4. Content Script Behavior</h3>
+		<p>The extension includes a content script that runs on all HTTP and HTTPS pages. This script checks for Kaspa-related meta tags and sends a message to the background script to update the extension icon accordingly. No data is stored or transmitted beyond this internal messaging.</p>
+		
+		<h3>5. Changes to This Policy</h3>
+		<p>If we make changes to this Privacy Policy, they will be posted here with an updated "Effective date." We encourage you to check this page for updates periodically.</p>
+		
+		<h3>6. Contact</h3>
+		<p>If you have any questions or concerns about this privacy policy, please reach out at <a href="https://x.com/Kaspahuborg">https://x.com/Kaspahuborg</a>.</p>
 	</article>
 </main>
 <footer id="page-footer">2025 Kaspa Community Hub</footer>
