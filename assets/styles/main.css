@@ -303,7 +303,22 @@ img {
 	font-size: 1.2em;
 }
 
-@media (max-width: 992px) {
+.articleVid {
+	position: relative;
+	display: block;
+	border: none;
+	margin: 0 auto;
+	border-radius: 15px;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 800px) and (max-aspect-ratio: 1/1) {
+	.articleVid {
+		min-width: 100%;
+		max-width: 100%;
+	}
+	
 	#counter {
 		display: none;
 	}
