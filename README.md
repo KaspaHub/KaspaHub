@@ -7,7 +7,7 @@ https://kaspahub.org/projects/
 
 https://kaspahub.org/communities/
 
-https://kaspahub.org/research/
+https://kaspahub.org/resources/
 
 https://kaspahub.org/wallets/
 
