@@ -19,4 +19,4 @@ https://kaspahub.org/solutions/
 
 https://kaspahub.org/developers/
 
-https://github.com/KaspaHub/donations
+https://github.com/KaspaHub/donation-page
