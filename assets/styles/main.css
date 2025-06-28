@@ -100,6 +100,12 @@ header a {
 	color: #ffffff !important;
 }
 
+.intro {
+	padding-left: 10px; 
+	min-height: 300px; 
+	align-content: center;
+}
+
 .page-wrapper {
 	max-width: 1300px;
 	margin: 0 auto;
