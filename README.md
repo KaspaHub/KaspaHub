@@ -28,8 +28,8 @@ https://github.com/KaspaHub/donation-page
 
 Kaspa Hub is freely available for anyone to use, copy, and create localized versions. You are encouraged to adapt and translate the platform to serve your community better.
 
-However, there is one important requirement:
-All pages in your localized version must include the original <footer> element unchanged, except for the home page where it can be omitted or customized.
+However, there is one requirement:
+All pages in your localized version must include the original &lt;footer&gt; element unchanged, except for the home page where it can be omitted or customized.
 
 This ensures consistent attribution and community connection across all versions of Kaspa Hub.
 
