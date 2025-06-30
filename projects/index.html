@@ -64,6 +64,7 @@
 		<div class="filter-group"><input type="radio" name="feature" id="ai" data-feature="ai"><label for="ai">AI</label></div>
 		<div class="filter-group"><input type="radio" name="feature" id="analytics" data-feature="analytics"><label for="analytics">Analytics</label></div>
 		<div class="filter-group"><input type="radio" name="feature" id="defi" data-feature="defi"><label for="defi">DeFi</label></div>
+		<div class="filter-group"><input type="radio" name="feature" id="gambling" data-feature="gambling"><label for="gambling">Gambling</label></div>
 		<div class="filter-group"><input type="radio" name="feature" id="games" data-feature="games"><label for="games">Games</label></div>
 		<div class="filter-group"><input type="radio" name="feature" id="jobs" data-feature="jobs"><label for="jobs">Jobs</label></div>
 		<div class="filter-group"><input type="radio" name="feature" id="launchpad" data-feature="launchpad"><label for="launchpad">Launchpad</label></div>
@@ -304,6 +305,15 @@ const communityProjects = [
 	}
 },
 {
+	name: "PPKAS",
+	description: "A KRC-20 token on Kaspa, combining a meme token with the first play-to-earn (P2E) app in Telegram, allowing users to play mobile games, collect NFTs, and earn tokens while learning about the Kaspa ecosystem.",
+	officialSite: "https://ppkas.space",
+	logo: "https://kaspahub.org/assets/logos/ppkas.webp",
+	features: {
+		games: true,
+	}
+},
+{
 	name: "KasCasino",
 	description: "A premier crypto casino on Kaspa, offering handcrafted games like Plinko, Blackjack, and Kaspian Cross, with KAS-based betting, sports betting, and fast, transparent payments.",
 	officialSite: "https://www.kascasino.xyz",
@@ -314,17 +324,8 @@ const communityProjects = [
 	}
 },
 {
-	name: "PPKAS",
-	description: "A KRC-20 token on Kaspa, combining a meme token with the first play-to-earn (P2E) app in Telegram, allowing users to play mobile games, collect NFTs, and earn tokens while learning about the Kaspa ecosystem.",
-	officialSite: "https://ppkas.space",
-	logo: "https://kaspahub.org/assets/logos/ppkas.webp",
-	features: {
-		games: true,
-	}
-},
-{
 	name: "ProbiFi",
-	description: "Kaspa’s first prediction market, enabling trading on outcomes of real-world events like politics, crypto, sports, and culture with fast, secure transactions.",
+	description: "Kaspa’s first decentralized prediction market, enabling trading on outcomes of real-world events like politics, crypto, sports, and culture with fast, secure transactions.",
 	officialSite: "https://probifi.gitbook.io/probifi-documentation/",
 	logo: "https://kaspahub.org/assets/logos/probifi.webp",
 	features: {
