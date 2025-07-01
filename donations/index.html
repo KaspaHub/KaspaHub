@@ -7,33 +7,16 @@
 <meta name="theme-color" content="#000000" />
 <title>Kaspa Link</title>
 <style>
-body {
-  font-family: system-ui, sans-serif;
-  background-color: #f0f2f5;
-  margin: 0;
-  padding: 2rem;
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-h1 {
-  font-size: 2rem;
-  color: #222;
-  margin-bottom: 1.5rem;
-  text-align: center;
 }
 #text-display {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
-  color: #333;
   word-wrap: break-word;
 }
 #qr-code {
@@ -62,17 +45,32 @@ h1 {
   user-select: none;
   overflow: hidden;
   border-radius: 15px; 
+  display: flex;
+;
 }
 </style>
 <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
-<body>
+<body class="">
+<header>
+  <nav id="page-nav">
+    <h2><a href="/">Kaspa Hub</a></h2>
+    <div class="toggle-theme">
+      <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+      <label for="toggle-theme-checkbox"></label>
+    </div>
+  </nav>
+</header>
+<main class="container">
 <h1 id="page-title">Kaspa Donations</h1>
-<div id="text-display">Loading...</div>
+<div id="text-display" class="theme-1">Loading...</div>
 <div id="qr-code"></div>
 <button id="copy-button" style="display:none;">Copy Wallet Address</button>
+</main>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery-qrcode-0.18.0.min.js"></script>
+<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+<script defer src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/main.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
