@@ -25,10 +25,7 @@ html, body {
 
 body {
 /* 	background: #0F0F0F; */
-}
-
-main {
-	min-height: 110vh;
+	min-height: 100vh;
 }
 
 .theme-1 {
