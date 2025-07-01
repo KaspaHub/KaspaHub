@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="theme-color" content="#000000" />
+<title>Kaspa Link</title>
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#text-display {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  word-wrap: break-word;
+}
+#qr-code {
+  margin-top: 1.5rem;
+}
+#copy-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#copy-button:hover {
+  background-color: #45a049;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
+#qr-code {
+  user-select: none;
+  overflow: hidden;
+  border-radius: 15px; 
+}
+</style>
+</head>
+<body>
+<h1 id="page-title">Kaspa Donations</h1>
+<div id="text-display">Loading...</div>
+<div id="qr-code"></div>
+<button id="copy-button" style="display:none;">Copy Wallet Address</button>
+<script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery-qrcode-0.18.0.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawWallet = urlParams.get("wallet");
+  const rawHandle = urlParams.get("handle");
+
+  const displayElement = document.getElementById("text-display");
+  const titleElement = document.getElementById("page-title");
+  const qrCodeElement = document.getElementById("qr-code");
+  const copyButton = document.getElementById("copy-button");
+
+  function setMetaTag(name, content) {
+    const meta = document.createElement('meta');
+    meta.setAttribute('name', name);
+    meta.setAttribute('content', content);
+    document.head.appendChild(meta);
+  }
+
+  if (rawHandle) {
+    const decodedHandle = decodeURIComponent(rawHandle);
+    document.title = decodedHandle;
+    titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
+    setMetaTag('kaspa:title', '@' + decodedHandle);
+  }
+
+  if (rawWallet) {
+    const decodedWallet = decodeURIComponent(rawWallet);
+    const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
+
+    if (!kaspaRegex.test(decodedWallet)) {
+      displayElement.innerHTML = "<span class='error'>Invalid Kaspa wallet address format.</span>";
+      return;
+    }
+
+    displayElement.textContent = decodedWallet;
+
+    $('#qr-code').qrcode({
+      render: 'image',
+      text: decodedWallet,
+      size: 256,
+      quiet: 3
+    });
+
+    copyButton.style.display = "inline-block";
+
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(decodedWallet).then(() => {
+        const originalText = copyButton.textContent;
+        copyButton.textContent = 'Copied!';
+        setTimeout(() => {
+          copyButton.textContent = originalText;
+        }, 1500);
+      }).catch(err => {
+        console.error('Clipboard copy failed:', err);
+      });
+    });
+
+    setMetaTag('kaspa:wallet', decodedWallet);
+
+  } else {
+    displayElement.textContent = "No 'wallet' parameter found in the URL.";
+  }
+});
+</script>
+</body>
+</html>
