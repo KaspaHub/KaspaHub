@@ -6,9 +6,8 @@
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="theme-color" content="#000000" />
 	<title>Kaspa Link</title>
-	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
-	<script defer src="https://kaspahub.org/assets/scripts/main.js"></script>
+	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
 <body class="">
 	
@@ -20,6 +19,7 @@
 			<label for="toggle-theme-checkbox"></label>
 		</div>
 	</nav>
+	<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
 	
 <main class="container">
