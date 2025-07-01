@@ -28,9 +28,31 @@
 	<meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
 	<meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
 	
-	<link rel="icon" type="image/x-icon" href="https://kaspahub.org/favicon.ico" />
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
-	<script defer src="https://kaspahub.org/assets/scripts/main.js"></script>
+	<script>
+	const checkbox = document.getElementById('toggle-theme-checkbox');
+	checkbox.addEventListener('change', () => {
+	var theme;
+	if (checkbox.checked) {
+	theme = 'dark';
+	} else {
+	theme = 'light';
+	}
+	document.cookie = 'theme=' + theme + '; path=/; SameSite=Lax';
+	location.reload();
+	});
+	checkbox.checked = document.cookie.includes('theme=dark');
+	(function () {
+	var theme;
+	if (document.cookie.includes('theme=dark')) {
+	theme = 'dark';
+	} else {
+	theme = 'light';
+	}
+	document.body.classList.add('background-' + theme);
+	})();
+	</script>
+	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
 <body class="">
 <header>
