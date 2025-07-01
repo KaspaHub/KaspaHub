@@ -28,21 +28,22 @@
 	<meta name="kaspa:title" content="Thanks for being here - your support is appreciated more than you know." />
 	<meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
  
-	<link rel="icon" type="image/x-icon" href="https://kaspahub.org/favicon.ico" />
-	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css">
-	<script defer src="https://kaspahub.org/assets/scripts/main.js"></script>
-
+	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
 <body class="">
+	
 <header>
-<nav id="page-nav">
-	<h2><a href="/">Kaspa Hub</a></h2>
-	<div class="toggle-theme">
-		<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
-		<label for="toggle-theme-checkbox"></label>
-	</div>
-</nav>
+	<nav id="page-nav">
+		<h2><a href="/">Kaspa Hub</a></h2>
+		<div class="toggle-theme">
+			<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+			<label for="toggle-theme-checkbox"></label>
+		</div>
+	</nav>
+	<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
+	
 <main class="page-wrapper">
 <div class="intro">
 	<h1>Kaspa Donations Extension</h1>
