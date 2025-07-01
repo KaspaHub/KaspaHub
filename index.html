@@ -28,30 +28,8 @@
 	<meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
 	<meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
 	
+	<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
-	<script>
-	const checkbox = document.getElementById('toggle-theme-checkbox');
-	checkbox.addEventListener('change', () => {
-	var theme;
-	if (checkbox.checked) {
-	theme = 'dark';
-	} else {
-	theme = 'light';
-	}
-	document.cookie = 'theme=' + theme + '; path=/; SameSite=Lax';
-	location.reload();
-	});
-	checkbox.checked = document.cookie.includes('theme=dark');
-	(function () {
-	var theme;
-	if (document.cookie.includes('theme=dark')) {
-	theme = 'dark';
-	} else {
-	theme = 'light';
-	}
-	document.body.classList.add('background-' + theme);
-	})();
-	</script>
 	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
 <body class="">
