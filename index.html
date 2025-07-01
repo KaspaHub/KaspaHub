@@ -28,7 +28,6 @@
 	<meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
 	<meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
 	
-	<script defer src="https://kaspahub.org/assets/scripts/main.js"></script>
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
 	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
@@ -45,6 +44,7 @@
 		<h1 style="font-size: 3em; filter: brightness(0.7);">Kaspa Hub</h1>
 		<p style="font-weight: bold;">Your central resource for the Kaspa ecosystem.</p>
 	</div>
+<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
 <main class="container">
 
