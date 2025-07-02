@@ -124,8 +124,7 @@ header a {
 
 .sidebar h2 {
 	font-size: 1.5em;
-	margin-top: 0;
-	margin-bottom: 20px;
+	margin: 0 5px 20px;
 	filter: brightness(0.7);
 }
 
@@ -333,7 +332,6 @@ img {
 	
 	.sidebar {
 		flex: none;
-		width: 100%;
 		margin-bottom: 20px;
 		padding: 20px 0;
 		box-shadow: none;
