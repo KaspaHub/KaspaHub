@@ -245,7 +245,7 @@ header a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 8px;
+	gap: 5px;
 	margin-bottom: 10px;
 	width: 100%;
 }
