@@ -7,7 +7,6 @@
 
 html {
 	font-family: Mulish, Arial, sans-serif;
-	background: none;
 	box-sizing: border-box;
 	word-wrap: anywhere;
 	overflow-wrap: break-word;
@@ -26,8 +25,23 @@ html, body {
 
 body {
 /* 	background: #0F0F0F; */
-/* 	min-height: 100vh; */
-	position: relative;
+	min-height: 100vh;
+}
+
+.background-light {
+	background: linear-gradient(to bottom right, #8BAFC4, #8BC6BD);
+	color: #3d3d3d;
+}
+
+.background-dark {
+	background: linear-gradient(to bottom right, #1a1a2e, #0c3f3a);
+	color: #e1e1e1;
+}
+
+.background-dark, .background-light {
+/* 	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover; */
 }
 
 .theme-1 {
@@ -39,33 +53,6 @@ body {
 	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-}
-
-.background-light { color:#3d3d3d; }
-.background-dark { color:#e1e1e1; }
-
-.background-light::before,
-.background-dark::before {
-	content:"";
-	position:fixed;
-	inset:0;
-	height:100dvh;
-	z-index:-1;
-	pointer-events:none;
-}
-
-.background-light::before{
-	background:linear-gradient(to bottom right,#8BAFC4,#8BC6BD);
-}
-.background-dark::before{
-	background:linear-gradient(to bottom right,#1a1a2e,#0c3f3a);
-}
-
-@supports not (height:100dvh){
-	.background-light::before,
-	.background-dark::before {
-		height:100vh;
-	}
 }
 
 input {
