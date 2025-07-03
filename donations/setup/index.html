@@ -110,12 +110,12 @@
       return;
     }
 
-    let fullUrl = 'https://kaspahub.org/donations/?wallet=' + encodeURIComponent(wallet);
+    let fullUrl = 'https://kaspahub.org/donations/?wallet=' + wallet;
     if (handle) {
-      fullUrl += '&handle=' + encodeURIComponent(handle);
+      fullUrl += '&handle=' + handle;
     }
 
-    let shortUrl = 'https://kaspahub.org/d/?w=' + encodeURIComponent(wallet);
+    let shortUrl = 'https://kaspahub.org/d/?w=' + wallet;
 
     linkBox.textContent = fullUrl;
     shortLinkBox.textContent = shortUrl;
