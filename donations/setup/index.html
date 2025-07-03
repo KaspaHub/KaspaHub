@@ -2,65 +2,56 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="theme-color" content="#000000" />
-  
-  <!-- Primary Meta Tags -->
-  <title>Kaspa Hub - Create a Kaspa Crypto Donation Page</title>
-  <meta name="title" content="Kaspa Hub - Make a Kaspa Crypto Donation Page" />
-  <meta name="description" content="Create your custom Kaspa crypto donation page in seconds. Enter your Kaspa wallet address to generate a QR code and shareable donation link. Fast, free, and secure." />
-  <meta name="keywords" content="Kaspa, Kaspa donations, crypto donations, Kaspa wallet, Crypto QR code, crypto link, crypto tips, donate crypto, create crypto donation page" />
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kaspahub.org/donations/setup/" />
-  <meta property="og:title" content="Create Your Kaspa Donation Page" />
-  <meta property="og:description" content="Generate a Kaspa donation page with wallet address, handle, and QR code. Accept Kaspa easily with a single link." />
-  <meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
-  <!-- X (Twitter) -->
-  <meta name="twitter:site" content="@kaspahuborg" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:url" content="https://kaspahub.org/donations/setup/" />
-  <meta name="twitter:title" content="Create Your Kaspa Crypto Donation Page" />
-  <meta name="twitter:description" content="Set up your Kaspa donation link in seconds with wallet and QR code." />
-  <meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
-  <!-- Kaspa -->
-  <meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
-  
-  <link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
-  <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
-<style>
-.link-box {
-  background: #f4f4f463;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-top: 1rem;
-  word-break: break-word;
-  text-align: center;
-}
-</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="#000000" />
+	
+	<!-- Primary Meta Tags -->
+	<title>Kaspa Hub - Create a Kaspa Crypto Donation Page</title>
+	<meta name="title" content="Kaspa Hub - Make a Kaspa Crypto Donation Page" />
+	<meta name="description" content="Create your custom Kaspa crypto donation page in seconds. Enter your Kaspa wallet address to generate a QR code and shareable donation link. Fast, free, and secure." />
+	<meta name="keywords" content="Kaspa, Kaspa donations, crypto donations, Kaspa wallet, Crypto QR code, crypto link, crypto tips, donate crypto, create crypto donation page" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://kaspahub.org/donations/setup/" />
+	<meta property="og:title" content="Create Your Kaspa Donation Page" />
+	<meta property="og:description" content="Generate a Kaspa donation page with wallet address, handle, and QR code. Accept Kaspa easily with a single link." />
+	<meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+	<!-- X (Twitter) -->
+	<meta name="twitter:site" content="@kaspahuborg" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:url" content="https://kaspahub.org/donations/setup/" />
+	<meta name="twitter:title" content="Create Your Kaspa Crypto Donation Page" />
+	<meta name="twitter:description" content="Set up your Kaspa donation link in seconds with wallet and QR code." />
+	<meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+	<!-- Kaspa -->
+	<meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+	
+	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+	<style>
+	.link-box {
+		background: #f4f4f463;
+		padding: 1rem;
+		border-radius: 6px;
+		margin-top: 1rem;
+		word-break: break-word;
+		text-align: center;
+	}
+	</style>
 </head>
 <body>
-  <header>
-    <nav id="page-nav">
-      <h2><a href="/">Kaspa Hub</a></h2>
-      <div class="toggle-theme">
-        <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
-        <label for="toggle-theme-checkbox"></label>
-      </div>
-    </nav>
-    <script>
-      const c = document.getElementById("toggle-theme-checkbox");
-      c.addEventListener("change", () => {
-        document.cookie = "theme=" + (c.checked ? "dark" : "light") + "; path=/; SameSite=Lax";
-        location.reload();
-      });
-      c.checked = document.cookie.includes("theme=dark");
-      (() => {
-        document.body.classList.add("background-" + (document.cookie.includes("theme=dark") ? "dark" : "light"));
-      })();
-    </script>
-  </header>
+
+<header>
+	<nav id="page-nav">
+		<h2><a href="/">Kaspa Hub</a></h2>
+		<div class="toggle-theme">
+			<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+			<label for="toggle-theme-checkbox"></label>
+		</div>
+	</nav>
+	<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
+</header>
 
   <main class="page-wrapper">
 <div class="intro">
@@ -81,7 +72,7 @@
     <div id="result" style="display:none;">
       <h3>Your Donation Page Link:</h3>
       <div class="link-box" id="linkBox"></div>
-      <button class="copy-button" style="margin-top: 20px;" onclick="copyLink()">Copy Link</button>
+      <button class="copy-button" id="copy" style="margin-top: 20px;" onclick="copyLink()">Copy Link</button>
     </div>
     <div class="error" id="errorMsg" style="display:none;"></div>
     </article>
@@ -126,7 +117,7 @@
 
   function copyLink() {
     const link = document.getElementById('linkBox').textContent;
-    const copyBtn = document.querySelector('.copy-button');
+    const copyBtn = document.getElementById('copy');
 
     navigator.clipboard.writeText(link).then(() => {
       const originalText = copyBtn.textContent;
