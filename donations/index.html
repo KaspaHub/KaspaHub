@@ -25,8 +25,8 @@
 <main class="container">
 <h1 id="page-title">Kaspa Donations</h1>
 <div id="text-display" class="theme-1">Loading...</div>
-<div id="qr-code"></div>
-<button id="copy-button" style="display:none;">Copy Wallet Address</button>
+<div class="qr-code" id="qr-code"></div>
+<button class="copy-button" id="copy-button" style="display:none;">Copy Wallet Address</button>
 </main>
 <style>
 main {
@@ -42,34 +42,6 @@ main {
 	text-align: center;
 	font-size: 1.2rem;
 	word-wrap: break-word;
-}
-#qr-code {
-	margin-top: 1.5rem;
-}
-#copy-button {
-	margin-top: 1rem;
-	padding: 0.5rem 1rem;
-	font-size: 1rem;
-	border: none;
-	border-radius: 6px;
-	background-color: #4caf50;
-	color: white;
-	cursor: pointer;
-	user-select: none;
-}
-
-#copy-button:hover {
-	background-color: #45a049;
-}
-.error {
-	color: red;
-	font-weight: bold;
-}
-#qr-code {
-	user-select: none;
-	overflow: hidden;
-	border-radius: 15px; 
-	display: flex;
 }
 </style>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery.js"></script>
