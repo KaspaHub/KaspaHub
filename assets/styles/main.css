@@ -51,8 +51,8 @@ body {
 
 .background-dark, .background-light {
 	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
+/* 	background-repeat: no-repeat;
+	background-size: cover; */
 }
 
 input {
