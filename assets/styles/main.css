@@ -31,6 +31,10 @@ body {
 	margin: 0 7px;
 }
 
+main {
+	padding-bottom: 100px;
+}
+
 .background-light {
 	background: linear-gradient(to bottom right, #8BAFC4, #8BC6BD);
 	color: #3d3d3d;
@@ -116,8 +120,6 @@ header a {
 .main-content-area {
 	display: flex;
 	gap: 25px;
-	min-height: 1000px;
-	padding-bottom: 100px;
 }
 
 .sidebar {
