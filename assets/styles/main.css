@@ -284,21 +284,6 @@ img {
 	/*height: auto !important;*/
 }
 
-.link-button {
-	transition: background-color 0.3s ease, transform 0.2s ease;
-	text-decoration: none !important;
-	color: #fff !important;
-	padding: 12px 25px;
-	background: rgb(0 126 114 / 55%);
-	border: 1px solid rgb(0 147 133);
-	border-radius: 16px;
-}
-
-.link-button:hover {
-	background-color: #333;
-	transform: translateY(-2px);
-}
-
 .no-items-message {
 	text-align: center;
 	/*width: 100%;*/
@@ -543,7 +528,7 @@ code {
 	display: flex;
 	justify-content: space-between;
 }
-/*  */
+/* theme switcher v */
 .toggle-theme {
 	width: 50px;
 	height: 50px;
@@ -582,4 +567,47 @@ code {
 .toggle-theme input:checked + label {
 	background-color: #333;
 	color: white;
+}
+/* buttons v */
+.link-button, .copy-button {
+	text-decoration: none !important;
+	cursor: pointer;
+	user-select: none;
+}
+.link-button {
+	background: rgb(0 126 114 / 55%);
+	border: 1px solid rgb(0 147 133);
+	color: #fff !important;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	padding: 12px 25px;
+	border-radius: 16px;
+}
+
+.link-button:hover {
+	background-color: #333;
+	transform: translateY(-2px);
+}
+.copy-button {
+	background-color: #4caf50;
+	color: white;
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: 6px;
+}
+.copy-button:hover {
+	background-color: #45a049;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+.qr-code {
+	user-select: none;
+	overflow: hidden;
+	border-radius: 15px; 
+	display: flex;
+	margin-top: 1.5rem;
 }
