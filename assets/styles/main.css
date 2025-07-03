@@ -564,10 +564,6 @@ code {
 	background-color: #45a049;
 }
 
-.error {
-	color: red;
-	font-weight: bold;
-}
 .qr-code {
 	user-select: none;
 	overflow: hidden;
