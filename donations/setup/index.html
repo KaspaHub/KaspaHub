@@ -105,13 +105,12 @@
       return;
     }
 
-    const url = new URL(window.location.origin + '/donations/');
-    url.searchParams.set('wallet', wallet);
+    let url = 'https://kaspahub.org/donations/?wallet=' + wallet;
     if (handle) {
-      url.searchParams.set('handle', handle);
+      url += '&handle=' + handle;
     }
 
-    linkBox.textContent = url.toString();
+    linkBox.textContent = url;
     result.style.display = 'block';
   }
 
