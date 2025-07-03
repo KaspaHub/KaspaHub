@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#000000" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Kaspa Hub - Create a Kaspa Crypto Donation Page</title>
+  <meta name="title" content="Kaspa Hub - Make a Kaspa Crypto Donation Page" />
+  <meta name="description" content="Create your custom Kaspa crypto donation page in seconds. Enter your Kaspa wallet address to generate a QR code and shareable donation link. Fast, free, and secure." />
+  <meta name="keywords" content="Kaspa, Kaspa donations, crypto donations, Kaspa wallet, Kaspa QR code, generate Kaspa link, Kaspa crypto tips, donate in Kaspa, create crypto donation page" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaspahub.org/donations/setup/" />
+  <meta property="og:title" content="Create Your Kaspa Donation Page" />
+  <meta property="og:description" content="Generate a Kaspa donation page with wallet address, handle, and QR code. Accept Kaspa easily with a single link." />
+  <meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+  <!-- X (Twitter) -->
+  <meta name="twitter:site" content="@kaspahuborg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://kaspahub.org/donations/setup/" />
+  <meta name="twitter:title" content="Create Your Kaspa Crypto Donation Page" />
+  <meta name="twitter:description" content="Set up your Kaspa donation link in seconds with wallet and QR code." />
+  <meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+  <!-- Kaspa -->
+  <meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+  
+  <link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+  <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+<style>
+.inputField-0 {
+  box-shadow: none;
+  resize: none;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  min-height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  border:2px solid #757575;
+  font-weight: normal;
+  background-color: rgba(0,0,0, 0.1);
+}
+
+.link-box {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  word-break: break-word;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav id="page-nav">
+      <h2><a href="/">Kaspa Hub</a></h2>
+      <div class="toggle-theme">
+        <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+        <label for="toggle-theme-checkbox"></label>
+      </div>
+    </nav>
+    <script>
+      const c = document.getElementById("toggle-theme-checkbox");
+      c.addEventListener("change", () => {
+        document.cookie = "theme=" + (c.checked ? "dark" : "light") + "; path=/; SameSite=Lax";
+        location.reload();
+      });
+      c.checked = document.cookie.includes("theme=dark");
+      (() => {
+        document.body.classList.add("background-" + (document.cookie.includes("theme=dark") ? "dark" : "light"));
+      })();
+    </script>
+  </header>
+
+  <main class="page-wrapper">
+<div class="intro">
+  <h1>Accept Donations</h1>
+  <p style="padding-left: 7px;">Use this form to create a custom Kaspa donation page link that displays your wallet address
+      and optional X (Twitter) handle. You can share the link with others, and they’ll see your QR code
+      and wallet ready to accept donations.</p>
+</div>
+    <article class="theme-1" style="max-width: 700px; display: flex; flex-direction: column; margin: 0 auto;">
+    <h6 for="wallet">Kaspa Wallet Address:</h6>
+    <input type="text" class="inputField-0" id="wallet" placeholder="e.g. kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+
+    <h6 for="handle">X / Twitter Handle (optional, no @):</h6>
+    <input type="text" class="inputField-0" id="handle" placeholder="e.g. Kaspahuborg" />
+
+    <button class="copy-button" style="margin-top: 20px;" onclick="generateLink()">Generate Donation Link</button>
+
+    <div id="result" style="display:none;">
+      <h3>Your Donation Page Link:</h3>
+      <div class="link-box" id="linkBox"></div>
+      <button class="copy-button" onclick="copyLink()">Copy Link</button>
+    </div>
+    <div class="error" id="errorMsg" style="display:none;"></div>
+    </article>
+  </main>
+<footer id="page-footer"><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
+<script>
+  function generateLink() {
+    const wallet = document.getElementById('wallet').value.trim();
+    const handle = document.getElementById('handle').value.trim();
+    const result = document.getElementById('result');
+    const linkBox = document.getElementById('linkBox');
+    const errorMsg = document.getElementById('errorMsg');
+
+    result.style.display = 'none';
+    errorMsg.style.display = 'none';
+    linkBox.textContent = '';
+
+    const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
+    const handleRegex = /^[A-Za-z0-9_]{1,15}$/;
+
+    if (!kaspaRegex.test(wallet)) {
+      errorMsg.textContent = "⚠️ Invalid Kaspa address. It must start with 'kaspa:' and be 50–72 characters long.";
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    if (handle && !handleRegex.test(handle)) {
+      errorMsg.textContent = "⚠️ Invalid handle. Use 1–15 characters: letters, numbers, or underscores only.";
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    const url = new URL(window.location.origin + '/donations/');
+    url.searchParams.set('wallet', wallet);
+    if (handle) {
+      url.searchParams.set('handle', handle);
+    }
+
+    linkBox.textContent = url.toString();
+    result.style.display = 'block';
+  }
+
+  function copyLink() {
+    const link = document.getElementById('linkBox').textContent;
+    const copyBtn = document.querySelector('.copy-button');
+
+    navigator.clipboard.writeText(link).then(() => {
+      const originalText = copyBtn.textContent;
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyBtn.textContent = originalText;
+      }, 1500);
+    }).catch(err => {
+      console.error('Clipboard copy failed:', err);
+    });
+  }
+</script>
+</body>
+</html>
