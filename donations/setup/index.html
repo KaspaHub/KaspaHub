@@ -53,7 +53,7 @@
 	<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
 
-  <main class="page-wrapper">
+<main class="page-wrapper">
 <div class="intro">
   <h1>Accept Donations</h1>
   <p style="padding-left: 7px;">Use this form to create a custom Kaspa donation page link that displays your wallet address
@@ -72,11 +72,14 @@
     <div id="result" style="display:none;">
       <h3>Your Donation Page Link:</h3>
       <div class="link-box" id="linkBox"></div>
-      <button class="copy-button" id="copy" style="margin-top: 20px;" onclick="copyLink()">Copy Link</button>
+      <button class="copy-button" id="copy" style="margin-top: 20px;" onclick="copyLink()">Copy to Clipboard</button>
+  <h3>Shortened Link:</h3>
+  <div class="link-box" id="shortLinkBox"></div>
+  <button class="copy-button" id="copyShort" style="margin-top: 20px;" onclick="copyShortLink()">Copy to Clipboard</button>
     </div>
     <div class="error" id="errorMsg" style="display:none;"></div>
     </article>
-  </main>
+</main>
 <footer id="page-footer"><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
 <script>
   function generateLink() {
@@ -84,11 +87,13 @@
     const handle = document.getElementById('handle').value.trim();
     const result = document.getElementById('result');
     const linkBox = document.getElementById('linkBox');
+    const shortLinkBox = document.getElementById('shortLinkBox');
     const errorMsg = document.getElementById('errorMsg');
 
     result.style.display = 'none';
     errorMsg.style.display = 'none';
     linkBox.textContent = '';
+    shortLinkBox.textContent = '';
 
     const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
     const handleRegex = /^[A-Za-z0-9_]{1,15}$/;
@@ -105,12 +110,15 @@
       return;
     }
 
-    let url = 'https://kaspahub.org/donations/?wallet=' + wallet;
+    let fullUrl = 'https://kaspahub.org/donations/?wallet=' + encodeURIComponent(wallet);
     if (handle) {
-      url += '&handle=' + handle;
+      fullUrl += '&handle=' + encodeURIComponent(handle);
     }
 
-    linkBox.textContent = url;
+    let shortUrl = 'https://kaspahub.org/d/?w=' + encodeURIComponent(wallet);
+
+    linkBox.textContent = fullUrl;
+    shortLinkBox.textContent = shortUrl;
     result.style.display = 'block';
   }
 
@@ -123,6 +131,21 @@
       copyBtn.textContent = 'Copied!';
       setTimeout(() => {
         copyBtn.textContent = originalText;
+      }, 1500);
+    }).catch(err => {
+      console.error('Clipboard copy failed:', err);
+    });
+  }
+
+  function copyShortLink() {
+    const shortLink = document.getElementById('shortLinkBox').textContent;
+    const copyShortBtn = document.getElementById('copyShort');
+
+    navigator.clipboard.writeText(shortLink).then(() => {
+      const originalText = copyShortBtn.textContent;
+      copyShortBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyShortBtn.textContent = originalText;
       }, 1500);
     }).catch(err => {
       console.error('Clipboard copy failed:', err);
