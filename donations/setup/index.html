@@ -30,22 +30,6 @@
   <link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
   <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 <style>
-.inputField-0 {
-  box-shadow: none;
-  resize: none;
-  outline: none;
-  font-size: 1rem;
-  border-radius: 6px;
-  min-height: 45px;
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
-  border:2px solid #757575;
-  font-weight: normal;
-  background-color: rgba(0,0,0, 0.1);
-}
-
 .link-box {
   background: #f4f4f4;
   padding: 1rem;
@@ -87,10 +71,10 @@
 </div>
     <article class="theme-1" style="max-width: 700px; display: flex; flex-direction: column; margin: 0 auto;">
     <h6 for="wallet">Kaspa Wallet Address:</h6>
-    <input type="text" class="inputField-0" id="wallet" placeholder="e.g. kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+    <input type="text" id="wallet" placeholder="e.g. kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
 
     <h6 for="handle">X / Twitter Handle (optional, no @):</h6>
-    <input type="text" class="inputField-0" id="handle" placeholder="e.g. Kaspahuborg" />
+    <input type="text" id="handle" placeholder="e.g. Kaspahuborg" />
 
     <button class="copy-button" style="margin-top: 20px;" onclick="generateLink()">Generate Donation Link</button>
 
