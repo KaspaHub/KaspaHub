@@ -14,12 +14,10 @@
 	<meta name="description" content="Crypto-link-in-bio - Kaspa Hub" />
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Send KAS Tips – Support Me with Kaspa" />
 	<meta property="og:description" content="Easily tip me with Kaspa (KAS)! This is my personal crypto donation link. Secure, fast, and social-ready." />
 	<!-- Twitter -->
 	<meta name="twitter:site" content="@kaspahuborg" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Send KAS Tips – Support Me with Kaspa" />
 	<meta name="twitter:description" content="This is my Kaspa donation link. Tip me securely using $KAS Perfect for crypto supporters!" />
 
 	
@@ -84,14 +82,23 @@ document.addEventListener("DOMContentLoaded", () => {
 if (rawHandle) {
 	const decodedHandle = decodeURIComponent(rawHandle);
 	const dynamicTitle = `@${decodedHandle} - Kaspa Tipping Link`;
-	
+
 	document.title = dynamicTitle;
 	titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
-	
+
 	setMetaTag('og:title', dynamicTitle, 'property');
 	setMetaTag('twitter:title', dynamicTitle);
-	setMetaTag('kaspa:title', '@' + decodedHandle);
+	setMetaTag('kaspa:title', `@${decodedHandle}`);
+} else {
+	const defaultTitle = "Send KAS Tips – Support Me with Kaspa";
+	document.title = defaultTitle;
+	titleElement.textContent = defaultTitle;
+
+	setMetaTag('og:title', defaultTitle, 'property');
+	setMetaTag('twitter:title', defaultTitle);
+	setMetaTag('kaspa:title', defaultTitle);
 }
+
 
   if (rawWallet) {
     const decodedWallet = decodeURIComponent(rawWallet);
