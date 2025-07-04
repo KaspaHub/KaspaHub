@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (rawHandle) {
 	const decodedHandle = decodeURIComponent(rawHandle);
-	const dynamicTitle = `Send KAS Tips to @${decodedHandle}`;
+	const dynamicTitle = `@${decodedHandle} - Kaspa Tipping Link`;
 	
 	document.title = dynamicTitle;
 	titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
