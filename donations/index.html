@@ -5,7 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="theme-color" content="#000000" />
+	<meta name="robots" content="noindex, nofollow" />
 	<title>Kaspa Link</title>
+
+	<!-- Primary Meta Tags -->
+	<title>Send KAS Tips – Support Me with Kaspa</title>
+	<meta name="title" content="Send KAS Tips – Support Me with Kaspa" />
+	<meta name="description" content="Crypto-link-in-bio - Kaspa Hub" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Send KAS Tips – Support Me with Kaspa" />
+	<meta property="og:description" content="Easily tip me with Kaspa (KAS)! This is my personal crypto donation link. Secure, fast, and social-ready." />
+	<!-- Twitter -->
+	<meta name="twitter:site" content="@kaspahuborg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Send KAS Tips – Support Me with Kaspa" />
+	<meta name="twitter:description" content="This is my Kaspa donation link. Tip me securely using $KAS Perfect for crypto supporters!" />
+
+	
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
 	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
 </head>
@@ -64,14 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(meta);
   }
 
-  if (rawHandle) {
-    const decodedHandle = decodeURIComponent(rawHandle);
-    document.title = decodedHandle;
-    titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
-    setMetaTag('kaspa:title', '@' + decodedHandle);
-    setMetaTag('twitter:title', '@' + decodedHandle);
-    setMetaTag('og:title', '@' + decodedHandle, 'property');
-  }
+if (rawHandle) {
+	const decodedHandle = decodeURIComponent(rawHandle);
+	const dynamicTitle = `Send KAS Tips to @${decodedHandle}`;
+	
+	document.title = dynamicTitle;
+	titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
+	
+	setMetaTag('og:title', dynamicTitle, 'property');
+	setMetaTag('twitter:title', dynamicTitle);
+	setMetaTag('kaspa:title', '@' + decodedHandle);
+}
 
   if (rawWallet) {
     const decodedWallet = decodeURIComponent(rawWallet);
