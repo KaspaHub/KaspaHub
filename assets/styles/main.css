@@ -25,7 +25,7 @@ html {
 
 body {
 /* 	background: #0F0F0F; */
-	min-height: 100vh;
+	min-height: 101vh;
 	display: flex;
 	flex-direction: column;
 	margin: 0 7px;
