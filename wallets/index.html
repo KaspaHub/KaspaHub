@@ -114,7 +114,7 @@
 const wallets = [
 {
 	name: "Tangem",
-	description: "Popular hardware wallet for simple, multi-chain asset management. Ideal for users valuing simplicity with keyless operation.",
+	description: "Popular cold wallet for simple, multi-chain asset management. Ideal for users valuing simplicity with keyless operation.",
 	officialSite: "https://tangem.com",
 	logo: "https://kaspahub.org/assets/logos/tangemwallet.webp",
 	features: {
@@ -185,6 +185,25 @@ const wallets = [
 		mobile: true,
 		desktop: false,
 		browserExtension: true,
+		web: false
+	}
+},
+{
+	name: "Goldshell Wallet",
+	description: "Cold wallet with air-gapped security, supporting multiple cryptocurrencies, featuring fingerprint unlock and companion app for real-time monitoring..",
+	officialSite: "https://www.goldshell.com/product/goldshell-wallet/",
+	logo: "https://kaspahub.org/assets/logos/goldshellwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: true,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: true,
+		mobile: true,
+		desktop: false,
+		browserExtension: false,
 		web: false
 	}
 },
@@ -418,7 +437,7 @@ const wallets = [
 },
 {
 	name: "Cool Wallet",
-	description: "Hardware wallet with cold and hot wallet functionality, supporting multi-chain assets and built-in token swapping.",
+	description: "Cold wallet with cold and hot wallet functionality, supporting multi-chain assets and built-in token swapping.",
 	officialSite: "https://www.coolwallet.io",
 	logo: "https://kaspahub.org/assets/logos/coolwallet.webp",
 	features: {
@@ -532,7 +551,7 @@ const wallets = [
 },
 {
 	name: "Ledger",
-	description: "Great hardware wallet for multi-chain asset management on desktop and mobile, <strong>currently only works with KasVault</strong>.",
+	description: "Industry-leading cold wallet for multi-chain asset management on desktop and mobile, <strong>currently only works with KasVault</strong>.",
 	officialSite: "https://kasvault.io",
 	logo: "https://kaspahub.org/assets/logos/ledgerwallet.webp",
 	features: {
