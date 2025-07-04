@@ -251,7 +251,7 @@ header a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 5px;
+	gap: 7px;
 	margin-bottom: 10px;
 	width: 100%;
 }
@@ -259,7 +259,7 @@ header a {
 .feature-tag, .platform-tag {
 	display: inline-flex;
 	align-items: center;
-	padding: 6px 12px;
+	padding: 5px 10px;
 	border-radius: 20px;
 	font-size: 0.85em;
 	font-weight: 500;
@@ -275,8 +275,6 @@ header a {
 .platform-tag {
 	background-color: #ebebeb;
 	color: #666;
-	padding: 6px 12px;
-	border: 1px solid #ddd;
 }
 
 .platform-tag img {
