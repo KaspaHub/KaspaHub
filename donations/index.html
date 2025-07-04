@@ -48,66 +48,71 @@ main {
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery-qrcode-0.18.0.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-	const urlParams = new URLSearchParams(window.location.search);
-	const rawWallet = urlParams.get("wallet");
-	const rawHandle = urlParams.get("handle");
-	
-	const displayElement = document.getElementById("text-display");
-	const titleElement = document.getElementById("page-title");
-	const qrCodeElement = document.getElementById("qr-code");
-	const copyButton = document.getElementById("copy-button");
+  const urlParams = new URLSearchParams(window.location.search);
+  const rawWallet = urlParams.get("wallet");
+  const rawHandle = urlParams.get("handle");
 
-	function setMetaTag(name, content) {
-		const meta = document.createElement('meta');
-		meta.setAttribute('name', name);
-		meta.setAttribute('content', content);
-		document.head.appendChild(meta);
-	}
+  const displayElement = document.getElementById("text-display");
+  const titleElement = document.getElementById("page-title");
+  const qrCodeElement = document.getElementById("qr-code");
+  const copyButton = document.getElementById("copy-button");
 
-	if (rawHandle) {
-		const decodedHandle = decodeURIComponent(rawHandle);
-		document.title = decodedHandle;
-		titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
-		setMetaTag('kaspa:title', '@' + decodedHandle);
-	}
+  function setMetaTag(name, content, attr = 'name') {
+    const meta = document.createElement('meta');
+    meta.setAttribute(attr, name);
+    meta.setAttribute('content', content);
+    document.head.appendChild(meta);
+  }
 
-	if (rawWallet) {
-		const decodedWallet = decodeURIComponent(rawWallet);
-		const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
-		
-		if (!kaspaRegex.test(decodedWallet)) {
-			displayElement.innerHTML = "<span class='error'>Invalid Kaspa wallet address format.</span>";
-			return;
-		}
+  if (rawHandle) {
+    const decodedHandle = decodeURIComponent(rawHandle);
+    document.title = decodedHandle;
+    titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
+    setMetaTag('kaspa:title', '@' + decodedHandle);
+    setMetaTag('twitter:title', '@' + decodedHandle);
+    setMetaTag('og:title', '@' + decodedHandle, 'property');
+  }
 
-	displayElement.textContent = decodedWallet;
+  if (rawWallet) {
+    const decodedWallet = decodeURIComponent(rawWallet);
+    const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
 
-	$('#qr-code').qrcode({
-		render: 'image',
-		text: decodedWallet,
-		size: 256,
-		quiet: 3
-	});
+    if (!kaspaRegex.test(decodedWallet)) {
+      displayElement.innerHTML = "<span class='error'>Invalid Kaspa wallet address format.</span>";
+      return;
+    }
 
-	copyButton.style.display = "inline-block";
+    displayElement.textContent = decodedWallet;
 
-	copyButton.addEventListener('click', () => {
-		navigator.clipboard.writeText(decodedWallet).then(() => {
-			const originalText = copyButton.textContent;
-			copyButton.textContent = 'Copied!';
-			setTimeout(() => {
-				copyButton.textContent = originalText;
-			}, 1500);
-		}).catch(err => {
-			// console.error('Clipboard copy failed:', err);
-		});
-	});
+    $('#qr-code').qrcode({
+      render: 'image',
+      text: decodedWallet,
+      size: 256,
+      quiet: 3
+    });
 
-	setMetaTag('kaspa:wallet', decodedWallet);
+    copyButton.style.display = "inline-block";
 
-	} else {
-		displayElement.textContent = "No 'wallet' parameter found in the URL.";
-	}
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(decodedWallet).then(() => {
+        const originalText = copyButton.textContent;
+        copyButton.textContent = 'Copied!';
+        setTimeout(() => {
+          copyButton.textContent = originalText;
+        }, 1500);
+      });
+    });
+
+    setMetaTag('kaspa:wallet', decodedWallet);
+
+    const qrImageURL = `https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=${decodedWallet}&margin=15`;
+
+    setMetaTag('twitter:image', qrImageURL);
+    setMetaTag('og:image', qrImageURL, 'property');
+  }
+  else {
+    displayElement.textContent = "No 'wallet' parameter found in the URL.";
+  }
 });
 </script>
 </body>
