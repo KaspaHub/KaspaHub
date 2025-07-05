@@ -170,44 +170,6 @@ const wallets = [
 	}
 },
 {
-	name: "SafePal",
-	description: "Secure wallet with hot and cold storage for multi-chain assets, ideal for daily users with built-in swapping.",
-	officialSite: "https://www.safepal.com",
-	logo: "https://kaspahub.org/assets/logos/safepalwallet.webp",
-	features: {
-		openSource: false,
-		multiChain: true,
-		selfCustodial: true,
-		krc20: false,
-		krc721: false,
-		knsDomains: false,
-		hardware: true,
-		mobile: true,
-		desktop: false,
-		browserExtension: true,
-		web: false
-	}
-},
-{
-	name: "Goldshell Wallet",
-	description: "Cold wallet with air-gapped security, supporting multiple cryptocurrencies, featuring fingerprint unlock and companion app for real-time monitoring.",
-	officialSite: "https://www.goldshell.com/product/goldshell-wallet/",
-	logo: "https://kaspahub.org/assets/logos/goldshellwallet.webp",
-	features: {
-		openSource: false,
-		multiChain: true,
-		selfCustodial: true,
-		krc20: false,
-		krc721: false,
-		knsDomains: false,
-		hardware: true,
-		mobile: true,
-		desktop: false,
-		browserExtension: false,
-		web: false
-	}
-},
-{
 	name: "KasKeeper",
 	description: "Web3 wallet for Kaspa with KRC20 token support, backed by KEF, designed for secure self-custodial storage and daily transactions.",
 	officialSite: "https://kaskeeper.vercel.app",
@@ -222,6 +184,25 @@ const wallets = [
 		hardware: false,
 		desktop: false,
 		mobile: true,
+		browserExtension: true,
+		web: false
+	}
+},
+{
+	name: "Kasware",
+	description: "The first open-source, non-custodial browser extension wallet for Kaspa - secure, private, and supports KRC20, KRC721, and KNS domains.",
+	officialSite: "https://www.kasware.xyz",
+	logo: "https://kaspahub.org/assets/logos/kaswarewallet.webp",
+	features: {
+		openSource: true,
+		multiChain: false,
+		selfCustodial: true,
+		krc20: true,
+		krc721: true,
+		knsDomains: true,
+		hardware: false,
+		mobile: true,
+		desktop: false,
 		browserExtension: true,
 		web: false
 	}
@@ -265,25 +246,6 @@ const wallets = [
 	}
 },
 {
-	name: "Kasware",
-	description: "The first open-source, non-custodial browser extension wallet for Kaspa - secure, private, and supports KRC20, KRC721, and KNS domains.",
-	officialSite: "https://www.kasware.xyz",
-	logo: "https://kaspahub.org/assets/logos/kaswarewallet.webp",
-	features: {
-		openSource: true,
-		multiChain: false,
-		selfCustodial: true,
-		krc20: true,
-		krc721: true,
-		knsDomains: true,
-		hardware: false,
-		mobile: true,
-		desktop: false,
-		browserExtension: true,
-		web: false
-	}
-},
-{
 	name: "Kurncy",
 	description: "Lightweight custodial Kaspa wallet with self-custody option on iOS & Android, supporting KRC20, KRC721 tokens and KNS domains.",
 	officialSite: "https://www.kurncy.com",
@@ -319,6 +281,63 @@ const wallets = [
 		mobile: false,
 		browserExtension: false,
 		web: true
+	}
+},
+{
+	name: "SafePal",
+	description: "Secure wallet with hot and cold storage for multi-chain assets, ideal for daily users with built-in swapping.",
+	officialSite: "https://www.safepal.com",
+	logo: "https://kaspahub.org/assets/logos/safepalwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: true,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: true,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},
+{
+	name: "Goldshell Wallet",
+	description: "Cold wallet with air-gapped security, supporting multiple cryptocurrencies, featuring fingerprint unlock and companion app for real-time monitoring.",
+	officialSite: "https://www.goldshell.com/product/goldshell-wallet/",
+	logo: "https://kaspahub.org/assets/logos/goldshellwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: true,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: true,
+		mobile: true,
+		desktop: false,
+		browserExtension: false,
+		web: false
+	}
+},
+{
+	name: "Cool Wallet",
+	description: "Cold wallet with cold and hot wallet functionality, supporting multi-chain assets and built-in token swapping.",
+	officialSite: "https://www.coolwallet.io",
+	logo: "https://kaspahub.org/assets/logos/coolwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: true,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: true,
+		mobile: true,
+		desktop: false,
+		browserExtension: false,
+		web: false
 	}
 },
 {
@@ -431,25 +450,6 @@ const wallets = [
 		hardware: false,
 		mobile: true,
 		desktop: true,
-		browserExtension: false,
-		web: false
-	}
-},
-{
-	name: "Cool Wallet",
-	description: "Cold wallet with cold and hot wallet functionality, supporting multi-chain assets and built-in token swapping.",
-	officialSite: "https://www.coolwallet.io",
-	logo: "https://kaspahub.org/assets/logos/coolwallet.webp",
-	features: {
-		openSource: false,
-		multiChain: true,
-		selfCustodial: true,
-		krc20: false,
-		krc721: false,
-		knsDomains: false,
-		hardware: true,
-		mobile: true,
-		desktop: false,
 		browserExtension: false,
 		web: false
 	}
