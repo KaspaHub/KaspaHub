@@ -345,14 +345,10 @@ img {
 	.filter-group {
 		margin-bottom: 0;
 	}
-}
-
-@media (max-width: 768px) {
 	
-	.filter-card {
-		padding: 20px;
+	.background-light, .background-dark {
+		background-attachment: scroll;
 	}
-	
 }
 
 footer {
