@@ -37,4 +37,4 @@ This ensures consistent attribution and community connection across all versions
 
 Feel free to reach out if you have questions or want to share your localized version!
 
-https://x.com/Kaspahuborg
+https://x.com/KaspaHub
