@@ -567,32 +567,37 @@ code {
 }
 /* input fields v */
 textarea {
-  text-decoration: none;
-  font-family: inherit;
-  white-space: break-spaces;
+	text-decoration: none;
+	font-family: inherit;
+	white-space: break-spaces;
 }
 
 input, textarea, button, select {
-  background: unset;
-  border: unset;
+	background: unset;
+	border: unset;
 }
 
 input, textarea, button, select, a {
-  outline: none;
+	outline: none;
 }
+
 textarea, input[type="text"] {
-  color: inherit;
-  box-shadow: none;
-  resize: none;
-  outline: none;
-  font-size: 1rem;
-  border-radius: 6px;
-  min-height: 45px;
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
-  border:2px solid #757575;
-  font-weight: normal;
-  background-color: rgba(0,0,0, 0.1);
+	color: inherit;
+	box-shadow: none;
+	resize: none;
+	outline: none;
+	font-size: 1rem;
+	border-radius: 6px;
+	min-height: 45px;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+	border:2px solid #757575;
+	font-weight: normal;
+	background-color: rgba(0,0,0, 0.1);
+}
+/* drop down v */
+option {
+	color: black;
 }
