@@ -565,7 +565,7 @@ code {
 	display: flex;
 	margin-top: 1.5rem;
 }
-/* input fields v */
+/* inputs v */
 textarea {
 	text-decoration: none;
 	font-family: inherit;
@@ -597,7 +597,16 @@ textarea, input[type="text"] {
 	font-weight: normal;
 	background-color: rgba(0,0,0, 0.1);
 }
-/* drop down v */
+
+select {
+	color: inherit;
+}
+
 option {
 	color: black;
+}
+
+.search-sort-controls {
+	text-align: right;
+	margin-bottom: 20px;
 }
