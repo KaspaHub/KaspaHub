@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,10 +80,16 @@
 		</div>
 	</aside>
 	<section class="filter-list-main">
-		<section class="exchange-list-section">
-			<div class="filter-grid" id="exchangeGrid"></div>
-			<button class="theme-1" id="loadMoreBtn">Load More</button>
-		</section>
+		<div class="theme-1 search-sort-controls">
+			<input type="text" id="searchInput" placeholder="Search exchanges..."/>
+			<select id="sortSelect">
+				<option value="default">Default</option>
+				<option value="az">A - Z</option>
+				<option value="za">Z - A</option>
+			</select>
+		</div>
+		<div class="filter-grid" id="exchangeGrid"></div>
+		<button class="theme-1" id="loadMoreBtn">Load More</button>
 	</section>
 </div>
 </main>
@@ -1189,6 +1196,8 @@ const exchanges = [
 const exchangeGrid = document.getElementById('exchangeGrid');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
 const counter = document.getElementById('counter');
 
 let filteredExchanges = [...exchanges];
@@ -1205,7 +1214,7 @@ function renderExchanges(initial = false) {
 		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
-	<img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+	<img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${exchange.name}</h3>
 <p class="filter-description">${exchange.description}</p>
@@ -1225,15 +1234,42 @@ function filterExchanges() {
 	const activeFeatures = new Set();
 	filterCheckboxes.forEach(cb => cb.checked && activeFeatures.add(cb.dataset.feature));
 
-	filteredExchanges = exchanges.filter(ex => {
+	const searchTerm = searchInput.value.trim().toLowerCase();
+	const defaultOrder = [...exchanges];
+
+	let nameMatches = [];
+	let descriptionMatches = [];
+
+	defaultOrder.forEach(ex => {
 		for (let feature of activeFeatures) {
-			if (!ex.features[feature]) return false;
+			if (!ex.features[feature]) return;
 		}
-		return true;
+
+		const nameMatch = ex.name.toLowerCase().includes(searchTerm);
+		const descMatch = ex.description.toLowerCase().includes(searchTerm);
+
+		if (searchTerm === "") {
+			nameMatches.push(ex);
+		} else if (nameMatch) {
+			nameMatches.push(ex);
+		} else if (descMatch) {
+			descriptionMatches.push(ex);
+		}
 	});
 
+	let combined = [...nameMatches, ...descriptionMatches];
+
+	const sortMode = sortSelect.value;
+	if (sortMode === 'az') {
+		combined.sort((a, b) => a.name.localeCompare(b.name));
+	} else if (sortMode === 'za') {
+		combined.sort((a, b) => b.name.localeCompare(a.name));
+	}
+
+	filteredExchanges = combined;
+
 	if (filteredExchanges.length === 0) {
-		exchangeGrid.innerHTML = '<p class="no-items-message">No exchanges match your selected filters.</p>';
+		exchangeGrid.innerHTML = '<p class="no-items-message">No exchanges match your search and filters.</p>';
 		loadMoreBtn.style.display = 'none';
 		counter.textContent = `(0 of ${exchanges.length})`;
 		return;
@@ -1244,6 +1280,8 @@ function filterExchanges() {
 
 filterCheckboxes.forEach(cb => cb.addEventListener('change', filterExchanges));
 loadMoreBtn.addEventListener('click', () => renderExchanges());
+searchInput.addEventListener('input', filterExchanges);
+sortSelect.addEventListener('change', filterExchanges);
 
 renderExchanges(true);
 </script>
