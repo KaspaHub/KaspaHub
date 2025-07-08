@@ -23,8 +23,6 @@ https://kaspahub.org/kaspa-donations/
 
 https://kaspahub.org/donations/setup/
 
-https://github.com/KaspaHub/donation-page
-
 
 # License & Usage
 
