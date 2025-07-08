@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,9 +104,15 @@
 		</div>
 	</aside>
 	<section class="filter-list-main">
-		<section class="wallet-list-section">
-			<div class="filter-grid" id="walletGrid"></div>
-		</section>
+		<div class="theme-1 search-sort-controls">
+			<input type="text" id="searchInput" placeholder="Search wallets..."/>
+			<select id="sortSelect">
+				<option value="default">Default</option>
+				<option value="az">A - Z</option>
+				<option value="za">Z - A</option>
+			</select>
+		</div>
+		<div class="filter-grid" id="walletGrid"></div>
 	</section>
 </div>
 </main>
@@ -323,7 +330,7 @@ const wallets = [
 },
 {
 	name: "Cool Wallet",
-	description: "Cold wallet with cold and hot wallet functionality, supporting multi-chain assets and built-in token swapping.",
+	description: "Secure wallet with both cold and hot wallet functionality, supporting multi-chain assets and built-in token swapping.",
 	officialSite: "https://www.coolwallet.io",
 	logo: "https://kaspahub.org/assets/logos/coolwallet.webp",
 	features: {
@@ -572,6 +579,9 @@ const wallets = [
 
 const walletGrid = document.getElementById('walletGrid');
 const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const counter = document.getElementById('counter');
 
 const tagInfoMap = {
 	openSource: { name: "Open Source", type: "feature" },
@@ -587,82 +597,90 @@ const tagInfoMap = {
 	web: { name: "Web", type: "device", icon: "https://kaspahub.org/assets/devices/web.webp" }
 };
 
-function renderWallets(filteredWallets) {
-walletGrid.innerHTML = '';
+function renderWallets(walletList) {
+	walletGrid.innerHTML = '';
 
-const counter = document.getElementById('counter');
-counter.textContent = `(${filteredWallets.length} of ${wallets.length})`;
+	counter.textContent = `(${walletList.length} of ${wallets.length})`;
 
-if (filteredWallets.length === 0) {
-	walletGrid.innerHTML = '<p class="no-items-message">No wallets match your selected filters.</p>';
-	return;
-}
+	if (walletList.length === 0) {
+		walletGrid.innerHTML = '<p class="no-items-message">No wallets match your search and filters.</p>';
+		return;
+	}
 
-filteredWallets.forEach(wallet => {
-	const card = document.createElement('div');
-	card.classList.add('filter-card');
-	card.classList.add('theme-1');
-	
-	let featureTagsHtml = '';
-	let platformTagsHtml = '';
-	
-	for (const featureKey in wallet.features) {
-			if (wallet.features[featureKey]) {
-				const tagInfo = tagInfoMap[featureKey];
-				if (tagInfo) {
-				if (tagInfo.type === 'feature') {
-					featureTagsHtml += `<span class="feature-tag">${tagInfo.name}</span>`;
-				} else if (tagInfo.type === 'device') {
-					platformTagsHtml += `<span class="platform-tag"><img src="${tagInfo.icon || 'https://img.icons8.com/ios-filled/50/000000/puzzle.png'}" alt="${tagInfo.name} Icon" loading="lazy">${tagInfo.name}</span>`;
+	walletList.forEach(wallet => {
+		const card = document.createElement('div');
+		card.classList.add('filter-card', 'theme-1');
+
+		let featureTagsHtml = '';
+		let platformTagsHtml = '';
+
+		for (const key in wallet.features) {
+			if (wallet.features[key]) {
+				const tag = tagInfoMap[key];
+				if (tag?.type === 'feature') {
+					featureTagsHtml += `<span class="feature-tag">${tag.name}</span>`;
+				} else if (tag?.type === 'device') {
+					platformTagsHtml += `<span class="platform-tag"><img src="${tag.icon}" alt="${tag.name}" loading="lazy">${tag.name}</span>`;
 				}
 			}
 		}
-	}
 
-	card.innerHTML = `
+		card.innerHTML = `
 <div class="filter-logo">
-	<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+	<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${wallet.name}</h3>
 <p class="filter-description">${wallet.description}</p>
 <div class="filter-features-container">${featureTagsHtml}</div>
 <div class="filter-platforms-container">${platformTagsHtml}</div>
 <a href="${wallet.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
-`;
-	walletGrid.appendChild(card);
+		`;
+		walletGrid.appendChild(card);
 	});
 }
 
 function filterWallets() {
-	const activeFeatureKeys = new Set();
-	filterCheckboxes.forEach(checkbox => {
-		if (checkbox.checked) {
-			activeFeatureKeys.add(checkbox.dataset.feature);
+	const activeFeatures = new Set();
+	filterCheckboxes.forEach(cb => cb.checked && activeFeatures.add(cb.dataset.feature));
+
+	const searchTerm = searchInput.value.trim().toLowerCase();
+	let nameMatches = [];
+	let descriptionMatches = [];
+
+	wallets.forEach(wallet => {
+		for (let feature of activeFeatures) {
+			if (!wallet.features[feature]) return;
+		}
+
+		const nameMatch = wallet.name.toLowerCase().includes(searchTerm);
+		const descMatch = wallet.description.toLowerCase().includes(searchTerm);
+
+		if (searchTerm === "") {
+			nameMatches.push(wallet);
+		} else if (nameMatch) {
+			nameMatches.push(wallet);
+		} else if (descMatch) {
+			descriptionMatches.push(wallet);
 		}
 	});
-	
-	const filtered = wallets.filter(wallet => {
-		if (activeFeatureKeys.size === 0) {
-			return true;
-		}
-	
-	    for (const featureKey of activeFeatureKeys) {
-		if (!wallet.features[featureKey]) {
-			return false;
-		}
+
+	let combined = [...nameMatches, ...descriptionMatches];
+
+	const sortMode = sortSelect.value;
+	if (sortMode === 'az') {
+		combined.sort((a, b) => a.name.localeCompare(b.name));
+	} else if (sortMode === 'za') {
+		combined.sort((a, b) => b.name.localeCompare(a.name));
 	}
-	return true;
-	});
-		
-	renderWallets(filtered);
+
+	renderWallets(combined);
 }
 
-filterCheckboxes.forEach(checkbox => {
-	checkbox.addEventListener('change', filterWallets);
-});
+filterCheckboxes.forEach(cb => cb.addEventListener('change', filterWallets));
+searchInput.addEventListener('input', filterWallets);
+sortSelect.addEventListener('change', filterWallets);
 
 renderWallets(wallets);
-
 </script>
 </body>
 </html>
