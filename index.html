@@ -41,12 +41,12 @@
 		</div>
 	</nav>
 	<div style="text-align: center; margin: 40px;">
-		<h1 style="font-size: 3em; filter: brightness(0.7);">Kaspa Hub</h1>
+		<h1 style="font-size: 3em; filter: brightness(0.7); color: #0c3f3a !important;">Kaspa Hub</h1>
 		<p style="font-weight: bold;">Your central resource for the Kaspa ecosystem.</p>
 	</div>
 <script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
-<main style="max-width: 1200px; margin: 0 auto;">
+<main style="max-width: 1200px; margin: 0 auto; padding-bottom: 0;">
 
 	<div class="grid-container">
 		
@@ -116,20 +116,17 @@
 		</a>
 
 	</div>
-</main>
-<style>
-
-body.theme-1 .intro h1 {
-	color: #0c3f3a !important;
-}
-	
-</style>
-<footer>
-	<p><strong>Built by the Kaspa community, for the Kaspa community. It's open-source, and contributions are always welcome!</strong></p>
-	<p style="font-size: 0.9em;">Disclaimer: <a href="https://github.com/KaspaHub/kaspahub.github.io">Kaspa Hub</a> is a community-run project and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the official Kaspa project or its core development team.<br> The content provided on this site is for informational purposes only and does not constitute financial or investment advice. <br>Always do your own research before making any decisions.<br>
-	 <a href="https://kaspahub.org/donations/?wallet=kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm&handle=KaspaHub">Support us</a> | <a href="https://x.com/KaspaHub">Contact us</a> | <a href="https://kaspahub.org/credits/">Acknowledgements</a><br>
+<section class="footer" style="margin-top: 70px">
+	<p><strong>Built with ❤️ by the Kaspa community, for the Kaspa community. We're <a href="https://github.com/KaspaHub/kaspahub.github.io">open-source</a>, and contributions are always welcome!</strong></p>
+		<p style="font-size: 0.9em;">
+Disclaimer: Kaspa Hub is a community-run project and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the official Kaspa project or its core development team.
+The content provided on this site is for informational purposes only and does not constitute financial or investment advice.
+Links to external websites are provided for convenience and informational purposes only, and we make no representations regarding their content or reliability.
+Always do your own research before making any decisions.<br>
+		<a href="https://kaspahub.org/donations/?wallet=kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm&handle=KaspaHub">Support us</a> | <a href="https://x.com/KaspaHub">Contact us</a> | <a href="https://kaspahub.org/credits/">Acknowledgements</a>
 	</p>
-	<p>© 2025 Kaspa Community Hub.</p>
-</footer>
+</section>
+</main>
+<footer id="page-footer"><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
 </body>
 </html>
