@@ -102,24 +102,25 @@
 			</div>
 		</div>
 	</aside>
-		<section class="filter-list-main">
-			<div class="theme-1 search-sort-controls">
-				<input type="text" id="searchWalletInput" placeholder="Search wallets..."/>
-				<select id="sortWalletSelect">
-					<option value="default">Default</option>
-					<option value="az">A - Z</option>
-					<option value="za">Z - A</option>
-				</select>
-			</div>
-			<div class="filter-grid" id="walletGrid"></div>
-			<button class="theme-1" id="loadMoreBtn">Load More</button>
-		</section>
-	</div>
+	<section class="filter-list-main">
+		<div class="theme-1 search-sort-controls">
+			<input type="text" id="searchInput" placeholder="Search wallets..." />
+			<select id="sortSelect">
+				<option value="default">Default</option>
+				<option value="az">A - Z</option>
+				<option value="za">Z - A</option>
+			</select>
+		</div>
+		<div class="filter-grid" id="walletGrid"></div>
+		<button class="theme-1" id="loadMoreBtn">Load More</button>
+	</section>
+</div>
 </main>
-
 <footer><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
-
 <script>
+const walletsPerPage = 30;
+let currentIndex = 0;
+
 const wallets = [
 {
 	name: "Tangem",
@@ -443,6 +444,3408 @@ const wallets = [
 		browserExtension: true,
 		web: false
 	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
+},{
+	name: "OKX Wallet",
+	description: "Custodial wallet integrated with a Tier 1 exchange, offering multi-chain support and seamless access to trading, transfers, and Web3 features.",
+	officialSite: "https://web3.okx.com",
+	logo: "https://kaspahub.org/assets/logos/okxwallet.webp",
+	features: {
+		openSource: false,
+		multiChain: true,
+		selfCustodial: false,
+		krc20: false,
+		krc721: false,
+		knsDomains: false,
+		hardware: false,
+		mobile: true,
+		desktop: false,
+		browserExtension: true,
+		web: false
+	}
 },
 {
 	name: "NOW Wallet",
@@ -579,53 +3982,90 @@ const wallets = [
 }
 ];
 
-const walletsPerPage = 30;
-let currentWalletIndex = 0;
-let filteredWallets = [...wallets];
-
 const walletGrid = document.getElementById('walletGrid');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
-const searchWalletInput = document.getElementById('searchWalletInput');
-const sortWalletSelect = document.getElementById('sortWalletSelect');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
 const counter = document.getElementById('counter');
+
+let filteredWallets = [...wallets];
+
+const tagInfoMap = {
+	openSource: { name: "Open Source", type: "feature" },
+	multiChain: { name: "Multi-Chain", type: "feature" },
+	selfCustodial: { name: "Self-Custodial", type: "feature" },
+	krc20: { name: "KRC-20", type: "feature" },
+	krc721: { name: "KRC-721", type: "feature" },
+	knsDomains: { name: "KNS", type: "feature" },
+	hardware: { name: "Hardware", type: "device", icon: "https://kaspahub.org/assets/devices/hardware.webp" },
+	desktop: { name: "Desktop", type: "device", icon: "https://kaspahub.org/assets/devices/desktop.webp" },
+	mobile: { name: "Mobile", type: "device", icon: "https://kaspahub.org/assets/devices/mobile.webp" },
+	browserExtension: { name: "Browser", type: "device", icon: "https://kaspahub.org/assets/devices/extension.webp" },
+	web: { name: "Web", type: "device", icon: "https://kaspahub.org/assets/devices/web.webp" }
+};
 
 function renderWallets(initial = false) {
 	if (initial) {
 		walletGrid.innerHTML = '';
-		currentWalletIndex = 0;
+		currentIndex = 0;
 	}
-	const slice = filteredWallets.slice(currentWalletIndex, currentWalletIndex + walletsPerPage);
+
+	const slice = filteredWallets.slice(currentIndex, currentIndex + walletsPerPage);
 	slice.forEach(wallet => {
 		const card = document.createElement('div');
 		card.classList.add('filter-card', 'theme-1');
+
+		let featureTagsHtml = '';
+		let platformTagsHtml = '';
+
+		for (const featureKey in wallet.features) {
+			if (wallet.features[featureKey]) {
+				const tagInfo = tagInfoMap[featureKey];
+				if (tagInfo) {
+					if (tagInfo.type === 'feature') {
+						featureTagsHtml += `<span class="feature-tag">${tagInfo.name}</span>`;
+					} else if (tagInfo.type === 'device') {
+						platformTagsHtml += `<span class="platform-tag"><img src="${tagInfo.icon || 'https://img.icons8.com/ios-filled/50/000000/puzzle.png'}" alt="${tagInfo.name} Icon" loading="lazy">${tagInfo.name}</span>`;
+					}
+				}
+			}
+		}
+
 		card.innerHTML = `
 <div class="filter-logo">
-	<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
+<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
 </div>
 <h3>${wallet.name}</h3>
 <p class="filter-description">${wallet.description}</p>
+<div class="filter-features-container">${featureTagsHtml}</div>
+<div class="filter-platforms-container">${platformTagsHtml}</div>
 <a href="${wallet.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
 		`;
+
 		walletGrid.appendChild(card);
 	});
-	currentWalletIndex += slice.length;
+
+	currentIndex += slice.length;
 	counter.textContent = `(${filteredWallets.length} of ${wallets.length})`;
-	loadMoreBtn.style.display = currentWalletIndex < filteredWallets.length ? 'block' : 'none';
+	loadMoreBtn.style.display = currentIndex < filteredWallets.length ? 'block' : 'none';
 }
 
 function filterWallets() {
 	const activeFeatures = new Set();
 	filterCheckboxes.forEach(cb => cb.checked && activeFeatures.add(cb.dataset.feature));
-	const searchTerm = searchWalletInput.value.trim().toLowerCase();
+
+	const searchTerm = searchInput.value.trim().toLowerCase();
+	const defaultOrder = [...wallets];
 
 	let nameMatches = [];
-	let descMatches = [];
+	let descriptionMatches = [];
 
-	wallets.forEach(wallet => {
+	defaultOrder.forEach(wallet => {
 		for (let feature of activeFeatures) {
 			if (!wallet.features[feature]) return;
 		}
+
 		const nameMatch = wallet.name.toLowerCase().includes(searchTerm);
 		const descMatch = wallet.description.toLowerCase().includes(searchTerm);
 
@@ -634,17 +4074,17 @@ function filterWallets() {
 		} else if (nameMatch) {
 			nameMatches.push(wallet);
 		} else if (descMatch) {
-			descMatches.push(wallet);
+			descriptionMatches.push(wallet);
 		}
 	});
 
-	let combined = [...nameMatches, ...descMatches];
+	let combined = [...nameMatches, ...descriptionMatches];
 
-	const sortMode = sortWalletSelect.value;
+	const sortMode = sortSelect.value;
 	if (sortMode === 'az') {
 		combined.sort((a, b) => a.name.localeCompare(b.name));
 	} else if (sortMode === 'za') {
-		combined.sort((a, b) => b.name.localeCompare(a.name));
+		combined.sort((a, b) => b.name.localeCompare(b.name));
 	}
 
 	filteredWallets = combined;
@@ -655,13 +4095,14 @@ function filterWallets() {
 		counter.textContent = `(0 of ${wallets.length})`;
 		return;
 	}
+
 	renderWallets(true);
 }
 
 filterCheckboxes.forEach(cb => cb.addEventListener('change', filterWallets));
-searchWalletInput.addEventListener('input', filterWallets);
-sortWalletSelect.addEventListener('change', filterWallets);
 loadMoreBtn.addEventListener('click', () => renderWallets());
+searchInput.addEventListener('input', filterWallets);
+sortSelect.addEventListener('change', filterWallets);
 
 renderWallets(true);
 </script>
