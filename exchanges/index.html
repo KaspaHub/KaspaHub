@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1237,36 +1236,21 @@ function filterExchanges() {
 	const searchTerm = searchInput.value.trim().toLowerCase();
 	const defaultOrder = [...exchanges];
 
-	let nameMatches = [];
-	let descriptionMatches = [];
-
-	defaultOrder.forEach(ex => {
+	filteredExchanges = defaultOrder.filter(exchange => {
 		for (let feature of activeFeatures) {
-			if (!ex.features[feature]) return;
+			if (!exchange.features[feature]) return false;
 		}
-
-		const nameMatch = ex.name.toLowerCase().includes(searchTerm);
-		const descMatch = ex.description.toLowerCase().includes(searchTerm);
-
-		if (searchTerm === "") {
-			nameMatches.push(ex);
-		} else if (nameMatch) {
-			nameMatches.push(ex);
-		} else if (descMatch) {
-			descriptionMatches.push(ex);
-		}
+		return searchTerm === "" ||
+			exchange.name.toLowerCase().includes(searchTerm) ||
+			exchange.description.toLowerCase().includes(searchTerm);
 	});
-
-	let combined = [...nameMatches, ...descriptionMatches];
 
 	const sortMode = sortSelect.value;
 	if (sortMode === 'az') {
-		combined.sort((a, b) => a.name.localeCompare(b.name));
+		filteredExchanges.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
 	} else if (sortMode === 'za') {
-		combined.sort((a, b) => b.name.localeCompare(a.name));
+		filteredExchanges.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
 	}
-
-	filteredExchanges = combined;
 
 	if (filteredExchanges.length === 0) {
 		exchangeGrid.innerHTML = '<p class="no-items-message">No exchanges match your search and filters.</p>';
