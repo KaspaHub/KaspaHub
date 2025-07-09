@@ -630,7 +630,7 @@ function renderProjects(initial = false) {
 		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
-<img src="${project.logo}" alt="${project.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+<img src="${project.logo}" alt="${project.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${project.name}</h3>
 <p class="filter-description">${project.description}</p>
@@ -650,10 +650,8 @@ function filterProjects() {
 	const defaultOrder = [...communityProjects];
 	
 	filteredProjects = defaultOrder.filter(project => {
-	if (selectedFeature && !project.features[selectedFeature]) return false;
-	return searchTerm === "" ||
-		project.name.toLowerCase().includes(searchTerm) ||
-		project.description.toLowerCase().includes(searchTerm);
+		if (selectedFeature && !project.features[selectedFeature]) return false;
+		return searchTerm === "" || project.name.toLowerCase().includes(searchTerm) || project.description.toLowerCase().includes(searchTerm);
 	});
 	
 	const sortMode = sortSelect.value;
