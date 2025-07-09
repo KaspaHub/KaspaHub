@@ -463,12 +463,12 @@ function renderMerchants(initial = false) {
 		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
-<img src="${merchant.logo}" alt="${merchant.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+<img src="${merchant.logo}" alt="${merchant.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${merchant.name}</h3>
 <p class="filter-description">${merchant.description}</p>
 <a href="${merchant.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
-	`;
+`;
 	merchantGrid.appendChild(card);
 	});
 
