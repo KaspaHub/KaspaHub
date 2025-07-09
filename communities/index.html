@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +38,7 @@
 	</style>
 </head>
 <body class="">
-    
+
 <header>
 	<nav id="page-nav">
 		<h2><a href="/">Kaspa Hub</a></h2>
@@ -83,18 +82,18 @@
 		</div>
 	</div>
 </aside>
-    <section class="filter-list-main">
-        <div class="theme-1 search-sort-controls">
-            <input type="text" id="searchInput" placeholder="Search communities..."/>
-            <select id="sortSelect">
-                <option value="default">Default</option>
-                <option value="az">A - Z</option>
-                <option value="za">Z - A</option>
-            </select>
-        </div>
-        <div class="filter-grid" id="communityGrid"></div>
-        <button class="theme-1" id="loadMoreBtn">Load More</button>
-    </section>
+<section class="filter-list-main">
+<div class="theme-1 search-sort-controls">
+	<input type="text" id="searchInput" placeholder="Search communities..."/>
+		<select id="sortSelect">
+		<option value="default">Default</option>
+		<option value="az">A - Z</option>
+		<option value="za">Z - A</option>
+	</select>
+</div>
+<div class="filter-grid" id="communityGrid"></div>
+<button class="theme-1" id="loadMoreBtn">Load More</button>
+</section>
 </div>
 </main>
 <footer><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
@@ -353,71 +352,69 @@ let lastCheckedRadio = null;
 let filteredCommunities = [...communityChats];
 
 function renderCommunities(initial = false) {
-    if (initial) {
-        communityGrid.innerHTML = '';
-        currentIndex = 0;
-    }
+	if (initial) {
+		communityGrid.innerHTML = '';
+		currentIndex = 0;
+	}
 
-    const slice = filteredCommunities.slice(currentIndex, currentIndex + communitiesPerPage);
-    slice.forEach(community => {
-        const card = document.createElement('div');
-        card.classList.add('filter-card', 'theme-1');
-        card.innerHTML = `
-            <div class="filter-logo">
-                <img src="${community.logo}" alt="${community.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
-            </div>
-            <h3>${community.name}</h3>
-            <p class="filter-description">${community.description}</p>
-            <a href="${community.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Community</a>
-        `;
-        communityGrid.appendChild(card);
-    });
-
-    currentIndex += slice.length;
-    counter.textContent = `(${filteredCommunities.length} of ${communityChats.length})`;
-    loadMoreBtn.style.display = currentIndex < filteredCommunities.length ? 'block' : 'none';
+	const slice = filteredCommunities.slice(currentIndex, currentIndex + communitiesPerPage);
+	slice.forEach(community => {
+		const card = document.createElement('div');
+		card.classList.add('filter-card', 'theme-1');
+		card.innerHTML = `
+<div class="filter-logo">
+<img src="${community.logo}" alt="${community.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+</div>
+<h3>${community.name}</h3>
+<p class="filter-description">${community.description}</p>
+<a href="${community.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Community</a>
+		`;
+	communityGrid.appendChild(card);
+	});
+	
+	currentIndex += slice.length;
+	counter.textContent = `(${filteredCommunities.length} of ${communityChats.length})`;
+	loadMoreBtn.style.display = currentIndex < filteredCommunities.length ? 'block' : 'none';
 }
 
 function filterCommunities() {
-    const selectedPlatform = Array.from(filterRadios).find(radio => radio.checked)?.dataset.platform;
-    const searchTerm = searchInput.value.trim().toLowerCase();
-    const defaultOrder = [...communityChats];
+	const selectedPlatform = Array.from(filterRadios).find(radio => radio.checked)?.dataset.platform;
+	const searchTerm = searchInput.value.trim().toLowerCase();
+	const defaultOrder = [...communityChats];
 
-    filteredCommunities = defaultOrder.filter(community => {
-        const matchesPlatform = !selectedPlatform || community.platform === selectedPlatform;
-        const matchesSearch = searchTerm === "" ||
-            community.name.toLowerCase().includes(searchTerm) ||
-            community.description.toLowerCase().includes(searchTerm);
-        return matchesPlatform && matchesSearch;
-    });
+	filteredCommunities = defaultOrder.filter(community => {
+		const matchesPlatform = !selectedPlatform || community.platform === selectedPlatform;
+		const matchesSearch = searchTerm === "" || community.name.toLowerCase().includes(searchTerm) || community.description.toLowerCase().includes(searchTerm);
+		return matchesPlatform && matchesSearch;
+	});
+	
+	const sortMode = sortSelect.value;
+		if (sortMode === 'az') {
+	filteredCommunities.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+	} else if (sortMode === 'za') {
+		filteredCommunities.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
+	}
 
-    const sortMode = sortSelect.value;
-    if (sortMode === 'az') {
-        filteredCommunities.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
-    } else if (sortMode === 'za') {
-        filteredCommunities.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
-    }
+	if (filteredCommunities.length === 0) {
+		communityGrid.innerHTML = '<p class="no-items-message">No communities match your search and filters.</p>';
+		loadMoreBtn.style.display = 'none';
+		counter.textContent = `(0 of ${communityChats.length})`;
+		return;
+	}
 
-    if (filteredCommunities.length === 0) {
-        communityGrid.innerHTML = '<p class="no-items-message">No communities match your search and filters.</p>';
-        loadMoreBtn.style.display = 'none';
-        counter.textContent = `(0 of ${communityChats.length})`;
-        return;
-    }
-
-    renderCommunities(true);
+	renderCommunities(true);
 }
 
 filterRadios.forEach(radio => {
-    radio.addEventListener('click', function () {
-        if (lastCheckedRadio === this) {
-            this.checked = false;
-            lastCheckedRadio = null;
-        } else {
-            lastCheckedRadio = this;
-        }
-        filterCommunities();
-    });
+	radio.addEventListener('click', function () {
+	if (lastCheckedRadio === this) {
+		this.checked = false;
+		lastCheckedRadio = null;
+	} else {
+		lastCheckedRadio = this;
+	}
+	filterCommunities();
+	});
 });
 
 loadMoreBtn.addEventListener('click', () => renderCommunities());
