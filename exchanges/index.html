@@ -1213,12 +1213,12 @@ function renderExchanges(initial = false) {
 		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
-	<img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
+<img src="${exchange.logo}" alt="${exchange.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${exchange.name}</h3>
 <p class="filter-description">${exchange.description}</p>
 <a href="${exchange.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
-		`;
+`;
 		
 		exchangeGrid.appendChild(card);
 	});
@@ -1240,9 +1240,7 @@ function filterExchanges() {
 		for (let feature of activeFeatures) {
 			if (!exchange.features[feature]) return false;
 		}
-		return searchTerm === "" ||
-			exchange.name.toLowerCase().includes(searchTerm) ||
-			exchange.description.toLowerCase().includes(searchTerm);
+		return searchTerm === "" || exchange.name.toLowerCase().includes(searchTerm) || exchange.description.toLowerCase().includes(searchTerm);
 	});
 
 	const sortMode = sortSelect.value;
