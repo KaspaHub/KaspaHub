@@ -83,14 +83,24 @@
 	</div>
 </aside>
 <section class="filter-list-main">
-<section class="research-tools-section">
+	<div class="theme-1 search-sort-controls">
+		<input type="text" id="searchInput" placeholder="Search resources..."/>
+		<select id="sortSelect">
+			<option value="default">Default</option>
+			<option value="az">A - Z</option>
+			<option value="za">Z - A</option>
+		</select>
+	</div>
 	<div class="filter-grid" id="toolGrid"></div>
-</section>
+	<button class="theme-1" id="loadMoreBtn">Load More</button>
 </section>
 </div>
 </main>
 <footer id="page-footer"><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
 <script>
+const toolsPerPage = 30;
+let currentIndex = 0;
+
 const researchTools = [
 {
 	name: "PHANTOM GHOSTDAG Whitepaper",
@@ -719,19 +729,22 @@ const researchTools = [
 ];
 
 const toolGrid = document.getElementById('toolGrid');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
 const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const counter = document.getElementById('counter');
 let lastCheckedRadio = null;
+let filteredTools = [...researchTools];
 
-function renderTools(filteredTools) {
-	toolGrid.innerHTML = '';
-	const counter = document.getElementById('counter');
-	counter.textContent = `(${filteredTools.length} of ${researchTools.length})`;
-	if (filteredTools.length === 0) {
-		toolGrid.innerHTML = '<p class="no-items-message">No research tools match your selected filter.</p>';
-		return;
+function renderTools(initial = false) {
+	if (initial) {
+		toolGrid.innerHTML = '';
+		currentIndex = 0;
 	}
 
-	filteredTools.forEach(tool => {
+	const slice = filteredTools.slice(currentIndex, currentIndex + toolsPerPage);
+	slice.forEach(tool => {
 		const card = document.createElement('div');
 		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
@@ -743,14 +756,40 @@ function renderTools(filteredTools) {
 <a href="${tool.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>`;
 		toolGrid.appendChild(card);
 	});
+
+	currentIndex += slice.length;
+	counter.textContent = `(${filteredTools.length} of ${researchTools.length})`;
+
+	loadMoreBtn.style.display = currentIndex < filteredTools.length ? 'block' : 'none';
 }
 
 function filterTools() {
 	const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature;
-	const filtered = selectedFeature
-		? researchTools.filter(tool => tool.features[selectedFeature])
-		: researchTools;
-	renderTools(filtered);
+	const searchTerm = searchInput.value.trim().toLowerCase();
+	const defaultOrder = [...researchTools];
+
+	filteredTools = defaultOrder.filter(tool => {
+		if (selectedFeature && !tool.features[selectedFeature]) return false;
+		return searchTerm === "" ||
+			tool.name.toLowerCase().includes(searchTerm) ||
+			tool.description.toLowerCase().includes(searchTerm);
+	});
+
+	const sortMode = sortSelect.value;
+	if (sortMode === 'az') {
+		filteredTools.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+	} else if (sortMode === 'za') {
+		filteredTools.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
+	}
+
+	if (filteredTools.length === 0) {
+		toolGrid.innerHTML = '<p class="no-items-message">No resources match your search and filters.</p>';
+		loadMoreBtn.style.display = 'none';
+		counter.textContent = `(0 of ${researchTools.length})`;
+		return;
+	}
+
+	renderTools(true);
 }
 
 filterRadios.forEach(radio => {
@@ -765,7 +804,11 @@ filterRadios.forEach(radio => {
 	});
 });
 
-renderTools(researchTools);
+loadMoreBtn.addEventListener('click', () => renderTools());
+searchInput.addEventListener('input', filterTools);
+sortSelect.addEventListener('change', filterTools);
+
+renderTools(true);
 </script>
 </body>
 </html>
