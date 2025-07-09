@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,51 +57,59 @@
 	<p style="padding-left: 7px;">Discover open-source tools for building on Kaspa, including nodes, wallets, visualization tools, and community support applications. <br>Filter by programming language to find the right tool for your development needs.</p>
 </div>
 <div class="main-content-area">
-    <aside class="sidebar theme-1">
+<aside class="sidebar theme-1">
 	<div class="filter-category">
-	    <h2 id="counter"></h2>
-	    <h3>Languages</h3>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="rust" data-feature="rust">
-		<label for="rust">Rust</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="javascript" data-feature="javascript">
-		<label for="javascript">JavaScript</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="typescript" data-feature="typescript">
-		<label for="typescript">TypeScript</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="dart" data-feature="dart">
-		<label for="dart">Dart</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="go" data-feature="go">
-		<label for="go">Go</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="php" data-feature="php">
-		<label for="php">PHP</label>
-	    </div>
-	    <div class="filter-group">
-		<input type="radio" name="language" id="python" data-feature="python">
-		<label for="python">Python</label>
-	    </div>
+		<h2 id="counter"></h2>
+		<h3>Languages</h3>
+		<div class="filter-group">
+			<input type="radio" name="language" id="rust" data-feature="rust">
+			<label for="rust">Rust</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="language" id="javascript" data-feature="javascript">
+			<label for="javascript">JavaScript</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="language" id="typescript" data-feature="typescript">
+			<label for="typescript">TypeScript</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="language" id="dart" data-feature="dart">
+			<label for="dart">Dart</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="language" id="go" data-feature="go">
+			<label for="go">Go</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="language" id="php" data-feature="php">
+			<label for="php">PHP</label>
+		</div>
+		<div class="filter-group">
+			<input type="radio" name="language" id="python" data-feature="python">
+			<label for="python">Python</label>
+		</div>
 	</div>
-    </aside>
-
-    <section class="filter-list-main">
-	<section class="tool-list-section">
-	    <div class="filter-grid" id="toolGrid">
-	    </div>
-	</section>
-    </section>
+</aside>
+<section class="filter-list-main">
+	<div class="theme-1 search-sort-controls">
+		<input type="text" id="searchInput" placeholder="Search tools..."/>
+		<select id="sortSelect">
+			<option value="default">Default</option>
+			<option value="az">A - Z</option>
+			<option value="za">Z - A</option>
+		</select>
+	</div>
+	<div class="filter-grid" id="toolGrid"></div>
+	<button class="theme-1" id="loadMoreBtn">Load More</button>
+</section>
 </div>
 </main>
 <footer><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
 <script>
+const toolsPerPage = 30;
+let currentIndex = 0;
+
 const tools = [
 {
 	name: "Kasplex",
@@ -329,9 +338,14 @@ const tools = [
 ];
 
 const toolGrid = document.getElementById('toolGrid');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
 const filterRadios = document.querySelectorAll('input[type="radio"][data-feature]');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const counter = document.getElementById('counter');
 
 let lastCheckedRadio = null;
+let filteredTools = [...tools];
 
 function getRandomColor() {
 	const letters = '0123456789ABCDEF';
@@ -342,55 +356,78 @@ function getRandomColor() {
 	return color;
 }
 
-function renderTools(filteredTools) {
-	toolGrid.innerHTML = '';
-	const counter = document.getElementById('counter');
-	counter.textContent = `(${filteredTools.length} of ${tools.length})`;
-
-	if (filteredTools.length === 0) {
-		toolGrid.innerHTML = '<p class="no-items-message">No tools match your selected filters.</p>';
-		return;
+function renderTools(initial = false) {
+	if (initial) {
+		toolGrid.innerHTML = '';
+		currentIndex = 0;
 	}
-
-	filteredTools.forEach(tool => {
+	
+	const slice = filteredTools.slice(currentIndex, currentIndex + toolsPerPage);
+	slice.forEach(tool => {
 		const card = document.createElement('div');
-		card.classList.add('filter-card');
-		card.classList.add('theme-1');
-
+		card.classList.add('filter-card', 'theme-1');
 		const randomColor = getRandomColor();
-
 		card.innerHTML = `
 <div class="filter-logo" style="background-color: ${randomColor}; display: flex; align-items: center; justify-content: center; height: 100px;">
 <h3 style="color: #F1F1F1; margin: 0;">${tool.name}</h3>
 </div>
 <h3>${tool.name}</h3>
 <p class="filter-description">${tool.description}</p>
-<a href="${tool.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button">View</a>`;
-		toolGrid.appendChild(card);
-	});
+<a href="${tool.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button">View</a>
+`;
+toolGrid.appendChild(card);
+});
+
+	currentIndex += slice.length;
+	counter.textContent = `(${filteredTools.length} of ${tools.length})`;
+	
+	loadMoreBtn.style.display = currentIndex < filteredTools.length ? 'block' : 'none';
 }
 
 function filterTools() {
 	const selectedFeature = Array.from(filterRadios).find(radio => radio.checked)?.dataset.feature;
-	const filtered = selectedFeature
-		? tools.filter(tool => tool.features[selectedFeature])
-		: tools;
-	renderTools(filtered);
+	const searchTerm = searchInput.value.trim().toLowerCase();
+	const defaultOrder = [...tools];
+
+	filteredTools = defaultOrder.filter(tool => {
+		if (selectedFeature && !tool.features[selectedFeature]) return false;
+		return searchTerm === "" || tool.name.toLowerCase().includes(searchTerm) || tool.description.toLowerCase().includes(searchTerm);
+	});
+	
+	const sortMode = sortSelect.value;
+	if (sortMode === 'az') {
+	filteredTools.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+	} else if (sortMode === 'za') {
+		filteredTools.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
+	}
+	
+	if (filteredTools.length === 0) {
+		toolGrid.innerHTML = '<p class="no-items-message">No tools match your search and filters.</p>';
+		loadMoreBtn.style.display = 'none';
+		counter.textContent = `(0 of ${tools.length})`;
+		return;
+	}
+	
+	renderTools(true);
 }
 
 filterRadios.forEach(radio => {
 	radio.addEventListener('click', function () {
-		if (lastCheckedRadio === this) {
-			this.checked = false;
-			lastCheckedRadio = null;
-		} else {
-			lastCheckedRadio = this;
-		}
-		filterTools();
+	if (lastCheckedRadio === this) {
+		this.checked = false;
+		lastCheckedRadio = null;
+	} else {
+		lastCheckedRadio = this;
+	}
+	filterTools();
 	});
 });
 
-renderTools(tools);
+loadMoreBtn.addEventListener('click', () => renderTools());
+searchInput.addEventListener('input', filterTools);
+sortSelect.addEventListener('change', filterTools);
+
+renderTools(true);
 </script>
 </body>
 </html>
