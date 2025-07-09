@@ -363,12 +363,12 @@ function renderCommunities(initial = false) {
 		card.classList.add('filter-card', 'theme-1');
 		card.innerHTML = `
 <div class="filter-logo">
-<img src="${community.logo}" alt="${community.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+<img src="${community.logo}" alt="${community.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${community.name}</h3>
 <p class="filter-description">${community.description}</p>
 <a href="${community.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Community</a>
-		`;
+`;
 	communityGrid.appendChild(card);
 	});
 	
