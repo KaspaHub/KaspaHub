@@ -566,6 +566,11 @@ code {
 	margin-top: 1.5rem;
 }
 /* inputs v */
+input::placeholder {
+	opacity: 0.5;
+	color: inherit;
+}
+
 textarea {
 	text-decoration: none;
 	font-family: inherit;
