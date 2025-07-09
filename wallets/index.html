@@ -656,36 +656,21 @@ function filterWallets() {
 	const searchTerm = searchInput.value.trim().toLowerCase();
 	const defaultOrder = [...wallets];
 
-	let nameMatches = [];
-	let descriptionMatches = [];
-
-	defaultOrder.forEach(wallet => {
+	filteredWallets = defaultOrder.filter(wallet => {
 		for (let feature of activeFeatures) {
-			if (!wallet.features[feature]) return;
+			if (!wallet.features[feature]) return false;
 		}
-
-		const nameMatch = wallet.name.toLowerCase().includes(searchTerm);
-		const descMatch = wallet.description.toLowerCase().includes(searchTerm);
-
-		if (searchTerm === "") {
-			nameMatches.push(wallet);
-		} else if (nameMatch) {
-			nameMatches.push(wallet);
-		} else if (descMatch) {
-			descriptionMatches.push(wallet);
-		}
+		return searchTerm === "" ||
+			wallet.name.toLowerCase().includes(searchTerm) ||
+			wallet.description.toLowerCase().includes(searchTerm);
 	});
-
-	let combined = [...nameMatches, ...descriptionMatches];
 
 	const sortMode = sortSelect.value;
 	if (sortMode === 'az') {
-		combined.sort((a, b) => a.name.localeCompare(b.name));
+		filteredWallets.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
 	} else if (sortMode === 'za') {
-		combined.sort((a, b) => b.name.localeCompare(b.name));
+		filteredWallets.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
 	}
-
-	filteredWallets = combined;
 
 	if (filteredWallets.length === 0) {
 		walletGrid.innerHTML = '<p class="no-items-message">No wallets match your search and filters.</p>';
