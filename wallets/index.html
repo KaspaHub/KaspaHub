@@ -632,14 +632,14 @@ function renderWallets(initial = false) {
 
 		card.innerHTML = `
 <div class="filter-logo">
-<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
+<img src="${wallet.logo}" alt="${wallet.name} Logo" onerror="this.onerror=null;this.src='https://kaspahub.org/assets/logos/logo.webp';" loading="lazy">
 </div>
 <h3>${wallet.name}</h3>
 <p class="filter-description">${wallet.description}</p>
 <div class="filter-features-container">${featureTagsHtml}</div>
 <div class="filter-platforms-container">${platformTagsHtml}</div>
 <a href="${wallet.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
-		`;
+`;
 
 		walletGrid.appendChild(card);
 	});
@@ -660,9 +660,7 @@ function filterWallets() {
 		for (let feature of activeFeatures) {
 			if (!wallet.features[feature]) return false;
 		}
-		return searchTerm === "" ||
-			wallet.name.toLowerCase().includes(searchTerm) ||
-			wallet.description.toLowerCase().includes(searchTerm);
+		return searchTerm === "" || wallet.name.toLowerCase().includes(searchTerm) || wallet.description.toLowerCase().includes(searchTerm);
 	});
 
 	const sortMode = sortSelect.value;
