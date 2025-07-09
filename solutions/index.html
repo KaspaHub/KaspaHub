@@ -82,15 +82,25 @@
 			</div>
 		</div>
 	</aside>
-	<section class="filter-list-main">
-		<section class="merchant-list-section">
-			<div class="filter-grid" id="merchantGrid"></div>
-		</section>
-	</section>
+    <section class="filter-list-main">
+        <div class="theme-1 search-sort-controls">
+            <input type="text" id="searchInput" placeholder="Search merchant solutions..."/>
+            <select id="sortSelect">
+                <option value="default">Default</option>
+                <option value="az">A - Z</option>
+                <option value="za">Z - A</option>
+            </select>
+        </div>
+        <div class="filter-grid" id="merchantGrid"></div>
+        <button class="theme-1" id="loadMoreBtn">Load More</button>
+    </section>
 </div>
 </main>
 <footer><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
 <script>
+const merchantsPerPage = 30;
+let currentIndex = 0;
+
 const merchantSolutions = [
 {
 	name: "Kasway",
@@ -433,58 +443,80 @@ const merchantSolutions = [
 ];
 
 const merchantGrid = document.getElementById('merchantGrid');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
 const filterCheckboxes = document.querySelectorAll('input[type="checkbox"][data-feature]');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const counter = document.getElementById('counter');
 
-function renderMerchants(filteredMerchants) {
-	merchantGrid.innerHTML = '';
-	const counter = document.getElementById('counter');
-	counter.textContent = `(${filteredMerchants.length} of ${merchantSolutions.length})`;
-	if (filteredMerchants.length === 0) {
-		merchantGrid.innerHTML = '<p class="no-items-message">No merchant solutions match your selected filters.</p>';
-		return;
-    	}
-	filteredMerchants.forEach(merchant => {
-		const card = document.createElement('div');
-		card.classList.add('filter-card');
-		card.classList.add('theme-1');
-		card.innerHTML = `
+let filteredMerchants = [...merchantSolutions];
+
+function renderMerchants(initial = false) {
+    if (initial) {
+        merchantGrid.innerHTML = '';
+        currentIndex = 0;
+    }
+
+    const slice = filteredMerchants.slice(currentIndex, currentIndex + merchantsPerPage);
+    slice.forEach(merchant => {
+        const card = document.createElement('div');
+        card.classList.add('filter-card', 'theme-1');
+        card.innerHTML = `
 <div class="filter-logo">
 <img src="${merchant.logo}" alt="${merchant.name} Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=Logo';" loading="lazy">
 </div>
 <h3>${merchant.name}</h3>
 <p class="filter-description">${merchant.description}</p>
 <a href="${merchant.officialSite}" target="_blank" rel="noopener noreferrer" class="link-button">Visit Website</a>
-	`;
-	merchantGrid.appendChild(card);
-	});
+        `;
+        merchantGrid.appendChild(card);
+    });
+
+    currentIndex += slice.length;
+    counter.textContent = `(${filteredMerchants.length} of ${merchantSolutions.length})`;
+
+    loadMoreBtn.style.display = currentIndex < filteredMerchants.length ? 'block' : 'none';
 }
 
 function filterMerchants() {
-	const activeFeatureKeys = new Set();
-	filterCheckboxes.forEach(checkbox => {
-		if (checkbox.checked) {
-			activeFeatureKeys.add(checkbox.dataset.feature);
-		}
-	});
-	const filtered = merchantSolutions.filter(merchant => {
-		if (activeFeatureKeys.size === 0) {
-			return true;
-		}
-	for (const featureKey of activeFeatureKeys) {
-		if (!merchant.features[featureKey]) {
-			return false;
-		}
-	}
-	return true;
-	});
-	renderMerchants(filtered);
+    const activeFeatures = new Set();
+    filterCheckboxes.forEach(cb => cb.checked && activeFeatures.add(cb.dataset.feature));
+
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const defaultOrder = [...merchantSolutions];
+
+    filteredMerchants = defaultOrder.filter(merchant => {
+        for (let feature of activeFeatures) {
+            if (!merchant.features[feature]) return false;
+        }
+        return searchTerm === "" ||
+            merchant.name.toLowerCase().includes(searchTerm) ||
+            merchant.description.toLowerCase().includes(searchTerm);
+    });
+
+    const sortMode = sortSelect.value;
+    if (sortMode === 'az') {
+        filteredMerchants.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
+    } else if (sortMode === 'za') {
+        filteredMerchants.sort((a, b) => b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }));
+    }
+
+    if (filteredMerchants.length === 0) {
+        merchantGrid.innerHTML = '<p class="no-items-message">No merchant solutions match your search and filters.</p>';
+        loadMoreBtn.style.display = 'none';
+        counter.textContent = `(0 of ${merchantSolutions.length})`;
+        return;
+    }
+
+    renderMerchants(true);
 }
 
-filterCheckboxes.forEach(checkbox => {
-	checkbox.addEventListener('change', filterMerchants);
-});
+filterCheckboxes.forEach(cb => cb.addEventListener('change', filterMerchants));
+loadMoreBtn.addEventListener('click', () => renderMerchants());
+searchInput.addEventListener('input', filterMerchants);
+sortSelect.addEventListener('change', filterMerchants);
 
-renderMerchants(merchantSolutions);
+renderMerchants(true);
 </script>
 </body>
 </html>
