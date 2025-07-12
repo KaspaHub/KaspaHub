@@ -218,8 +218,8 @@ header a {
 	text-align: center;
 	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 	min-height: 300px;
-/* 	max-height: 500px; */
-	max-width: 800px;
+	max-height: 700px;
+	max-width: 700px;
 	margin: 0 auto;
 }
 
