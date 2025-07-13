@@ -68,7 +68,7 @@ input {
 }
 
 br, span, font, p, h1, h2, h3, h4, h5, h6, time {
-	min-height: 1.25rem;
+/* 	min-height: 1.25rem; */
 	line-height: 1.25em;
 }
 
