@@ -417,7 +417,7 @@ code {
 .card {
 	transition: all 0.3s ease;
 	min-height: 200px;
-	max-height: 210px;
+	max-height: 250px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
