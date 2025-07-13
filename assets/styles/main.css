@@ -444,7 +444,6 @@ code {
 .card-title {
 	filter: brightness(0.9);
 	font-size: 1.7rem;
-	margin-bottom: 15px;
 }
 
 .card-description {
