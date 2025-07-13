@@ -115,9 +115,6 @@ header a {
 }
 
 .sidebar {
-/* 	margin: 0 5px 20px; */
-	flex: 0 0 250px;
-	padding: 20px;
 	align-self: flex-start;
 }
 
