@@ -242,7 +242,6 @@ header a {
 }
 
 .filter-description {
-	font-size: 1em;
 	margin-bottom: 20px;
 	flex-grow: 1;
 }
@@ -450,7 +449,6 @@ code {
 }
 
 .card-description {
-	font-size: 1em;
 	margin-bottom: 20px;
 	flex-grow: 1;
 }
