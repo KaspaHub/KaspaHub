@@ -3,6 +3,8 @@ Dive into the Kaspa universe with Kaspa Hub - an independent community-driven pl
 
 https://kaspahub.org/
 
+https://kaspahub.org/articles/
+
 https://kaspahub.org/projects/
 
 https://kaspahub.org/communities/
