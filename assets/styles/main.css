@@ -22,8 +22,8 @@ body {
 	overflow-wrap: break-word;
 	word-break: break-word;
 	min-height: 101vh;
-	display: flex;
-	flex-direction: column;
+/* 	display: flex;
+	flex-direction: column; */
 	margin: 0 7px;
 	padding: 0;
 }
@@ -204,11 +204,6 @@ header a {
 	max-width: 700px;
 	margin: 0 auto;
 }
-
-/*.filter-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}*/
 
 .filter-logo {
 	min-width: 100px;
