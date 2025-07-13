@@ -1,26 +1,25 @@
 @charset "UTF-8";
 
-@font-face {
+/* @font-face {
 	font-family: 'Mulish';
 	src: url('https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/fonts/mulish-variablefont_wght.ttf') format('truetype');
+} */
+
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
 html {
-	font-family: Mulish, Arial, sans-serif;
+/* 	font-family: Mulish, Arial, sans-serif; */
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 	box-sizing: border-box;
 	word-wrap: anywhere;
 	overflow-wrap: break-word;
 	word-break: break-word;
 	cursor: default;
 	font-size: 1.2rem;
-/* 	line-height: 1.25rem; */
-/* 	font-weight: 450; */
 	-webkit-tap-highlight-color: transparent;
-}
-
-html {
-	margin: 0;
-	padding: 0;
 }
 
 body {
