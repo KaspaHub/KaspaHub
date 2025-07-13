@@ -67,12 +67,12 @@ input {
 	font-size: 1rem;
 }
 
-br, span, font, p, h1, h2, h3, h4, h5, h6, time {
+br, span, font, p, time {
 	line-height: 1.35;
 	vertical-align: baseline;
 }
 
-h1, h2, h3, h4, h5, h6, p, time {
+h1, h2, h3, h4, h5, h6 {
 	margin-block-start: 0.5rem;
 	margin-block-end: 0.5rem;
 }
