@@ -5,28 +5,27 @@
 	src: url('https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/fonts/mulish-variablefont_wght.ttf') format('truetype');
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
+* {
+	box-sizing: border-box;
 }
 
 html {
-	font-family: Mulish, sans-serif, Segoe UI, Arial;
-	box-sizing: border-box;
-	word-wrap: anywhere;
-	overflow-wrap: break-word;
-	word-break: break-word;
 	cursor: default;
-	font-size: 1.2rem;
 	-webkit-tap-highlight-color: transparent;
 }
 
 body {
-/* 	background: #0F0F0F; */
+	font-family: Mulish, 'Segoe UI', Arial, sans-serif;
+	font-size: 1.2rem;
+	font-weight: 500;
+	word-wrap: anywhere;
+	overflow-wrap: break-word;
+	word-break: break-word;
 	min-height: 101vh;
 	display: flex;
 	flex-direction: column;
 	margin: 0 7px;
+	padding: 0;
 }
 
 main {
