@@ -111,6 +111,7 @@ header a {
 
 .sidebar {
 	align-self: flex-start;
+	min-width: 280px;
 }
 
 .sidebar h2 {
