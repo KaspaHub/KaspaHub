@@ -13,8 +13,8 @@ html {
 	word-break: break-word;
 	cursor: default;
 	font-size: 1.2rem;
-	font-weight: 450;
-	line-height: 1.25rem;
+/* 	line-height: 1.25rem; */
+/* 	font-weight: 450; */
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -68,8 +68,8 @@ input {
 }
 
 br, span, font, p, h1, h2, h3, h4, h5, h6, time {
-/* 	min-height: 1.25rem; */
-	line-height: 1.25em;
+	line-height: 1.35;
+	vertical-align: baseline;
 }
 
 h1, h2, h3, h4, h5, h6, p, time {
@@ -131,7 +131,7 @@ header a {
 
 .sidebar h2 {
 	margin-bottom: 20px;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	filter: brightness(0.7);
 }
 
@@ -140,7 +140,7 @@ header a {
 }
 
 .filter-category h3 {
-	font-size: 1.1em;
+	font-size: 1.1rem;
 	filter: brightness(0.7);
 	margin-bottom: 15px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -260,10 +260,9 @@ header a {
 	align-items: center;
 	padding: 5px 10px;
 	border-radius: 20px;
-	font-size: 0.85em;
 	font-weight: 500;
 	white-space: nowrap;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 }
 
 .feature-tag {
@@ -292,7 +291,7 @@ img {
 	/*width: 100%;*/
 	color: #666;
 	padding: 50px;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 }
 
 .articleVid {
@@ -352,7 +351,7 @@ img {
 
 footer, .footer {
 	color: #6c757d;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	text-align: center;
 	padding: 0;
 	margin: 0;
@@ -413,7 +412,7 @@ code {
 	background-color: rgba(192,192,192, 0.3);
 	padding-right: 10px;
 	padding-left: 10px;
-	font-size: 1.05em;
+	font-size: 1.05rem;
 	border-radius: 6px;
 }
 
@@ -444,7 +443,7 @@ code {
 
 .card-title {
 	filter: brightness(0.9);
-	font-size: 1.7em;
+	font-size: 1.7rem;
 	margin-bottom: 15px;
 }
 
@@ -469,7 +468,7 @@ code {
 	padding: 10px 15px;
 	border-radius: 5px;
 	font-weight: 700;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	text-align: center;
 }
 
