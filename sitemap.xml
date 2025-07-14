@@ -37,6 +37,12 @@
 	<priority>0.8</priority>
 </url>
 <url>
+	<loc>https://kaspahub.org/article/kaspa-vs-cardano/</loc>
+	<lastmod>2025-07-14</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>0.8</priority>
+</url>
+<url>
 	<loc>https://kaspahub.org/wallets/</loc>
 	<lastmod>2025-07-13</lastmod>
 	<changefreq>weekly</changefreq>
