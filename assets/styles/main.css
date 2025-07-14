@@ -588,6 +588,47 @@ option {
 	margin-bottom: 20px;
 }
 
+/* table v */
+.table-container {
+	max-width: 100%;
+	overflow-x: auto;
+	position: relative;
+}
+table {
+	width: max-content;
+	text-align: center;
+	margin: 0 auto;
+}
+table th, table td, table tr {
+	padding: 5px;
+}
+table th {
+	background-color: #b3b3b3;
+}
+table th:first-child, table td:first-child {
+	position: sticky;
+	left: 0;
+	background-color: #b3b3b3;
+	z-index: 1;
+	min-width: 120px;
+}
+table td:first-child {
+	font-weight: bold;
+}
+article table {
+	border-collapse: collapse;
+}
+table tr:nth-child(odd) {
+	background-color: #dddddd0f;
+}
+table tr:nth-child(even) {
+	background-color: #dddddd2e;
+}
+table tr:hover {
+	background-color: rgba(100, 100, 100, 0.1);
+}
+
+/* ad */
 ins.adsbygoogle[data-ad-status="unfilled"] {
     display: none !important;
 }
