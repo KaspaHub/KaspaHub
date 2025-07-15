@@ -504,6 +504,7 @@ code {
 	text-decoration: none !important;
 	cursor: pointer;
 	user-select: none;
+	font-size: 1rem;
 }
 .link-button {
 	background: rgb(0 126 114 / 55%);
