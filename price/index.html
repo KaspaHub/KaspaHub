@@ -33,18 +33,16 @@
 <style>
 #price {
 font-size: 2rem;
-color: #222;
-transition: color 0.3s ease-in-out;
+font-weight: bold;
+transition: color 0.4s ease-in-out;
 }
-
 #price.updated {
-animation: fadeIn 0.5s ease-out;
+animation: fadeIn 0.6s ease-out;
 }
-
 @keyframes fadeIn {
 from {
 opacity: 0.3;
-transform: scale(0.98);
+transform: scale(0.97);
 }
 to {
 opacity: 1;
@@ -63,7 +61,7 @@ transform: scale(1);
 		</div>
 	</nav>
 	<div style="text-align: center; margin: 100px 40px; ma">
-		<p style="font-size: 2rem; font-weight: bold;" id="price">Loading Kaspa price...</p>
+		<p id="price">Loading Kaspa price...</p>
 	</div>
 <script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
