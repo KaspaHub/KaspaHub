@@ -49,7 +49,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const priceEl = document.getElementById("price");
 
-    const kaspaApi = "https://api.kaspa.org/info/price?s=10";
+    const kaspaApi = "https://api.kaspa.org/info/price";
     const fallbackApi = "https://api.coingecko.com/api/v3/simple/price?ids=kaspa&vs_currencies=usd";
 
     async function fetchKaspaPrice() {
@@ -87,7 +87,7 @@
     }
 
     fetchKaspaPrice();
-    setInterval(fetchKaspaPrice, 10000);
+    setInterval(fetchKaspaPrice, 15000);
   });
 </script>
 </body>
