@@ -35,6 +35,8 @@ While not strictly required, including the original &lt;footer&gt; element helps
 
 Localized versions that include the footer may also be featured on our site, helping others discover your work.
 
-Feel free to reach out if you have questions or want to share your localized version!
+# Contact Us
+
+Feel free to reach out if you have questions, want to submit your project, or share your localized Kaspa Hub. We're always interested in what you're building in the Kaspa ecosystem.
 
 https://x.com/KaspaHub
