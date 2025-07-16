@@ -46,33 +46,49 @@
 <script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
 </header>
 <script defer>
-document.addEventListener("DOMContentLoaded", () => {
-const priceEl = document.getElementById("price");
-const apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=kaspa&vs_currencies=usd";
+  document.addEventListener("DOMContentLoaded", () => {
+    const priceEl = document.getElementById("price");
 
-async function fetchKaspaPrice() {
-	try {
-		const response = await fetch(apiUrl);
-		if (!response.ok) throw new Error("API error");
-		const data = await response.json();
-		const price = data.kaspa.usd;
-		
-		const titlePrice = price.toFixed(4);
-		const bodyPrice = price.toFixed(6);
-		
-		document.title = `KAS/USD - $${titlePrice}`;
-		priceEl.textContent = `Kaspa Price: $${bodyPrice}`;
-		priceEl.classList.remove("loading");
-	} catch (err) {
-		priceEl.textContent = "Failed to load Kaspa price.";
-		console.error("Error fetching price:", err);
-	}
-}
+    const kaspaApi = "https://api.kaspa.org/info/price?s=10";
+    const fallbackApi = "https://api.coingecko.com/api/v3/simple/price?ids=kaspa&vs_currencies=usd";
 
-fetchKaspaPrice();
-setInterval(fetchKaspaPrice, 20000);
-});
+    async function fetchKaspaPrice() {
+      try {
+        const price = await getKaspaPrice();
+        updateUI(price);
+      } catch (err) {
+        console.error("Both APIs failed:", err);
+        priceEl.textContent = "Failed to load Kaspa price.";
+      }
+    }
+
+    async function getKaspaPrice() {
+      try {
+        const res = await fetch(kaspaApi);
+        if (!res.ok) throw new Error("Kaspa API error");
+        const data = await res.json();
+        return data.price;
+      } catch (err) {
+        console.warn("Kaspa API failed, falling back to CoinGecko.");
+        const res = await fetch(fallbackApi);
+        if (!res.ok) throw new Error("CoinGecko API error");
+        const data = await res.json();
+        return data.kaspa.usd;
+      }
+    }
+
+    function updateUI(price) {
+      const titlePrice = price.toFixed(4);
+      const bodyPrice = price.toFixed(6);
+
+      document.title = `$${titlePrice} - KAS/USD`;
+      priceEl.textContent = `Kaspa Price: $${bodyPrice}`;
+      priceEl.classList.remove("loading");
+    }
+
+    fetchKaspaPrice();
+    setInterval(fetchKaspaPrice, 30000);
+  });
 </script>
-
 </body>
 </html>
