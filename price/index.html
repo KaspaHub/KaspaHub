@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="#000000" />
+
+  <!-- Primary Meta Tags -->
+  <title>Kaspa Price Tracker</title>
+  <meta name="title" content="Live Kaspa (KAS) Price Tracker — Stay Updated in Real-Time" />
+  <meta name="description" content="Track the live price of Kaspa (KAS) with real-time updates. Follow Kaspa's market performance, stay informed, and never miss a price move." />
+  <meta name="keywords" content="kaspa, kas, kaspa price, live kaspa, real-time crypto, cryptocurrency, blockdag, ghostdag" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaspahub.org/price/" />
+  <meta property="og:title" content="Live Kaspa (KAS) Price Tracker — Stay Updated in Real-Time" />
+  <meta property="og:description" content="Monitor the Kaspa price live with automatic updates. The most accurate way to stay connected to KAS market trends." />
+  <meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@KaspaHub" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://kaspahub.org/price/" />
+  <meta name="twitter:title" content="Live Kaspa (KAS) Price Tracker" />
+  <meta name="twitter:description" content="Get live Kaspa (KAS) price updates. Track Kaspa’s market performance in real-time from any device." />
+  <meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+  <!-- Kaspa -->
+  <meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
+  <meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+  
+  <link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+  <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+</head>
+<body class="">
+<header>
+  <nav id="page-nav">
+    <h2><a href="/">Kaspa Hub</a></h2>
+    <div class="toggle-theme">
+      <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+      <label for="toggle-theme-checkbox"></label>
+    </div>
+  </nav>
+  <div style="text-align: center; margin: 100px 40px; ma">
+    <p style="font-size: 2rem;" id="price">Loading Kaspa price...</p>
+  </div>
+<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
+</header>
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    const priceEl = document.getElementById("price");
+    const apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=kaspa&vs_currencies=usd";
+
+    async function fetchKaspaPrice() {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("API error");
+        const data = await response.json();
+        const price = data.kaspa.usd;
+
+        const titlePrice = price.toFixed(3);
+        const bodyPrice = price.toFixed(6);
+
+        document.title = `KAS/USD - $${titlePrice}`;
+        priceEl.textContent = `Kaspa Price: $${bodyPrice}`;
+        priceEl.classList.remove("loading");
+      } catch (err) {
+        priceEl.textContent = "Failed to load Kaspa price.";
+        console.error("Error fetching price:", err);
+      }
+    }
+
+    fetchKaspaPrice();
+    setInterval(fetchKaspaPrice, 30000);
+  });
+</script>
+
+</body>
+</html>
