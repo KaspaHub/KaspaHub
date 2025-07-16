@@ -25,6 +25,7 @@ https://kaspahub.org/kaspa-donations/
 
 https://kaspahub.org/donations/setup/
 
+https://kaspahub.org/price/
 
 # License & Usage
 
