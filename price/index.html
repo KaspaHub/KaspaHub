@@ -57,7 +57,7 @@ async function fetchKaspaPrice() {
 		const data = await response.json();
 		const price = data.kaspa.usd;
 		
-		const titlePrice = price.toFixed(3);
+		const titlePrice = price.toFixed(4);
 		const bodyPrice = price.toFixed(6);
 		
 		document.title = `KAS/USD - $${titlePrice}`;
@@ -70,7 +70,7 @@ async function fetchKaspaPrice() {
 }
 
 fetchKaspaPrice();
-setInterval(fetchKaspaPrice, 10000);
+setInterval(fetchKaspaPrice, 20000);
 });
 </script>
 
