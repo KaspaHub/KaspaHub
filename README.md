@@ -29,12 +29,11 @@ https://kaspahub.org/price/
 
 # License & Usage
 
-Kaspa Hub is freely available for anyone to use, copy, and create localized versions. You are encouraged to adapt and translate the platform to serve your community better.
+Kaspa Hub is freely available for anyone to use, copy, rename, and create localized versions. You are encouraged to adapt and translate the platform to serve your community better.
 
-However, there is one requirement:
-All pages in your localized version must include the original &lt;footer&gt; element unchanged.
+While not strictly required, including the original &lt;footer&gt; element helps ensure consistent attribution and community connection across all versions of Kaspa Hub.
 
-This ensures consistent attribution and community connection across all versions of Kaspa Hub.
+Localized versions that include the footer may also be featured on our site, helping others discover your work.
 
 Feel free to reach out if you have questions or want to share your localized version!
 
