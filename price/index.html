@@ -30,6 +30,28 @@
 	
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
 	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+<style>
+#price {
+font-size: 2rem;
+color: #222;
+transition: color 0.3s ease-in-out;
+}
+
+#price.updated {
+animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0.3;
+transform: scale(0.98);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+</style>
 </head>
 <body class="">
 <header>
