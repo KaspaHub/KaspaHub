@@ -76,40 +76,44 @@ transform: scale(1);
 
     async function fetchKaspaPrice() {
       try {
-        const price = await getKaspaPrice();
-        updateUI(price);
+	const price = await getKaspaPrice();
+	updateUI(price);
       } catch (err) {
-        console.error("Both APIs failed:", err);
-        priceEl.textContent = "Failed to load Kaspa price.";
+	console.error("Both APIs failed:", err);
+	priceEl.textContent = "Failed to load Kaspa price.";
       }
     }
 
     async function getKaspaPrice() {
       try {
-        const res = await fetch(kaspaApi);
-        if (!res.ok) throw new Error("Kaspa API error");
-        const data = await res.json();
-        return data.price;
+	const res = await fetch(kaspaApi);
+	if (!res.ok) throw new Error("Kaspa API error");
+	const data = await res.json();
+	return data.price;
       } catch (err) {
-        console.warn("Kaspa API failed, falling back to CoinGecko.");
-        const res = await fetch(fallbackApi);
-        if (!res.ok) throw new Error("CoinGecko API error");
-        const data = await res.json();
-        return data.kaspa.usd;
+	console.warn("Kaspa API failed, falling back to CoinGecko.");
+	const res = await fetch(fallbackApi);
+	if (!res.ok) throw new Error("CoinGecko API error");
+	const data = await res.json();
+	return data.kaspa.usd;
       }
     }
 
     function updateUI(price) {
-      const titlePrice = price.toFixed(4);
-      const bodyPrice = price.toFixed(6);
-
-      document.title = `$${titlePrice} - KAS/USD`;
-      priceEl.textContent = `Kaspa Price: $${bodyPrice}`;
-      priceEl.classList.remove("loading");
+	const titlePrice = price.toFixed(4);
+	const bodyPrice = price.toFixed(6);
+	
+	document.title = `$${titlePrice} - KAS/USD`;
+	priceEl.textContent = `Kaspa Price: $${bodyPrice}`;
+	priceEl.classList.remove("loading");
+	
+	priceEl.classList.remove("updated");
+	void priceEl.offsetWidth;
+	priceEl.classList.add("updated");
     }
 
-    fetchKaspaPrice();
-    setInterval(fetchKaspaPrice, 15000);
+	fetchKaspaPrice();
+	setInterval(fetchKaspaPrice, 15000);
   });
 </script>
 </body>
