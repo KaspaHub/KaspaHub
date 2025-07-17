@@ -100,12 +100,18 @@
 	<loc>https://kaspahub.org/price/</loc>
 	<lastmod>2025-07-16</lastmod>
 	<changefreq>weekly</changefreq>
-	<priority>0.6</priority>
+	<priority>0.7</priority>
 </url>
 <url>
 	<loc>https://kaspahub.org/article/best-no-kyc-crypto-exchanges/</loc>
 	<lastmod>2025-07-17</lastmod>
 	<changefreq>weekly</changefreq>
-	<priority>0.6</priority>
+	<priority>0.7</priority>
+</url>
+<url>
+	<loc>https://kaspahub.org/article/what-is-kaspa-block-time/</loc>
+	<lastmod>2025-07-17</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>0.7</priority>
 </url>
 </urlset>
