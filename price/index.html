@@ -70,15 +70,15 @@ transform: scale(1);
 <button id="load-chart-btn" style="color: inherit; padding: 12px 24px; font-size: 1rem; cursor: pointer;">📈 Load Kaspa Chart</button>
 </div>
 <div id="chart-container" style="height: 700px;"></div>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 const button = document.getElementById("load-chart-btn");
 const chartContainer = document.getElementById("chart-container");
 
-button.addEventListener("click", () => {
-if (chartContainer.children.length > 0) return;
+let chartLoaded = false;
 
+button.addEventListener("click", () => {
+if (!chartLoaded) {
 const widgetDiv = document.createElement("div");
 widgetDiv.className = "tradingview-widget-container";
 widgetDiv.style = "height:100%; width:100%";
@@ -123,7 +123,14 @@ script.innerHTML = JSON.stringify({
 });
 
 widgetDiv.appendChild(script);
-button.style.display = "none";
+
+chartLoaded = true;
+button.textContent = "❌ Hide Chart";
+} else {
+chartContainer.innerHTML = "";
+chartLoaded = false;
+button.textContent = "📈 Display Chart";
+}
 });
 });
 </script>
