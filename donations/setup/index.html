@@ -64,19 +64,19 @@
 	<p style="padding-left: 7px;">Use this form to create a custom Kaspa cryptocurrency donation page link that displays your wallet address and optional X (Twitter) handle. You can share the link with others, and they’ll see your QR code and wallet ready to accept donations.</p>
 </div>
 <article class="theme-1" style="max-width: 700px; display: flex; flex-direction: column; margin: 0 auto;">
-	<h6 for="wallet">Kaspa Wallet Address:</h6>
+	<h5 for="wallet">Kaspa Wallet Address:</h5>
 	<input type="text" id="wallet" placeholder="e.g. kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
 	
-	<h6 for="handle">X / Twitter Handle (optional, no @):</h6>
+	<h5 for="handle">X / Twitter Handle (optional, no @):</h5>
 	<input type="text" id="handle" placeholder="e.g. KaspaHub" />
 	
 	<button class="copy-button" style="margin-top: 20px;" onclick="generateLink()">Generate Donation Link</button>
 	
 	<div id="result" style="display:none;">
-		<h3>Your Donation Page Link:</h3>
+		<h4>Your Donation Page Link:</h4>
 		<div class="link-box" id="linkBox"></div>
 		<button class="copy-button" id="copy" style="margin-top: 20px;" onclick="copyLink()">Copy to Clipboard</button>
-		<h3>Shortened Link:</h3>
+		<h4>Shortened Link:</h4>
 		<div class="link-box" id="shortLinkBox"></div>
 		<button class="copy-button" id="copyShort" style="margin-top: 20px;" onclick="copyShortLink()">Copy to Clipboard</button>
 	</div>
