@@ -5,192 +5,241 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="theme-color" content="#000000" />
-	
-	<!-- Primary Meta Tags -->
-	<title>Kaspa Price Tracker</title>
-	<meta name="title" content="Live Kaspa Price Tracker - Stay Updated in Real-Time" />
-	<meta name="description" content="Track the live price of Kaspa (KAS) with real-time updates. Follow Kaspa's market performance, stay informed, and never miss a price move." />
-	<meta name="keywords" content="kaspa, kas, kaspa price, live kaspa, real-time crypto, cryptocurrency, blockdag, ghostdag" />
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://kaspahub.org/price/" />
-	<meta property="og:title" content="Live Kaspa (KAS) Price Tracker - Stay Updated in Real-Time" />
-	<meta property="og:description" content="Monitor the Kaspa price live with automatic updates. The most accurate way to stay connected to KAS market trends." />
-	<meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
-	<!-- Twitter -->
-	<meta name="twitter:site" content="@KaspaHub" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:url" content="https://kaspahub.org/price/" />
-	<meta name="twitter:title" content="Live Kaspa $KAS Price Tracker" />
-	<meta name="twitter:description" content="Get live Kaspa (KAS) price updates. Track Kaspa’s market performance in real-time from any device." />
-	<meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
-	<!-- Kaspa -->
-	<meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
-	<meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
-	
-	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
-	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
-<style>
-#chart-container {
-	height: 700px;
-}
-@media (max-width: 800px) and (max-aspect-ratio: 1/1) {
-	#chart-container {
-		height: 500px;
-	}
-}
-#price {
-	font-size: 3rem;
-	font-weight: bold;
-	transition: color 0.4s ease-in-out;
-}
-#price.updated {
-	animation: fadeIn 0.6s ease-out;
-}
-@keyframes fadeIn {
-	from {
-		opacity: 0.3;
-		transform: scale(0.97);
-	}
-	to {
-	opacity: 1;
-	transform: scale(1);
-	}
-}
-</style>
+    
+    <!-- Primary Meta Tags -->
+    <title>Kaspa Price Tracker</title>
+    <meta name="title" content="Live Kaspa Price Tracker and Market Data" />
+    <meta name="description" content="Follow the live price of Kaspa with real-time updates. View market cap, fully diluted valuation, circulating and max supply, and more." />
+    <meta name="keywords" content="Kaspa, KAS, live Kaspa price, Kaspa market cap, crypto tracker, Kaspa supply, Kaspa valuation, KAS price chart, cryptocurrency stats" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kaspahub.org/price/" />
+    <meta property="og:title" content="Kaspa vs Bitcoin: Hashrate to Market Cap Efficiency" />
+    <meta property="og:description" content="Track Kaspa price movements in real time. See updated market cap, supply metrics, and valuation data." />
+    <meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@KaspaHub" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://kaspahub.org/price/" />
+    <meta name="twitter:title" content="Kaspa Price Tracker" />
+    <meta name="twitter:description" content="Real-time price and supply metrics for Kaspa including market cap and valuation updates." />
+    <meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+    <!-- Kaspa -->
+    <meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
+    <meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+    
+    <link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+  <style>
+    #chart-container { height: 700px; }
+    @media (max-width: 800px) and (max-aspect-ratio: 1/1) {
+      #chart-container { height: 500px; }
+    }
+
+    #price {
+      font-size: 3rem;
+      font-weight: bold;
+      transition: color 0.4s ease-in-out;
+    }
+
+    #price.updated {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.3; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .stat-item {
+      min-width: 180px;
+      text-align: center;
+      padding: 12px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-item dt {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .stat-item dd {
+      margin: 0;
+    }
+  </style>
 </head>
-<body class="">
-<header>
-	<nav id="page-nav">
-		<h2><a href="/">Kaspa Hub</a></h2>
-		<div class="toggle-theme">
-			<input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
-			<label for="toggle-theme-checkbox"></label>
-		</div>
-	</nav>
-	<div style="text-align: center; margin-top: 100px;">
-		<p id="price">Loading..</p>
-	</div>
-<script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
-</header>
-<main style="max-width: 1200px; margin: 0 auto; height:800px;">
-<div style="text-align: center; margin-bottom: 20px;">
-<button id="load-chart-btn" style="color: inherit; padding: 12px 24px; font-size: 1rem; cursor: pointer;">📈 Load Kaspa Chart</button>
-</div>
-<div id="chart-container"></div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-const button = document.getElementById("load-chart-btn");
-const chartContainer = document.getElementById("chart-container");
+<body>
+  <header>
+    <nav id="page-nav">
+      <h2><a href="/">Kaspa Hub</a></h2>
+      <div class="toggle-theme">
+        <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme">
+        <label for="toggle-theme-checkbox"></label>
+      </div>
+    </nav>
+    <div style="text-align: center; margin-top: 100px;">
+      <p id="price">Loading...</p>
+      <div id="market-stats" style="text-align: center; margin-top: 30px;">
+        <dl class="stats-container">
+          <div class="stat-item">
+            <dt>Market Cap</dt>
+            <dd id="market-cap">Loading...</dd>
+          </div>
+          <div class="stat-item">
+            <dt>Fully Diluted Valuation</dt>
+            <dd id="fdv">Loading...</dd>
+          </div>
+          <div class="stat-item">
+            <dt>Circulating Supply</dt>
+            <dd id="circ-supply">Loading...</dd>
+          </div>
+          <div class="stat-item">
+            <dt>Max Supply</dt>
+            <dd id="max-supply">Loading...</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </header>
 
-let chartLoaded = false;
+  <main style="max-width: 1200px; margin: 0 auto; height:800px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <button id="load-chart-btn" style="color: inherit; padding: 12px 24px; font-size: 1rem; cursor: pointer;">📈 Open Chart</button>
+    </div>
+    <div id="chart-container"></div>
+  </main>
 
-button.addEventListener("click", () => {
-if (!chartLoaded) {
-const widgetDiv = document.createElement("div");
-widgetDiv.className = "tradingview-widget-container";
-widgetDiv.style = "height:100%; width:100%";
-widgetDiv.innerHTML = `
-<div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
-<div class="tradingview-widget-copyright">
-<a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-<span class="blue-text">Track all markets on TradingView</span>
-</a>
-</div>
-`;
+  <script>
+    const toggle = document.getElementById("toggle-theme-checkbox");
+    toggle.checked = document.cookie.includes("theme=dark");
 
-chartContainer.appendChild(widgetDiv);
+    toggle.addEventListener("change", () => {
+      document.cookie = `theme=${toggle.checked ? "dark" : "light"}; path=/; SameSite=Lax`;
+      location.reload();
+    });
 
-const script = document.createElement("script");
-script.type = "text/javascript";
-script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-script.async = true;
-script.innerHTML = JSON.stringify({
-	"allow_symbol_change": true,
-	"calendar": false,
-	"details": false,
-	"hide_side_toolbar": true,
-	"hide_top_toolbar": false,
-	"hide_legend": false,
-	"hide_volume": false,
-	"hotlist": false,
-	"interval": "60",
-	"locale": "en",
-	"save_image": true,
-	"style": "1",
-	"symbol": "MEXC:KASUSDT",
-	"theme": "dark",
-	"timezone": "Etc/UTC",
-	"backgroundColor": "#0F0F0F",
-	"gridColor": "rgba(242, 242, 242, 0.06)",
-	"watchlist": [],
-	"withdateranges": false,
-	"compareSymbols": [],
-	"studies": [],
-	"autosize": true
-});
+    document.body.classList.add("background-" + (toggle.checked ? "dark" : "light"));
+  </script>
 
-widgetDiv.appendChild(script);
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("load-chart-btn");
+      const container = document.getElementById("chart-container");
+      let loaded = false;
 
-chartLoaded = true;
-button.textContent = "❌ Hide Chart";
-} else {
-chartContainer.innerHTML = "";
-chartLoaded = false;
-button.textContent = "📈 Display Chart";
-}
-});
-});
-</script>
-</main>
-<script defer>
-  document.addEventListener("DOMContentLoaded", () => {
-    const priceEl = document.getElementById("price");
+      button.addEventListener("click", () => {
+        if (!loaded) {
+          const widget = document.createElement("div");
+          widget.className = "tradingview-widget-container";
+          widget.style = "height:100%; width:100%";
+          widget.innerHTML = `
+            <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+            <div class="tradingview-widget-copyright">
+              <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+                <span class="blue-text">Track all markets on TradingView</span>
+              </a>
+            </div>
+          `;
 
-    const kaspaApi = "https://api.kaspa.org/info/price";
-    const fallbackApi = "https://api.coingecko.com/api/v3/simple/price?ids=kaspa&vs_currencies=usd";
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+          script.async = true;
+          script.innerHTML = JSON.stringify({
+            symbol: "MEXC:KASUSDT",
+            interval: "60",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            autosize: true,
+            backgroundColor: "#0F0F0F",
+            gridColor: "rgba(242, 242, 242, 0.06)",
+            timezone: "Etc/UTC",
+            allow_symbol_change: true,
+            hide_top_toolbar: false,
+            hide_side_toolbar: true,
+            hide_volume: false,
+            calendar: false,
+            details: false,
+            save_image: true,
+          });
 
-    async function fetchKaspaPrice() {
-      try {
-	const price = await getKaspaPrice();
-	updateUI(price);
-      } catch (err) {
-	console.error("Both APIs failed:", err);
-	priceEl.textContent = "Failed to load Kaspa price.";
+          widget.appendChild(script);
+          container.appendChild(widget);
+          loaded = true;
+          button.textContent = "❌ Close Chart";
+        } else {
+          container.innerHTML = "";
+          loaded = false;
+          button.textContent = "📈 Open Chart";
+        }
+      });
+    });
+  </script>
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const priceEl = document.getElementById("price");
+      const marketCapEl = document.getElementById("market-cap");
+      const fdvEl = document.getElementById("fdv");
+      const circEl = document.getElementById("circ-supply");
+      const maxEl = document.getElementById("max-supply");
+
+      const supply = {
+        circulating: 26476089441,
+        max: 28704026601
+      };
+
+      async function fetchPrice() {
+        try {
+          const res = await fetch("https://api.kaspa.org/info/price");
+          if (!res.ok) throw new Error("API error");
+          const { price } = await res.json();
+          updateUI(price);
+        } catch (e) {
+          console.error("Failed to fetch Kaspa price:", e);
+          priceEl.textContent = "Error loading price";
+        }
       }
-    }
 
-    async function getKaspaPrice() {
-      try {
-	const res = await fetch(kaspaApi);
-	if (!res.ok) throw new Error("Kaspa API error");
-	const data = await res.json();
-	return data.price;
-      } catch (err) {
-	console.warn("Kaspa API failed, falling back to CoinGecko.");
-	const res = await fetch(fallbackApi);
-	if (!res.ok) throw new Error("CoinGecko API error");
-	const data = await res.json();
-	return data.kaspa.usd;
+      function updateUI(price) {
+        const priceFormatted = price.toFixed(6);
+        document.title = `$${price.toFixed(4)} - KAS/USD`;
+        priceEl.textContent = `$${priceFormatted}`;
+        priceEl.classList.remove("updated");
+        void priceEl.offsetWidth;
+        priceEl.classList.add("updated");
+
+        const marketCap = price * supply.circulating;
+        const fdv = price * supply.max;
+
+        marketCapEl.textContent = formatLargeNumber(marketCap);
+        fdvEl.textContent = formatLargeNumber(fdv);
+        circEl.textContent = `${(supply.circulating / 1e9).toFixed(2)}B KAS`;
+        maxEl.textContent = `${(supply.max / 1e9).toFixed(2)}B KAS`;
       }
-    }
 
-    function updateUI(price) {
-	const titlePrice = price.toFixed(4);
-	const bodyPrice = price.toFixed(6);
-	
-	document.title = `$${titlePrice} - KAS/USD`;
-	priceEl.textContent = `$${bodyPrice}`;
-	priceEl.classList.remove("loading");
-	
-	priceEl.classList.remove("updated");
-	void priceEl.offsetWidth;
-	priceEl.classList.add("updated");
-    }
+      function formatLargeNumber(value) {
+        if (value >= 1e12) return `$${(value / 1e12).toFixed(2)}T`;
+        if (value >= 1e9) return `$${(value / 1e9).toFixed(2)}B`;
+        if (value >= 1e6) return `$${(value / 1e6).toFixed(2)}M`;
+        return `$${value.toFixed(2)}`;
+      }
 
-	fetchKaspaPrice();
-	setInterval(fetchKaspaPrice, 15000);
-  });
-</script>
+      fetchPrice();
+      setInterval(fetchPrice, 15000);
+    });
+  </script>
 </body>
 </html>
