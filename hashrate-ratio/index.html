@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#000000" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Kaspa vs Bitcoin: Hashrate to Marketcap Ratio</title>
+  <meta name="title" content="Kaspa vs Bitcoin - Hashrate to Market Cap Efficiency Comparison (Live)" />
+  <meta name="description" content="Compare Kaspa (KAS) and Bitcoin (BTC) by analyzing their hashrate-to-market cap efficiency." />
+  <meta name="keywords" content="Kaspa, Bitcoin, crypto efficiency, hashrate to marketcap, crypto comparison, KAS, BTC, energy efficient crypto, blockchain metrics, CoinGecko API, crypto ratio" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaspahub.org/hashrate-ratio/" />
+  <meta property="og:title" content="Kaspa vs Bitcoin: Hashrate to Market Cap Efficiency" />
+  <meta property="og:description" content="Explore which crypto is more efficient by comparing hashrate to market cap. Live metrics for Kaspa and Bitcoin." />
+  <meta property="og:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@KaspaHub" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://kaspahub.org/hashrate-ratio/" />
+  <meta name="twitter:title" content="Kaspa vs Bitcoin - Hashrate to Marketcap Ratio" />
+  <meta name="twitter:description" content="Compare real-time hashrate efficiency of Kaspa and Bitcoin." />
+  <meta name="twitter:image" content="https://kaspahub.org/assets/kaspahub.jpg" />
+  <!-- Kaspa -->
+  <meta name="kaspa:title" content="We gratefully accept donations in Kaspa." />
+  <meta name="kaspa:wallet" content="kaspa:qqejxej2q6eprdh0syyz4kuwf8064m5e0z446wlc57uuzxneq3n2yma57nyxm" />
+  
+  <link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
+  <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+</head>
+<body class="">
+    
+<header>
+    <nav id="page-nav">
+        <h2><a href="/">Kaspa Hub</a></h2>
+        <div class="toggle-theme">
+            <input type="checkbox" id="toggle-theme-checkbox" aria-label="Toggle theme-1">
+            <label for="toggle-theme-checkbox"></label>
+        </div>
+    </nav>
+    <script>const c=document.getElementById("toggle-theme-checkbox");c.addEventListener("change",()=>{document.cookie="theme="+(c.checked?"dark":"light")+"; path=/; SameSite=Lax";location.reload()}),c.checked=document.cookie.includes("theme=dark"),(()=>{document.body.classList.add("background-"+(document.cookie.includes("theme=dark")?"dark":"light"))})();</script>
+</header>
+
+<main class="page-wrapper">
+  <div class="intro">
+    <h1>Hashrate to Marketcap Ratio</h1>
+    <p style="padding-left: 7px;">
+      The "Ratio (EH/s ÷ Marketcap)" is calculated by dividing the network hashrate (in exahashes per second) by the market capitalization (in USD). This metric helps compare the efficiency of each cryptocurrency relative to its market value.
+    </p>
+  </div>
+
+  <article class="theme-1">
+    <h2>Kaspa vs Bitcoin</h2>
+    <div class="table-container">
+      <table id="comparison-table" style="width: 800px;">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Kaspa (KAS)</th>
+            <th>Bitcoin (BTC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Price (USD)</td><td id="kas-price">Loading...</td><td id="btc-price">Loading...</td></tr>
+          <tr><td>Circulating Supply</td><td>26,463,800,000</td><td>19,894,074</td></tr>
+          <tr><td>Market Cap (USD)</td><td id="kas-cap">-</td><td id="btc-cap">-</td></tr>
+          <tr><td>Hashrate (EH/s)</td><td>0.88</td><td>900.52</td></tr>
+          <tr><td>Ratio (EH/s ÷ Marketcap)</td><td id="kas-ratio">-</td><td id="btc-ratio">-</td></tr>
+          <tr><td>Ratio (Normalized)</td><td id="kas-normalized">-</td><td id="btc-normalized">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align: center; font-size: 0.9rem;">Prices update every 30 seconds using CoinGecko.</p>
+  </article>
+</main>
+<script>
+    const data = {
+      kas: {
+        supply: 26463800000,
+        hashrate: 0.88,
+        price: null,
+        marketcap: null,
+        ratio: null,
+        normalized: null,
+      },
+      btc: {
+        supply: 19894074,
+        hashrate: 900.52,
+        price: null,
+        marketcap: null,
+        ratio: null,
+        normalized: null,
+      }
+    };
+
+    const apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=kaspa,bitcoin&vs_currencies=usd";
+
+    async function updateData() {
+      try {
+        const res = await fetch(apiUrl);
+        const json = await res.json();
+
+        data.kas.price = json.kaspa.usd;
+        data.btc.price = json.bitcoin.usd;
+
+        data.kas.marketcap = data.kas.price * data.kas.supply;
+        data.btc.marketcap = data.btc.price * data.btc.supply;
+
+        data.kas.ratio = data.kas.hashrate / data.kas.marketcap;
+        data.btc.ratio = data.btc.hashrate / data.btc.marketcap;
+
+        const base = 0.000000001;
+        data.kas.normalized = data.kas.ratio / base;
+        data.btc.normalized = data.btc.ratio / base;
+
+        updateUI();
+      } catch (e) {
+        console.error("Failed to fetch prices", e);
+      }
+    }
+
+    function format(num, decimals = 4) {
+      return Number(num).toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    }
+
+    function updateUI() {
+      document.getElementById("kas-price").textContent = `$${format(data.kas.price, 6)}`;
+      document.getElementById("btc-price").textContent = `$${format(data.btc.price, 2)}`;
+
+      document.getElementById("kas-cap").textContent = `$${format(data.kas.marketcap, 0)}`;
+      document.getElementById("btc-cap").textContent = `$${format(data.btc.marketcap, 0)}`;
+
+      document.getElementById("kas-ratio").textContent = format(data.kas.ratio, 12);
+      document.getElementById("btc-ratio").textContent = format(data.btc.ratio, 12);
+
+      document.getElementById("kas-normalized").textContent = format(data.kas.normalized, 2);
+      document.getElementById("btc-normalized").textContent = format(data.btc.normalized, 2);
+
+      document.getElementById("comparison-table").classList.add("updated");
+    }
+
+    updateData();
+    setInterval(updateData, 30000);
+  </script>
+</body>
+</html>
