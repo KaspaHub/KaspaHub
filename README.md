@@ -27,6 +27,8 @@ https://kaspahub.org/donations/setup/
 
 https://kaspahub.org/price/
 
+https://kaspahub.org/hashrate-ratio/
+
 # License & Usage
 
 Kaspa Hub is freely available for anyone to use, copy, rename, and create localized versions. You are encouraged to adapt and translate the platform to serve your community better.
