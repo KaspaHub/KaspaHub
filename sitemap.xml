@@ -118,16 +118,16 @@
 	<loc>https://kaspahub.org/hashrate-ratio/</loc>
 	<lastmod>2025-07-22</lastmod>
 	<changefreq>weekly</changefreq>
-	<priority>0.6</priority>
+	<priority>0.7</priority>
 </url>
 <url>
-	<loc>https://kaspahub.org/price/</loc>
+	<loc>https://kaspahub.org/hashrate-ratio/</loc>
 	<lastmod>2025-07-22</lastmod>
 	<changefreq>weekly</changefreq>
 	<priority>0.6</priority>
 </url>
 <url>
-	<loc>https://kaspahub.org/hashrate-ratio/</loc>
+	<loc>https://kaspahub.org/price/</loc>
 	<lastmod>2025-07-22</lastmod>
 	<changefreq>weekly</changefreq>
 	<priority>0.6</priority>
