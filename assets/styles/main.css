@@ -99,9 +99,12 @@ header a {
 
 .page-wrapper {
 	max-width: 1300px;
-	width: 100%;
 	margin: 0 auto;
-	flex-grow: 1;
+}
+
+.article-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .main-content-area {
