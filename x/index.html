@@ -24,10 +24,11 @@
 </header>
 
 <main class="container">
-    <h1 id="page-title">Kaspa Donations</h1>
-    <div id="text-display" class="theme-1">Loading...</div>
-    <div class="qr-code" id="qr-code"></div>
-    <button class="copy-button" id="copy-button" style="display:none; margin: 20px 0;">Copy Wallet Address</button>
+	<h1 id="page-title">Kaspa Donations</h1>
+	<div id="text-display" class="theme-1">Loading...</div>
+	<div class="qr-code" id="qr-code"></div>
+	<button class="copy-button" id="copy-button" style="display:none; margin: 20px 0;">Copy Wallet Address</button>
+	<a class="copy-button" id="open-button" style="display:none; margin: 20px 0;" href="kaspa:ADDRESS_HERE" target="_blank">Open Wallet</a>
 </main>
 
 <style>
@@ -59,55 +60,60 @@ document.addEventListener("DOMContentLoaded", () => {
 	const titleElement = document.getElementById("page-title");
 	const qrCodeElement = document.getElementById("qr-code");
 	const copyButton = document.getElementById("copy-button");
+	const openButton = document.getElementById("open-button");
+	
+	function setMetaTag(name, content) {
+		const meta = document.createElement('meta');
+		meta.setAttribute('name', name);
+		meta.setAttribute('content', content);
+		document.head.appendChild(meta);
+	}
 
-    function setMetaTag(name, content) {
-        const meta = document.createElement('meta');
-        meta.setAttribute('name', name);
-        meta.setAttribute('content', content);
-        document.head.appendChild(meta);
-    }
+	if (!xUser) {
+		displayElement.textContent = "Missing X handle in the URL.";
+		return;
+	}
 
-    if (!xUser) {
-        displayElement.textContent = "Missing X handle in the URL.";
-        return;
-    }
+	const user = users.find(u => u.x.toLowerCase() === xUser.toLowerCase());
+	
+	if (!user) {
+		displayElement.innerHTML = `<span class='error'>No user found with X handle <strong>@${xUser}</strong>.</span>`;
+		return;
+	}
 
-    const user = users.find(u => u.x.toLowerCase() === xUser.toLowerCase());
+	document.title = `@${user.x}`;
+	titleElement.innerHTML = `<a href="https://x.com/${user.x}" target="_blank" rel="noopener noreferrer">@${user.x}</a>`;
+	setMetaTag('kaspa:title', '@' + user.x);
+	
+	let displayText = user.wallet;
+	if (user.domain) {
+		displayText += `<br><br><span style="font-size: 1rem; opacity: 0.75;">${user.domain}</span>`;
+	}
+	
+	displayElement.innerHTML = displayText;
 
-    if (!user) {
-        displayElement.innerHTML = `<span class='error'>No user found with X handle <strong>@${xUser}</strong>.</span>`;
-        return;
-    }
+	$('#qr-code').qrcode({
+		render: 'image',
+		text: user.wallet,
+		size: 256,
+		quiet: 3
+	});
 
-    document.title = `@${user.x}`;
-    titleElement.innerHTML = `<a href="https://x.com/${user.x}" target="_blank" rel="noopener noreferrer">@${user.x}</a>`;
-    setMetaTag('kaspa:title', '@' + user.x);
-
-    let displayText = user.wallet;
-    if (user.domain) {
-        displayText += `<br><br><span style="font-size: 1rem; opacity: 0.75;">${user.domain}</span>`;
-    }
-    displayElement.innerHTML = displayText;
-
-    $('#qr-code').qrcode({
-        render: 'image',
-        text: user.wallet,
-        size: 256,
-        quiet: 3
-    });
-
-    copyButton.style.display = "inline-block";
-    copyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(user.wallet).then(() => {
-            const originalText = copyButton.textContent;
-            copyButton.textContent = 'Copied!';
-            setTimeout(() => {
-                copyButton.textContent = originalText;
-            }, 1500);
-        });
-    });
-
-    setMetaTag('kaspa:wallet', user.wallet);
+	copyButton.style.display = "inline-block";
+	copyButton.addEventListener('click', () => {
+		navigator.clipboard.writeText(user.wallet).then(() => {
+			const originalText = copyButton.textContent;
+			copyButton.textContent = 'Copied!';
+		setTimeout(() => {
+			copyButton.textContent = originalText;
+		}, 1500);
+		});
+	});
+	
+	openButton.style.display = "inline-block";
+	openButton.href = user.wallet;
+	
+	setMetaTag('kaspa:wallet', user.wallet);
 });
 </script>
 </body>
