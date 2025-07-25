@@ -504,8 +504,8 @@ code {
 	color: white;
 }
 /* buttons v */
-.link-button, .copy-button {
-	text-decoration: none !important;
+.link-button, .copy-button, .button {
+	all: unset;
 	cursor: pointer;
 	user-select: none;
 	font-size: 1rem;
@@ -523,15 +523,15 @@ code {
 	background-color: #333;
 	transform: translateY(-2px);
 }
-.copy-button {
+.copy-button, .button {
 	background-color: #4caf50;
 	color: white;
-	padding: 0.5rem 1rem;
+	padding: 8px;
 	font-size: 1rem;
 	border: none;
 	border-radius: 6px;
 }
-.copy-button:hover {
+.copy-button:hover, .button:hover {
 	background-color: #45a049;
 }
 
