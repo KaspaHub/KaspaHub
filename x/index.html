@@ -53,12 +53,12 @@ main {
 import { users } from 'https://cdn.jsdelivr.net/gh/KaspaHub/kaspa-wallet-directory@latest/wallets.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const xUser = urlParams.get("x");
-    const displayElement = document.getElementById("text-display");
-    const titleElement = document.getElementById("page-title");
-    const qrCodeElement = document.getElementById("qr-code");
-    const copyButton = document.getElementById("copy-button");
+	const search = window.location.search;
+	const xUser = search ? decodeURIComponent(search.slice(1)) : null;
+	const displayElement = document.getElementById("text-display");
+	const titleElement = document.getElementById("page-title");
+	const qrCodeElement = document.getElementById("qr-code");
+	const copyButton = document.getElementById("copy-button");
 
     function setMetaTag(name, content) {
         const meta = document.createElement('meta');
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!xUser) {
-        displayElement.textContent = "Missing 'x' parameter in the URL.";
+        displayElement.textContent = "Missing X handle in the URL.";
         return;
     }
 
