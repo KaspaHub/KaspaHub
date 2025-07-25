@@ -509,6 +509,7 @@ code {
 	cursor: pointer;
 	user-select: none;
 	font-size: 1rem;
+	text-align: center;
 }
 .link-button {
 	background: rgb(0 126 114 / 55%);
