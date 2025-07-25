@@ -123,8 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 	
-	openButton.style.display = "inline-block";
-	openButton.href = user.wallet;
+	if (window.innerHeight > window.innerWidth) {
+		openButton.style.display = "inline-block";
+		openButton.href = user.wallet;
+	}
 	
 	setMetaTag('kaspa:wallet', user.wallet);
 });
