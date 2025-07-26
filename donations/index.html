@@ -27,8 +27,7 @@
 <h1 id="page-title">Kaspa Donations</h1>
 <div id="text-display" class="theme-1">Loading...</div>
 <div class="qr-code" id="qr-code"></div>
-<button class="button" id="copy-button" style="display: none;">Copy Wallet Address</button>
-<a class="button" id="open-button" style="display: none;" href="" target="_blank">Open Wallet</a>
+<button class="copy-button" id="copy-button" style="display:none; margin: 20px 0;">Copy Wallet Address</button>
 </main>
 <style>
 main {
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const titleElement = document.getElementById("page-title");
 	const qrCodeElement = document.getElementById("qr-code");
 	const copyButton = document.getElementById("copy-button");
-	const openButton = document.getElementById("open-button");
 
 	function setMetaTag(name, content) {
 		const meta = document.createElement('meta');
@@ -114,12 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			// console.error('Clipboard copy failed:', err);
 		});
 	});
-		
-	if (window.innerHeight > window.innerWidth) {
-		openButton.style.display = "inline-block";
-		openButton.href = user.wallet;
-	}
-		
+
 	setMetaTag('kaspa:wallet', decodedWallet);
 
 	} else {
