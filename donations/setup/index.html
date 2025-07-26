@@ -76,84 +76,59 @@
 		<h4>Your Donation Page Link:</h4>
 		<div class="link-box" id="linkBox"></div>
 		<button class="copy-button" id="copy" style="margin-top: 20px;" onclick="copyLink()">Copy to Clipboard</button>
-		<h4>Shortened Link:</h4>
-		<div class="link-box" id="shortLinkBox"></div>
-		<button class="copy-button" id="copyShort" style="margin-top: 20px;" onclick="copyShortLink()">Copy to Clipboard</button>
 	</div>
 	<div class="error" id="errorMsg" style="display:none;"></div>
 </article>
 </main>
 <footer><a href="https://kaspahub.org/">Kaspa Community Hub</a>© 2025</footer>
 <script>
-  function generateLink() {
-    const wallet = document.getElementById('wallet').value.trim();
-    const handle = document.getElementById('handle').value.trim();
-    const result = document.getElementById('result');
-    const linkBox = document.getElementById('linkBox');
-    const shortLinkBox = document.getElementById('shortLinkBox');
-    const errorMsg = document.getElementById('errorMsg');
+function generateLink() {
+	const wallet = document.getElementById('wallet').value.trim();
+	const handle = document.getElementById('handle').value.trim();
+	const result = document.getElementById('result');
+	const linkBox = document.getElementById('linkBox');
+	const errorMsg = document.getElementById('errorMsg');
+	
+	result.style.display = 'none';
+	errorMsg.style.display = 'none';
+	linkBox.textContent = '';
+	
+	const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
+	const handleRegex = /^[A-Za-z0-9_]{1,15}$/;
+	
+	if (!kaspaRegex.test(wallet)) {
+		errorMsg.textContent = "⚠️ Invalid Kaspa address. It must start with 'kaspa:' and be 50–72 characters long.";
+		errorMsg.style.display = 'block';
+		return;
+	}
+	
+	if (handle && !handleRegex.test(handle)) {
+		errorMsg.textContent = "⚠️ Invalid handle. Use 1–15 characters: letters, numbers, or underscores only.";
+		errorMsg.style.display = 'block';
+		return;
+	}
+	
+	let fullUrl = 'https://kaspahub.org/donations/?wallet=' + wallet;
+	if (handle) {
+		fullUrl += '&handle=' + handle;
+	}
+	
+	linkBox.textContent = fullUrl;
+	result.style.display = 'block';
+}
+	
+function copyLink() {
+	const link = document.getElementById('linkBox').textContent;
+	const copyBtn = document.getElementById('copy');
 
-    result.style.display = 'none';
-    errorMsg.style.display = 'none';
-    linkBox.textContent = '';
-    shortLinkBox.textContent = '';
+	navigator.clipboard.writeText(link);
+	const originalText = copyBtn.textContent;
+	copyBtn.textContent = 'Copied!';
+	setTimeout(() => {
+		copyBtn.textContent = originalText;
+	}, 1500);
+}
 
-    const kaspaRegex = /^kaspa:[a-zA-Z0-9]{50,72}$/;
-    const handleRegex = /^[A-Za-z0-9_]{1,15}$/;
-
-    if (!kaspaRegex.test(wallet)) {
-      errorMsg.textContent = "⚠️ Invalid Kaspa address. It must start with 'kaspa:' and be 50–72 characters long.";
-      errorMsg.style.display = 'block';
-      return;
-    }
-
-    if (handle && !handleRegex.test(handle)) {
-      errorMsg.textContent = "⚠️ Invalid handle. Use 1–15 characters: letters, numbers, or underscores only.";
-      errorMsg.style.display = 'block';
-      return;
-    }
-
-    let fullUrl = 'https://kaspahub.org/donations/?wallet=' + wallet;
-    if (handle) {
-      fullUrl += '&handle=' + handle;
-    }
-
-    let shortUrl = 'https://kaspahub.org/d/?w=' + wallet;
-
-    linkBox.textContent = fullUrl;
-    shortLinkBox.textContent = shortUrl;
-    result.style.display = 'block';
-  }
-
-  function copyLink() {
-    const link = document.getElementById('linkBox').textContent;
-    const copyBtn = document.getElementById('copy');
-
-    navigator.clipboard.writeText(link).then(() => {
-      const originalText = copyBtn.textContent;
-      copyBtn.textContent = 'Copied!';
-      setTimeout(() => {
-        copyBtn.textContent = originalText;
-      }, 1500);
-    }).catch(err => {
-      console.error('Clipboard copy failed:', err);
-    });
-  }
-
-  function copyShortLink() {
-    const shortLink = document.getElementById('shortLinkBox').textContent;
-    const copyShortBtn = document.getElementById('copyShort');
-
-    navigator.clipboard.writeText(shortLink).then(() => {
-      const originalText = copyShortBtn.textContent;
-      copyShortBtn.textContent = 'Copied!';
-      setTimeout(() => {
-        copyShortBtn.textContent = originalText;
-      }, 1500);
-    }).catch(err => {
-      console.error('Clipboard copy failed:', err);
-    });
-  }
 </script>
 </body>
 </html>
