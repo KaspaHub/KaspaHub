@@ -64,7 +64,7 @@ main {
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery-qrcode-0.18.0.min.js"></script>
 <script type="module">
-import { users } from 'https://kaspahub.github.io/kaspa-wallet-directory/wallets-old.js';
+import { users } from 'https://kaspahub.github.io/kaspa-wallet-directory/wallets.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 	const search = window.location.search;
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const qrCodeElement = document.getElementById("qr-code");
 	const copyButton = document.getElementById("copy-button");
 	const openButton = document.getElementById("open-button");
-	
+
 	function setMetaTag(name, content) {
 		const meta = document.createElement('meta');
 		meta.setAttribute('name', name);
@@ -87,22 +87,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		return;
 	}
 
-	const user = users.find(u => u.x.toLowerCase() === xUser.toLowerCase());
-	
+	const userKey = Object.keys(users).find(key => key.toLowerCase() === xUser.toLowerCase());
+	const user = users[userKey];
+
 	if (!user) {
 		displayElement.innerHTML = `<span class='error'>No user found with X handle <strong>@${xUser}</strong>.</span>`;
 		return;
 	}
 
-	document.title = `@${user.x}`;
-	titleElement.innerHTML = `<a href="https://x.com/${user.x}" target="_blank" rel="noopener noreferrer">@${user.x}</a>`;
-	setMetaTag('kaspa:title', '@' + user.x);
-	
+	document.title = `@${userKey}`;
+	titleElement.innerHTML = `<a href="https://x.com/${userKey}" target="_blank" rel="noopener noreferrer">@${userKey}</a>`;
+	setMetaTag('kaspa:title', '@' + userKey);
+
 	let displayText = user.wallet;
 	if (user.domain) {
 		displayText += `<br><br><span style="font-size: 1rem; opacity: 0.75;">${user.domain}</span>`;
 	}
-	
+
 	displayElement.innerHTML = displayText;
 
 	$('#qr-code').qrcode({
@@ -117,19 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		navigator.clipboard.writeText(user.wallet).then(() => {
 			const originalText = copyButton.textContent;
 			copyButton.textContent = 'Copied!';
-		setTimeout(() => {
-			copyButton.textContent = originalText;
-		}, 1500);
+			setTimeout(() => {
+				copyButton.textContent = originalText;
+			}, 1500);
 		});
 	});
-	
+
 	if (window.innerHeight > window.innerWidth) {
 		openButton.style.display = "inline-block";
 		openButton.href = user.wallet;
 	}
-	
+
 	setMetaTag('kaspa:wallet', user.wallet);
 });
+
 </script>
 </body>
 </html>
