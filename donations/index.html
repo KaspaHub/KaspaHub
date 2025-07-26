@@ -114,6 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
+	if (window.innerHeight > window.innerWidth) {
+		openButton.style.display = "inline-block";
+		openButton.href = decodedWallet;
+	}
+		
 	setMetaTag('kaspa:wallet', decodedWallet);
 
 	} else {
