@@ -27,7 +27,8 @@
 <h1 id="page-title">Kaspa Donations</h1>
 <div id="text-display" class="theme-1">Loading...</div>
 <div class="qr-code" id="qr-code"></div>
-<button class="copy-button" id="copy-button" style="display:none; margin: 20px 0;">Copy Wallet Address</button>
+<button class="button" id="copy-button" style="display: none;">Copy Wallet Address</button>
+<a class="button" id="open-button" style="display: none;" href="" target="_blank">Open Wallet</a>
 </main>
 <style>
 main {
@@ -44,6 +45,15 @@ main {
 	font-size: 1.2rem;
 	word-wrap: break-word;
 }
+.button {
+	width: 200px;
+	margin: 20px 0;
+}
+#open-button {
+	color: white;
+	text-decoration: none;
+	font-weight: inherit;
+}
 </style>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery-qrcode-0.18.0.min.js"></script>
@@ -57,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const titleElement = document.getElementById("page-title");
 	const qrCodeElement = document.getElementById("qr-code");
 	const copyButton = document.getElementById("copy-button");
+	const openButton = document.getElementById("open-button");
 
 	function setMetaTag(name, content) {
 		const meta = document.createElement('meta');
@@ -91,19 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	copyButton.style.display = "inline-block";
-
 	copyButton.addEventListener('click', () => {
-		navigator.clipboard.writeText(decodedWallet).then(() => {
+		navigator.clipboard.writeText(user.wallet).then(() => {
 			const originalText = copyButton.textContent;
 			copyButton.textContent = 'Copied!';
 			setTimeout(() => {
 				copyButton.textContent = originalText;
 			}, 1500);
-		}).catch(err => {
-			// console.error('Clipboard copy failed:', err);
 		});
 	});
-
+		
+	if (window.innerHeight > window.innerWidth) {
+		openButton.style.display = "inline-block";
+		openButton.href = user.wallet;
+	}
+		
 	setMetaTag('kaspa:wallet', decodedWallet);
 
 	} else {
