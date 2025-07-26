@@ -9,6 +9,31 @@
 	<title>Kaspa Link</title>
 	<link rel="stylesheet" href="https://kaspahub.org/assets/styles/main.css" />
 	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/favicon.ico" />
+<style>
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#page-title {
+	margin-bottom: 20px;
+}
+#text-display {
+	max-width: 600px;
+	text-align: center;
+	font-size: 1.2rem;
+	word-wrap: break-word;
+}
+#open-button {
+	color: white;
+	text-decoration: none;
+	font-weight: inherit;
+}
+.button {
+	width: 200px;
+	margin: 20px 0;
+}
+</style>
 </head>
 <body>
 
@@ -30,36 +55,6 @@
 	<button class="button" id="copy-button" style="display: none;">Copy Wallet Address</button>
 	<a class="button" id="open-button" style="display: none;" href="" target="_blank">Open Wallet</a>
 </main>
-
-<style>
-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-#page-title {
-	margin-bottom: 20px;
-}
-
-#text-display {
-	max-width: 600px;
-	text-align: center;
-	font-size: 1.2rem;
-	word-wrap: break-word;
-}
-
-#open-button {
-	color: white;
-	text-decoration: none;
-	font-weight: inherit;
-}
-
-.button {
-	width: 200px;
-	margin: 20px 0;
-}
-</style>
 
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/KaspaHub/KaspaHub@latest/assets/scripts/jquery-qrcode-0.18.0.min.js"></script>
