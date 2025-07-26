@@ -539,9 +539,9 @@ code {
 .qr-code {
 	user-select: none;
 	overflow: hidden;
-	border-radius: 15px; 
 	display: flex;
-	margin-top: 1.5rem;
+	border-radius: 15px; 
+	margin: 20px 0;
 }
 /* inputs v */
 input::placeholder {
