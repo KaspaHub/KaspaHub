@@ -103,12 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	copyButton.style.display = "inline-block";
 	copyButton.addEventListener('click', () => {
+		navigator.clipboard.writeText(decodedWallet).then(() => {
 		navigator.clipboard.writeText(user.wallet).then(() => {
 			const originalText = copyButton.textContent;
 			copyButton.textContent = 'Copied!';
 			setTimeout(() => {
 				copyButton.textContent = originalText;
 			}, 1500);
+		}).catch(err => {
+			// console.error('Clipboard copy failed:', err);
 		});
 	});
 		
