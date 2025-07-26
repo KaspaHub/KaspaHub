@@ -67,7 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	const titleElement = document.getElementById("page-title");
 	const qrCodeElement = document.getElementById("qr-code");
 	const copyButton = document.getElementById("copy-button");
+	const openButton = document.getElementById("open-button");
 
+	
 	function setMetaTag(name, content) {
 		const meta = document.createElement('meta');
 		meta.setAttribute('name', name);
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	if (rawHandle) {
 		const decodedHandle = decodeURIComponent(rawHandle);
-		document.title = decodedHandle;
+		document.title = '@' + decodedHandle;
 		titleElement.innerHTML = `<a href="https://x.com/${decodedHandle}" target="_blank" rel="noopener noreferrer">@${decodedHandle}</a>`;
 		setMetaTag('kaspa:title', '@' + decodedHandle);
 	}
